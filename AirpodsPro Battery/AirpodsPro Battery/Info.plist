@@ -38,5 +38,7 @@
 	<true/>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>We use Apple Event to gather battery information on your connected AirPods</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We use bluetooth to fetch data </string>
 </dict>
 </plist>

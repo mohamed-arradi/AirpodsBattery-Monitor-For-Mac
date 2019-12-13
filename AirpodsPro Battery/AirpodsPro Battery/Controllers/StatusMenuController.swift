@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import IOBluetooth
 
 fileprivate enum MenuItemType: Int {
     case batteryView = 0
@@ -40,16 +41,13 @@ class StatusMenuController: NSObject, NSAlertDelegate {
         
         setupStatusMenu()
         
-        let scriptHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh",
-                                                         "sysInfo.sh",
-                                                         "mapmac.txt"])
+        let scriptHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt"])
         
         airpodsBatteryViewModel = BatteryViewModel(scriptHandler: scriptHandler)
         
         updateBatteryValue()
         
         timer = Timer.scheduledTimer(timeInterval: tickingInterval, target: self, selector: #selector(updateBatteryValue), userInfo: nil, repeats: true)
-        
     }
     
     deinit {
@@ -114,19 +112,19 @@ class StatusMenuController: NSObject, NSAlertDelegate {
         
         let airpodsName = airpodsBatteryViewModel.deviceName
         
-        guard !airpodsName.isEmpty else {
+        guard !airpodsName.isEmpty,
+            let devices = IOBluetoothDevice.pairedDevices() as? [IOBluetoothDevice],
+            let airpodsDevice = devices.filter({ $0.name == airpodsName }).first else {
             return
         }
         
-        let callBack = AppleScriptExecutor().runScript(scriptName: "AirpodsConnectionHandler", keyParams: ["{AIRPODS_NAME}": airpodsName.replacingOccurrences(of: "'", with: "’")])
+        if airpodsDevice.isConnected() {
+            airpodsDevice.closeConnection()
+        } else {
+            airpodsDevice.openConnection()
+        }
         
         updateBatteryValue()
-        
-        if callBack.success == false, let errorDictionnary = callBack.error {
-            if let errorMessage = errorDictionnary["NSAppleScriptErrorMessage"] as? String {
-                dialogOKCancel(question: "verify_permissions".localized, text: errorMessage)
-            }
-        }
     }
     
     @IBAction func aboutAppClicked(_ sender: NSMenuItem) {

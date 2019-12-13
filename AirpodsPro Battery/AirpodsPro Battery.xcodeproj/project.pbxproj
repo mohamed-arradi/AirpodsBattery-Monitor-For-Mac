@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB5874E3239E1974005C6E04 /* sysInfo.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB5874E2239E1974005C6E04 /* sysInfo.sh */; };
 		EB5874E5239E19F7005C6E04 /* ScriptsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */; };
 		EB8CF6B123A2154900C59492 /* PreferencePersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PreferencePersistanceManager.swift */; };
 		EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */; };
 		EB8E8E38238DBDD800EBC5ED /* BashExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E8E37238DBDD800EBC5ED /* BashExecutor.swift */; };
 		EB8E8E3A238E4A1600EBC5ED /* mapmac.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB8E8E39238E4A1600EBC5ED /* mapmac.txt */; };
-		EBBF51562387FD57003D4C8B /* AirpodsConnectionHandler.scpt in Resources */ = {isa = PBXBuildFile; fileRef = EBBF51552387FD57003D4C8B /* AirpodsConnectionHandler.scpt */; };
 		EBC7AD3F2386769700A53E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD3E2386769700A53E83 /* AppDelegate.swift */; };
 		EBC7AD412386769700A53E83 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD402386769700A53E83 /* StatusMenuController.swift */; };
 		EBC7AD432386769900A53E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC7AD422386769900A53E83 /* Assets.xcassets */; };
@@ -45,13 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB5874E2239E1974005C6E04 /* sysInfo.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = sysInfo.sh; sourceTree = "<group>"; };
 		EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsHandler.swift; sourceTree = "<group>"; };
 		EB8CF6B023A2154900C59492 /* PreferencePersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencePersistanceManager.swift; sourceTree = "<group>"; };
 		EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "battery-airpods.sh"; sourceTree = "<group>"; };
 		EB8E8E37238DBDD800EBC5ED /* BashExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BashExecutor.swift; sourceTree = "<group>"; };
 		EB8E8E39238E4A1600EBC5ED /* mapmac.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapmac.txt; sourceTree = "<group>"; };
-		EBBF51552387FD57003D4C8B /* AirpodsConnectionHandler.scpt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AirpodsConnectionHandler.scpt; sourceTree = "<group>"; };
 		EBC7AD3B2386769700A53E83 /* AirpodsPro Battery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AirpodsPro Battery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC7AD3E2386769700A53E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC7AD402386769700A53E83 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
@@ -178,9 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				EB8E8E39238E4A1600EBC5ED /* mapmac.txt */,
-				EBBF51552387FD57003D4C8B /* AirpodsConnectionHandler.scpt */,
 				EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */,
-				EB5874E2239E1974005C6E04 /* sysInfo.sh */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -292,14 +286,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBBF51562387FD57003D4C8B /* AirpodsConnectionHandler.scpt in Resources */,
 				EB8E8E3A238E4A1600EBC5ED /* mapmac.txt in Resources */,
 				EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */,
 				EBFE03AA23A3644B006095DB /* CreditsWindow.xib in Resources */,
 				EBFE03A423A36339006095DB /* AboutWindow.xib in Resources */,
 				EBC7AD432386769900A53E83 /* Assets.xcassets in Resources */,
 				EBC7AD602387D71E00A53E83 /* Localizable.strings in Resources */,
-				EB5874E3239E1974005C6E04 /* sysInfo.sh in Resources */,
 				EBC7AD512386791E00A53E83 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

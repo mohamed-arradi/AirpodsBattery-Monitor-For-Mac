@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import IOBluetooth
 
 enum AirpodsConnectionStatus {
     case connected
@@ -120,25 +121,18 @@ class BatteryViewModel: BatteryInformation {
     
     func airpodsName(completion: @escaping (_ deviceName: String) -> Void) {
         
-        let urlScript = scriptHandler.scriptDiskFilePath(scriptName: "sysInfo.sh")
-        
-        guard !urlScript.isEmpty else {
-            completion("")
-            return
-        }
-        
         let regexExpression = "(\\w+\\s?\\w+\\D\\w\\s?+AirPods\\s?.(\\w?|\\w)+)"
         
-        self.scriptHandler.execute(commandName: "sh", arguments: ["\(urlScript)"]) { (result) in
-            
-            switch result {
-            case .success(let value):
-                completion(value.matches(for: regexExpression).first ?? "")
-            case .failure(let error):
-                print(error.localizedDescription)
-                completion("")
+        IOBluetoothDevice.pairedDevices().forEach({ device in
+             guard let device = device as? IOBluetoothDevice,
+                 let addressString = device.addressString,
+                 let deviceName = device.name,
+                 let airpodsMatch = deviceName.matches(for: regexExpression).first
+             else {
+                return
             }
-        }
+            completion(airpodsMatch)
+         })
     }
 }
 

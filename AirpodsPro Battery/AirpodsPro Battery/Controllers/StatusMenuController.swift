@@ -43,7 +43,11 @@ class StatusMenuController: NSViewController {
         airpodsBatteryViewModel = BatteryViewModel(scriptHandler: scriptHandler)
         updateBatteryValue()
         
-        timer = Timer.scheduledTimer(timeInterval: tickingInterval, target: self, selector: #selector(updateBatteryValue), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: tickingInterval,
+                                     target: self,
+                                     selector: #selector(updateBatteryValue),
+                                     userInfo: nil,
+                                     repeats: true)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)

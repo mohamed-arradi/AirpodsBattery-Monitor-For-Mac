@@ -132,16 +132,17 @@ class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         
         let regexExpression = "(\\w+\\s?\\w+\\D\\w\\s?+AirPods\\s?.(\\w?|\\w)+)"
         
-        IOBluetoothDevice.pairedDevices().forEach({ device in
-            guard let device = device as? IOBluetoothDevice,
-                let deviceAddress = device.addressString,
-                let deviceName = device.name,
-                let airpodsMatch = deviceName.matches(for: regexExpression).first
-                else {
-                    return
-            }
-            completion(airpodsMatch, deviceAddress)
-        })
+        guard let devices = IOBluetoothDevice.pairedDevices() as? [IOBluetoothDevice] else {
+            completion("", "")
+            return
+        }
+        
+        guard let device = devices.first(where: { $0.name.matches(for: regexExpression).first?.isEmpty == false }) else {
+            completion("", "")
+            return
+        }
+        
+        completion(device.name, device.addressString)
     }
     
     func toogleCurrentBluetoothDevice() {

@@ -6,15 +6,6 @@
   Copyright © 2019 Mohamed Arradi. All rights reserved.
 */
 
-// Notification
-"low_battery_title_notification" = "Low battery";
-"low_battery_right_ear_title_notification" = "Right Airpods is low battery";
-"low_battery_left_ear_title_notification" = " Left Airpods is low battery";
-"low_battery_all_title_notification" = "Case and Airpods have low battery";
-"low_battery_both_title_notification" = "Both Airpods have low battery";
-"low_battery_case_title_notification" = "Airpods Case is Low battery";
-"low_battery_generic_subtitle_notification" = "Don't forget to charge it soon";
-
 // General
 "quit_app" = "Quit App";
 

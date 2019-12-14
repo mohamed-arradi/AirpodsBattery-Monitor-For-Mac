@@ -14,7 +14,7 @@ enum AirpodsConnectionStatus {
     case disconnected
 }
 
-protocol BluetoothDeviceManagementProtocol {
+protocol BluetoothAirpodsBatteryManagementProtocol {
     
     var connectionStatus: AirpodsConnectionStatus { get set }
     var leftBatteryValue: String { get set }
@@ -25,6 +25,7 @@ protocol BluetoothDeviceManagementProtocol {
     var caseBatteryProgressValue: CGFloat { get set }
     var displayStatusMessage: String { get set }
     var deviceName: String { get }
+    var deviceAddress: String { get }
     
     func updateBatteryInformation(completion: @escaping (_ success: Bool, _ connectionStatus: AirpodsConnectionStatus) -> Void)
     func processBatteryEntries(groups: [String])
@@ -32,7 +33,7 @@ protocol BluetoothDeviceManagementProtocol {
     func toogleCurrentBluetoothDevice()
 }
 
-class BatteryViewModel: BluetoothDeviceManagementProtocol {
+class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var leftBatteryValue: String = "--"
     var rightBatteryValue: String = "--"
@@ -160,7 +161,6 @@ class BatteryViewModel: BluetoothDeviceManagementProtocol {
         } else {
             bluetoothDevice.openConnection()
         }
-        
     }
 }
 

@@ -52,7 +52,7 @@ struct ScriptsHandler {
         let scriptURL = URL(fileURLWithPath: directoryPath, isDirectory: true)
         if !directoryExistsAtPath(directoryPath) {
             guard let _ = try? FileManager.default.createDirectory(at: scriptURL, withIntermediateDirectories: true) else {
-                assertionFailure("directory should be created and permissions allowed")
+                print("directory should be created and permissions allowed")
                 return
             }
         }
@@ -65,13 +65,13 @@ struct ScriptsHandler {
             let ext = fileExtension,
             let fName = fileName,
             let localScriptPath = Bundle.main.path(forResource: fileName, ofType: fileExtension) else {
-                assertionFailure("File \(fileName ?? "") does not exist")
+                print("File \(fileName ?? "") does not exist")
                 return
         }
         
         let finalFileURL = scriptURL.appendingPathComponent("\(fName).\(ext)").relativePath
         guard let _ = try? FileManager.default.createFile(atPath: finalFileURL, contents: Data(contentsOf: URL(fileURLWithPath: localScriptPath)), attributes: nil) else {
-            assertionFailure("File has not been created at \(finalFileURL)")
+            print("File has not been created at \(finalFileURL)")
             return
         }
     }

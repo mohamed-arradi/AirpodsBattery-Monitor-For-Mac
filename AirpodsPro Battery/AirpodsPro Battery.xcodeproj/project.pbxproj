@@ -18,10 +18,7 @@
 		EBC7AD4F2386776000A53E83 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD4E2386776000A53E83 /* String+Localized.swift */; };
 		EBC7AD512386791E00A53E83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC7AD502386791E00A53E83 /* MainMenu.xib */; };
 		EBC7AD5323867CF400A53E83 /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD5223867CF400A53E83 /* BatteryView.swift */; };
-		EBC7AD5523867D8100A53E83 /* AppleScriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD5423867D8100A53E83 /* AppleScriptExecutor.swift */; };
 		EBC7AD5923867D9400A53E83 /* JCGGProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD5823867D9400A53E83 /* JCGGProgressBar.swift */; };
-		EBC7AD5B2387CB1A00A53E83 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD5A2387CB1A00A53E83 /* NotificationManager.swift */; };
-		EBC7AD5D2387CC0300A53E83 /* NotificationBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD5C2387CC0300A53E83 /* NotificationBattery.swift */; };
 		EBC7AD602387D71E00A53E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBC7AD622387D71E00A53E83 /* Localizable.strings */; };
 		EBFE03A323A36339006095DB /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03A123A36339006095DB /* AboutWindow.swift */; };
 		EBFE03A423A36339006095DB /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBFE03A223A36339006095DB /* AboutWindow.xib */; };
@@ -58,10 +55,7 @@
 		EBC7AD4E2386776000A53E83 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		EBC7AD502386791E00A53E83 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		EBC7AD5223867CF400A53E83 /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
-		EBC7AD5423867D8100A53E83 /* AppleScriptExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleScriptExecutor.swift; sourceTree = "<group>"; };
 		EBC7AD5823867D9400A53E83 /* JCGGProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCGGProgressBar.swift; sourceTree = "<group>"; };
-		EBC7AD5A2387CB1A00A53E83 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		EBC7AD5C2387CC0300A53E83 /* NotificationBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBattery.swift; sourceTree = "<group>"; };
 		EBC7AD612387D71E00A53E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBFE03A123A36339006095DB /* AboutWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
 		EBFE03A223A36339006095DB /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
@@ -133,8 +127,6 @@
 		EBC7AD632387DD7900A53E83 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EBC7AD5C2387CC0300A53E83 /* NotificationBattery.swift */,
-				EBC7AD5423867D8100A53E83 /* AppleScriptExecutor.swift */,
 				EB8E8E37238DBDD800EBC5ED /* BashExecutor.swift */,
 				EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */,
 			);
@@ -186,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				EB8CF6B023A2154900C59492 /* PreferencePersistanceManager.swift */,
-				EBC7AD5A2387CB1A00A53E83 /* NotificationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -328,11 +319,8 @@
 				EBC7AD412386769700A53E83 /* StatusMenuController.swift in Sources */,
 				EBFE03A823A36401006095DB /* CreditsWindow.swift in Sources */,
 				EBC7AD5323867CF400A53E83 /* BatteryView.swift in Sources */,
-				EBC7AD5B2387CB1A00A53E83 /* NotificationManager.swift in Sources */,
-				EBC7AD5523867D8100A53E83 /* AppleScriptExecutor.swift in Sources */,
 				EB5874E5239E19F7005C6E04 /* ScriptsHandler.swift in Sources */,
 				EB8CF6B123A2154900C59492 /* PreferencePersistanceManager.swift in Sources */,
-				EBC7AD5D2387CC0300A53E83 /* NotificationBattery.swift in Sources */,
 				EBFE03AD23A374F0006095DB /* BatteryViewModel.swift in Sources */,
 				EBC7AD3F2386769700A53E83 /* AppDelegate.swift in Sources */,
 				EBFE03A323A36339006095DB /* AboutWindow.swift in Sources */,

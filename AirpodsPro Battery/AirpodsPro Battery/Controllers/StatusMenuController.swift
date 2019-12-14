@@ -17,7 +17,7 @@ fileprivate enum MenuItemTypePosition: Int {
     case quitApp = 8
 }
 
-class StatusMenuController: NSObject {
+class StatusMenuController: NSViewController {
     
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var batteryStatusView: BatteryView!
@@ -123,3 +123,14 @@ class StatusMenuController: NSObject {
     }
 }
 
+@available(OSX 10.12.1, *)
+extension StatusMenuController: NSTouchBarDelegate {
+  override func makeTouchBar() -> NSTouchBar? {
+    let touchBar = NSTouchBar()
+    touchBar.delegate = self
+   // touchBar.customizationIdentifier = .travelBar
+//    touchBar.defaultItemIdentifiers = [.infoLabelItem]
+//    touchBar.customizationAllowedItemIdentifiers = [.infoLabelItem]
+    return touchBar
+  }
+}

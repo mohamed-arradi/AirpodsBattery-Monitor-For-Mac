@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,6 +30,24 @@
                         <view key="contentView" id="gtc-Fy-RJG">
                             <rect key="frame" x="0.0" y="0.0" width="480" height="271"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7TA-D4-G9P">
+                                    <rect key="frame" x="28" y="12" width="424" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="29" id="O52-tj-2aR"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Developer: Arradi-Alaoui Mohamed / hello@arradimohamed.fr" id="reU-qp-20r">
+                                        <font key="font" metaFont="systemLight" size="13"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="7TA-D4-G9P" secondAttribute="bottom" constant="12" id="Tsp-rf-Rjz"/>
+                                <constraint firstItem="7TA-D4-G9P" firstAttribute="leading" secondItem="gtc-Fy-RJG" secondAttribute="leading" constant="30" id="eu9-J5-Lj6"/>
+                                <constraint firstItem="7TA-D4-G9P" firstAttribute="centerX" secondItem="gtc-Fy-RJG" secondAttribute="centerX" id="myG-IC-gQQ"/>
+                            </constraints>
                         </view>
                         <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                     </box>
@@ -83,6 +102,6 @@
         </window>
     </objects>
     <resources>
-        <image name="StatusAppIcon" width="256" height="256"/>
+        <image name="StatusAppIcon" width="512" height="512"/>
     </resources>
 </document>

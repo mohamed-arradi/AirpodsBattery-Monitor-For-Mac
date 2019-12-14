@@ -13,7 +13,9 @@ import UserNotifications
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        NotificationManager().requestAuthorisation()
+        if #available(OSX 10.12.1, *) {
+           NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
+         }
     }
 }
 

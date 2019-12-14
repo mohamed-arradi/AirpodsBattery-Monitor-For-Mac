@@ -30,6 +30,7 @@
 		EBFE03AA23A3644B006095DB /* CreditsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBFE03A923A3644B006095DB /* CreditsWindow.xib */; };
 		EBFE03AD23A374F0006095DB /* BatteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03AC23A374F0006095DB /* BatteryViewModel.swift */; };
 		EBFE03B523A38478006095DB /* AirpodsPro_BatteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03B423A38478006095DB /* AirpodsPro_BatteryTests.swift */; };
+		EBFE03DC23A4AC62006095DB /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03DB23A4AC62006095DB /* AlertUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		EBFE03B223A38478006095DB /* AirpodsPro BatteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AirpodsPro BatteryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFE03B423A38478006095DB /* AirpodsPro_BatteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirpodsPro_BatteryTests.swift; sourceTree = "<group>"; };
 		EBFE03B623A38478006095DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBFE03DB23A4AC62006095DB /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		EBC7AD3D2386769700A53E83 /* AirpodsPro Battery */ = {
 			isa = PBXGroup;
 			children = (
+				EBFE03DA23A4AC52006095DB /* Utils */,
 				EBFE03AB23A374E0006095DB /* ViewModel */,
 				EBC7AD682387E09200A53E83 /* Services */,
 				EBC7AD662387DF3300A53E83 /* Views */,
@@ -203,6 +206,14 @@
 				EBFE03B623A38478006095DB /* Info.plist */,
 			);
 			path = "AirpodsPro BatteryTests";
+			sourceTree = "<group>";
+		};
+		EBFE03DA23A4AC52006095DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EBFE03DB23A4AC62006095DB /* AlertUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBFE03DC23A4AC62006095DB /* AlertUtil.swift in Sources */,
 				EBC7AD4F2386776000A53E83 /* String+Localized.swift in Sources */,
 				EBC7AD5923867D9400A53E83 /* JCGGProgressBar.swift in Sources */,
 				EB8E8E38238DBDD800EBC5ED /* BashExecutor.swift in Sources */,

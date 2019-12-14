@@ -14,7 +14,7 @@ enum AirpodsConnectionStatus {
     case disconnected
 }
 
-protocol BatteryInformation {
+protocol BluetoothDeviceManagementProtocol {
     
     var connectionStatus: AirpodsConnectionStatus { get set }
     var leftBatteryValue: String { get set }
@@ -28,10 +28,11 @@ protocol BatteryInformation {
     
     func updateBatteryInformation(completion: @escaping (_ success: Bool, _ connectionStatus: AirpodsConnectionStatus) -> Void)
     func processBatteryEntries(groups: [String])
-    func airpodsName(completion: @escaping (_ deviceName: String) -> Void)
+    func fetchAirpodsName(completion: @escaping (_ deviceName: String,_ deviceAddress: String) -> Void)
+    func toogleCurrentBluetoothDevice()
 }
 
-class BatteryViewModel: BatteryInformation {
+class BatteryViewModel: BluetoothDeviceManagementProtocol {
     
     var leftBatteryValue: String = "--"
     var rightBatteryValue: String = "--"
@@ -43,7 +44,13 @@ class BatteryViewModel: BatteryInformation {
     
     var deviceName: String {
         get {
-            return preferenceManager.getValuePreferences(from: PreferenceKey.deviceName) as? String ?? ""
+            return preferenceManager.getValuePreferences(from: .deviceName) as? String ?? ""
+        }
+    }
+    
+    var deviceAddress: String {
+        get {
+            return preferenceManager.getValuePreferences(from: .deviceAddress) as? String ?? ""
         }
     }
     
@@ -69,11 +76,12 @@ class BatteryViewModel: BatteryInformation {
                 let pattern = "\\d+"
                 let groups = value.groups(for: pattern).flatMap({$0})
                 self.processBatteryEntries(groups: groups)
-                self.airpodsName { (deviceName) in
-                    guard !deviceName.isEmpty else {
+                self.fetchAirpodsName { (deviceName, deviceAddress) in
+                    guard !deviceName.isEmpty, !deviceAddress.isEmpty else {
                         return
                     }
                     self.preferenceManager.savePreferences(key: .deviceName, value: deviceName)
+                    self.preferenceManager.savePreferences(key: .deviceAddress, value: deviceAddress)
                 }
                 completion(true, self.connectionStatus)
             case .failure(let error):
@@ -119,20 +127,40 @@ class BatteryViewModel: BatteryInformation {
         }
     }
     
-    func airpodsName(completion: @escaping (_ deviceName: String) -> Void) {
+    func fetchAirpodsName(completion: @escaping (_ deviceName: String, _ deviceAddress: String) -> Void) {
         
         let regexExpression = "(\\w+\\s?\\w+\\D\\w\\s?+AirPods\\s?.(\\w?|\\w)+)"
         
         IOBluetoothDevice.pairedDevices().forEach({ device in
-             guard let device = device as? IOBluetoothDevice,
-                 let addressString = device.addressString,
-                 let deviceName = device.name,
-                 let airpodsMatch = deviceName.matches(for: regexExpression).first
-             else {
-                return
+            guard let device = device as? IOBluetoothDevice,
+                let deviceAddress = device.addressString,
+                let deviceName = device.name,
+                let airpodsMatch = deviceName.matches(for: regexExpression).first
+                else {
+                    return
             }
-            completion(airpodsMatch)
-         })
+            completion(airpodsMatch, deviceAddress)
+        })
+    }
+    
+    func toogleCurrentBluetoothDevice() {
+        
+        guard !deviceAddress.isEmpty, let bluetoothDevice = IOBluetoothDevice(addressString: deviceAddress) else {
+            print("Device not found")
+            return
+        }
+        
+        if !bluetoothDevice.isPaired() {
+            print("Device not paired")
+            return
+        }
+        
+        if bluetoothDevice.isConnected() {
+            bluetoothDevice.closeConnection()
+        } else {
+            bluetoothDevice.openConnection()
+        }
+        
     }
 }
 

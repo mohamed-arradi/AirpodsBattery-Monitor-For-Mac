@@ -10,6 +10,7 @@ import Foundation
 
 enum PreferenceKey: String {
     case deviceName
+    case deviceAddress
 }
 struct PreferencePersistanceManager {
     

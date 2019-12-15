@@ -1,4 +1,4 @@
-(/images/appIcon.png)
+![AppIcon-AirPodsBattery-Monitor](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/feature/airpods_pro_battery_monitoring/images/appIcon.png)
 # AirPods Battery Monitor For MAC OS X
 
 Airpods Mac OS App which show you the battery percentage of your airpods and give you notifications when airpods battery is low!

@@ -93,20 +93,24 @@ class StatusMenuController: NSViewController {
         airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in
             
             guard let strongSelf = self else { return }
-            strongSelf.batteryStatusView.updateViewData(airpodsBatteryViewModel: strongSelf.airpodsBatteryViewModel)
             
-            strongSelf.statusItem.button?.title = strongSelf.airpodsBatteryViewModel.displayStatusMessage
-            
-            let connected = strongSelf.airpodsBatteryViewModel.connectionStatus == .connected
-            strongSelf.updateStatusButtonImage(hide: connected)
-            
-            if !strongSelf.airpodsBatteryViewModel.deviceName.isEmpty {
-            let format = connected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
-            let deviceName = strongSelf.airpodsBatteryViewModel.deviceName
-            
-            strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
-            } else {
-            strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
+            DispatchQueue.main.async {
+                
+                strongSelf.batteryStatusView.updateViewData(airpodsBatteryViewModel: strongSelf.airpodsBatteryViewModel)
+                
+                strongSelf.statusItem.button?.title = strongSelf.airpodsBatteryViewModel.displayStatusMessage
+                
+                let connected = strongSelf.airpodsBatteryViewModel.connectionStatus == .connected
+                strongSelf.updateStatusButtonImage(hide: connected)
+                
+                if !strongSelf.airpodsBatteryViewModel.deviceName.isEmpty {
+                    let format = connected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
+                    let deviceName = strongSelf.airpodsBatteryViewModel.deviceName
+                    
+                    strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
+                } else {
+                    strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
+                }
             }
         }
     }
@@ -133,12 +137,12 @@ class StatusMenuController: NSViewController {
 
 @available(OSX 10.12.1, *)
 extension StatusMenuController: NSTouchBarDelegate {
-  override func makeTouchBar() -> NSTouchBar? {
-    let touchBar = NSTouchBar()
-    touchBar.delegate = self
-   // touchBar.customizationIdentifier = .travelBar
-//    touchBar.defaultItemIdentifiers = [.infoLabelItem]
-//    touchBar.customizationAllowedItemIdentifiers = [.infoLabelItem]
-    return touchBar
-  }
+    override func makeTouchBar() -> NSTouchBar? {
+        let touchBar = NSTouchBar()
+        touchBar.delegate = self
+        // touchBar.customizationIdentifier = .travelBar
+        //    touchBar.defaultItemIdentifiers = [.infoLabelItem]
+        //    touchBar.customizationAllowedItemIdentifiers = [.infoLabelItem]
+        return touchBar
+    }
 }

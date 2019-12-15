@@ -1,9 +1,9 @@
-![AppIcon-AirPodsBattery-Monitor](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/feature/airpods_pro_battery_monitoring/images/appIcon.png)
+![AppIcon-AirPodsBattery-Monitor](/images/appIcon.png)
 # AirPods Battery Monitor For MAC OS X
 
 Airpods Mac OS App which show you the battery percentage of your airpods and give you notifications when airpods battery is low!
 
-![Image of AirPods Battery Monitor](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/feature/airpods_pro_battery_monitoring/images/airpods-connected-min.png)
+![Image of AirPods Battery Monitor](/images/airpods-connected-min.png)
 
 A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left / Right) in real-time ! 
 
@@ -15,7 +15,7 @@ It is a shortcut to remove the long and painfull access from the Bluetooth Tab t
 
 **Classic Way**
 
-Just download the latest version here : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/feature/airpods_pro_battery_monitoring/releases/1.0.0/Airpods%20Battery%20Monitor-1.0.0.zip
+Just download the latest version here : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/releases/1.0.0/Airpods%20Battery%20Monitor-1.0.0.zip
 
 **Homebrew**
 

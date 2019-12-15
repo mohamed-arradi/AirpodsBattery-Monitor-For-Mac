@@ -15,7 +15,11 @@ It is a shortcut to remove the long and painfull access from the Bluetooth Tab t
 
 **Direct Download Link**
 
-Just download the latest version here: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/raw/master/releases/1.0.1/Airpods%20Battery%20Monitor.zip
+Just download the latest version here: 
+
+[![AirPods Battery Monitor Release](/images/downloadbutton.png)](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/raw/master/releases/1.0.1/Airpods%20Battery%20Monitor.zip)
+
+![QRCode](/images/qrcode-release.png)
 
 **Via Homebrew**
 

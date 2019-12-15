@@ -2,19 +2,21 @@
 
 Airpods Mac OS App which show you the battery percentage of your airpods and give you notifications when airpods battery is low!
 
-![Image of AirPods Battery Monitor](https://github.com/mohamed-arradi/DarkModeSwitcher/blob/master/images/airpods-connected-min.png)
+![Image of AirPods Battery Monitor](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/images/airpods-connected-min.png)
 
-A small Mac OS App that allow you to see easily your AirPods Battery in real-time ! It is a shortcut to the long and painfull access from the Bluetooth tab
+A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left / Right) in real-time ! 
+
+It is a shortcut to remove the long and painfull access from the Bluetooth Tab that Mac OS X provide.
 
 **Current Release Version: 1.0
 
 ## How to download directly the App ?
 
-Just download the App zip file here : https://github.com/mohamed-arradi/DarkModeSwitcher/tree/master/Release
+Just download the latest version here : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/releases/1.0.0/Airpods Battery Monitor-1.0.0.zip
 
 ## Why this App can be useful to you ?
 
-On Mac OS,  in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
+On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
 
 This is why I build this tiny mac status bar app.
 
@@ -38,8 +40,6 @@ This App cannot be allowed right now on the Mac App Store due to the necessary t
 
 ![Screenshot](images/airpods-connected-min.png)
 
-![Screenshot](images/AirPodsConnected-WithNoCase-min.png)
-
 *AirPods Disconnected*
 
 ![Screenshot](images/AirpodsDisconnected.png)
@@ -57,21 +57,19 @@ If you want to contribute to improve it, it will be with pleasure !
 
 ### HISTORY
 
-**1.0
+*1.0*
 
  ** Improving UI
  ** Added Missing Permissions for Mac OS Mojave
  ** Implemented keyboard shortcut 
 
-**1.0.0
+*1.0.0*
 
  * V1 AirPods Battery Monitor
  * Connect / Disconnect from your Airpods
  * Detect Battery from Case / Left Ear / Right Ear
 
 ### Image Credits
-
-Icons:
 
 - Airpod Case by Joel Wisneski from the Noun Project
 

@@ -38,7 +38,7 @@ This is why I build this tiny mac status bar app.
 - Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
 - Support multiple languages
 
-### HISTORY
+### CHANGELOG
 
 **1.0.0**
 
@@ -83,6 +83,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ### SUPPORT
 
-You like it ? help supporting this app by giving me **Coffee** to not sleep for coding :)
+You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)

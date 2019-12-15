@@ -10,9 +10,15 @@ It is a shortcut to remove the long and painfull access from the Bluetooth Tab t
 
 **Current Release Version: 1.0
 
-## How to download directly the App ?
+## HOW TO INSTALL IT ?
+
+* Classic Way *
 
 Just download the latest version here : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/feature/airpods_pro_battery_monitoring/releases/1.0.0/Airpods%20Battery%20Monitor-1.0.0.zip
+
+* Homebrew *
+
+Work in progress
 
 ## Why this App can be useful to you ?
 
@@ -30,19 +36,7 @@ This is a MacOSX App build with xCode using Swift 5.0 and Sandbox Not activated 
 
 This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required. (Except if you manage to bribe some Apple Reviewers which I did not succeeded yet :))
 
-
-### Screenshots
-
-*AirPods Connected*
-
-![Screenshot](images/airpods-connected-min.png)
-
-*AirPods Disconnected*
-
-![Screenshot](images/AirpodsDisconnected.png)
-
-
-### Contributing
+### CONTRIBUTING
 
 If you want to contribute to improve it, it will be with pleasure !
 
@@ -52,6 +46,7 @@ If you want to contribute to improve it, it will be with pleasure !
 - Add TouchBar App in order to see the battery from the touch bar
 - Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
 - Support multiple languages
+
 ### HISTORY
 
 *1.0*
@@ -66,6 +61,18 @@ If you want to contribute to improve it, it will be with pleasure !
  * Connect / Disconnect from your Airpods
  * Detect Battery from Case / Left Ear / Right Ear
 
+
+### SCREENSHOTS
+
+*AirPods Connected*
+
+![Screenshot](images/airpods-connected-min.png)
+
+*AirPods Disconnected*
+
+![Screenshot](images/AirpodsDisconnected.png)
+
+
 ### Image Credits
 
 - Airpod Case by Joel Wisneski from the Noun Project
@@ -76,11 +83,11 @@ If you want to contribute to improve it, it will be with pleasure !
 
 - https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32
 
-### License
+### LICENCE
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### Support
+### SUPPORT
 
 You like it ? help supporting this app by giving me Coffee to not sleep for coding :)
 

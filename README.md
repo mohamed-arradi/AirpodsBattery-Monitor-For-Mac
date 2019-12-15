@@ -40,6 +40,10 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG
 
+**1.0.1**
+
+ * BugFix when Airpods Name is a phone number
+
 **1.0.0**
 
  * V1 AirPods Battery Monitor

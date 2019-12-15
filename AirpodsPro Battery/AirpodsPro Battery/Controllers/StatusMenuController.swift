@@ -90,10 +90,6 @@ class StatusMenuController: NSViewController {
     
     @objc fileprivate func updateBatteryValue() {
         
-        guard let devices = IOBluetoothDevice.pairedDevices(), devices.count > 0 else {
-            return
-        }
-        
         airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in
             
             guard let strongSelf = self else { return }
@@ -104,10 +100,14 @@ class StatusMenuController: NSViewController {
             let connected = strongSelf.airpodsBatteryViewModel.connectionStatus == .connected
             strongSelf.updateStatusButtonImage(hide: connected)
             
+            if !strongSelf.airpodsBatteryViewModel.deviceName.isEmpty {
             let format = connected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
             let deviceName = strongSelf.airpodsBatteryViewModel.deviceName
             
             strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
+            } else {
+            strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
+            }
         }
     }
     

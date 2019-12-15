@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutWindow" customModule="AirpodsPro_Battery" customModuleProvider="target">
+            <connections>
+                <outlet property="appBuildVersionLabel" destination="5d2-yC-2Fk" id="uz3-Qr-FRW"/>
+                <outlet property="appIconImageView" destination="91e-fi-Zxz" id="FhC-Eu-5pW"/>
+                <outlet property="appNameLabel" destination="4Na-4Q-nj9" id="hjX-lK-Bxv"/>
+                <outlet property="window" destination="MfR-9v-276" id="Knd-G6-bD1"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="MfR-9v-276">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="163" y="199" width="480" height="271"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <view key="contentView" id="uIp-0O-d4L">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="271"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="R8W-lr-PVn">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="271"/>
+                        <view key="contentView" id="gtc-Fy-RJG">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="271"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7TA-D4-G9P">
+                                    <rect key="frame" x="28" y="12" width="424" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="29" id="O52-tj-2aR"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Developer: Arradi-Alaoui Mohamed / hello@arradimohamed.fr" id="reU-qp-20r">
+                                        <font key="font" metaFont="systemLight" size="13"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="7TA-D4-G9P" secondAttribute="bottom" constant="12" id="Tsp-rf-Rjz"/>
+                                <constraint firstItem="7TA-D4-G9P" firstAttribute="leading" secondItem="gtc-Fy-RJG" secondAttribute="leading" constant="30" id="eu9-J5-Lj6"/>
+                                <constraint firstItem="7TA-D4-G9P" firstAttribute="centerX" secondItem="gtc-Fy-RJG" secondAttribute="centerX" id="myG-IC-gQQ"/>
+                            </constraints>
+                        </view>
+                        <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Na-4Q-nj9">
+                        <rect key="frame" x="28" y="121" width="424" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="CxT-MR-vFA"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Airpods Battery Monitor" id="kmf-h9-735">
+                            <font key="font" metaFont="systemBold" size="17"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5d2-yC-2Fk">
+                        <rect key="frame" x="28" y="65" width="424" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="PQ8-TZ-PMd"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version 1.0" id="h49-Xh-lcg">
+                            <font key="font" metaFont="systemLight" size="13"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="91e-fi-Zxz">
+                        <rect key="frame" x="207" y="186" width="66" height="65"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="65" id="6jR-hi-0wr"/>
+                            <constraint firstAttribute="width" constant="66" id="cNK-ej-IiT"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="top" imageScaling="proportionallyDown" image="StatusAppIcon" id="yRe-3B-ALy"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5d2-yC-2Fk" firstAttribute="top" secondItem="4Na-4Q-nj9" secondAttribute="bottom" constant="27" id="5tH-q6-gET"/>
+                    <constraint firstItem="4Na-4Q-nj9" firstAttribute="top" secondItem="91e-fi-Zxz" secondAttribute="bottom" constant="36" id="8KX-RX-B6V"/>
+                    <constraint firstItem="4Na-4Q-nj9" firstAttribute="leading" secondItem="uIp-0O-d4L" secondAttribute="leading" constant="30" id="8oB-5g-8qY"/>
+                    <constraint firstItem="R8W-lr-PVn" firstAttribute="top" secondItem="uIp-0O-d4L" secondAttribute="top" id="ANW-zQ-dw0"/>
+                    <constraint firstAttribute="bottom" secondItem="R8W-lr-PVn" secondAttribute="bottom" id="B6f-xO-Brh"/>
+                    <constraint firstItem="R8W-lr-PVn" firstAttribute="centerY" secondItem="4Na-4Q-nj9" secondAttribute="centerY" id="Dcu-KV-PmH"/>
+                    <constraint firstItem="4Na-4Q-nj9" firstAttribute="trailing" secondItem="5d2-yC-2Fk" secondAttribute="trailing" id="KfX-LM-9yS"/>
+                    <constraint firstItem="91e-fi-Zxz" firstAttribute="centerX" secondItem="R8W-lr-PVn" secondAttribute="centerX" id="YpU-Pt-3Le"/>
+                    <constraint firstItem="R8W-lr-PVn" firstAttribute="leading" secondItem="uIp-0O-d4L" secondAttribute="leading" id="gzv-c6-yWN"/>
+                    <constraint firstItem="91e-fi-Zxz" firstAttribute="centerX" secondItem="uIp-0O-d4L" secondAttribute="centerX" id="iMd-LS-VU1"/>
+                    <constraint firstItem="91e-fi-Zxz" firstAttribute="top" secondItem="uIp-0O-d4L" secondAttribute="top" constant="20" symbolic="YES" id="k6I-Tf-Fwu"/>
+                    <constraint firstItem="4Na-4Q-nj9" firstAttribute="leading" secondItem="5d2-yC-2Fk" secondAttribute="leading" id="wPu-UI-QRG"/>
+                    <constraint firstItem="91e-fi-Zxz" firstAttribute="centerX" secondItem="4Na-4Q-nj9" secondAttribute="centerX" id="wTW-ZV-BuU"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="547" y="155"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="StatusAppIcon" width="512" height="512"/>
+    </resources>
+</document>

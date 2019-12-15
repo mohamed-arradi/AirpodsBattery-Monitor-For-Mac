@@ -12,11 +12,11 @@ It is a shortcut to remove the long and painfull access from the Bluetooth Tab t
 
 ## HOW TO INSTALL IT ?
 
-* Classic Way *
+**Classic Way**
 
 Just download the latest version here : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/feature/airpods_pro_battery_monitoring/releases/1.0.0/Airpods%20Battery%20Monitor-1.0.0.zip
 
-* Homebrew *
+**Homebrew**
 
 Work in progress
 
@@ -49,13 +49,7 @@ If you want to contribute to improve it, it will be with pleasure !
 
 ### HISTORY
 
-*1.0*
-
- ** Improving UI
- ** Added Missing Permissions for Mac OS Mojave
- ** Implemented keyboard shortcut 
-
-*1.0.0*
+**1.0.0**
 
  * V1 AirPods Battery Monitor
  * Connect / Disconnect from your Airpods
@@ -64,11 +58,11 @@ If you want to contribute to improve it, it will be with pleasure !
 
 ### SCREENSHOTS
 
-*AirPods Connected*
+**AirPods Connected**
 
 ![Screenshot](images/airpods-connected-min.png)
 
-*AirPods Disconnected*
+**AirPods Disconnected**
 
 ![Screenshot](images/AirpodsDisconnected.png)
 
@@ -89,6 +83,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ### SUPPORT
 
-You like it ? help supporting this app by giving me Coffee to not sleep for coding :)
+You like it ? help supporting this app by giving me **Coffee** to not sleep for coding :)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)

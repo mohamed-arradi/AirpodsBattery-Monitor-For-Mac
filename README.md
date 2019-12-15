@@ -31,16 +31,6 @@ This is why I build this tiny mac status bar app.
 
 ![Demo-AirpodsBatteryMonitor](images/AirpodsBatteryMonitor-Demo.gif)
 
-### Why it is not on the App Store ?
-
-This is a MacOSX App build with xCode using Swift 5.0 and Sandbox Not activated in order to beneficiate from the bash permission.
-
-This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required. (Except if you manage to bribe some Apple Reviewers which I did not succeeded yet :))
-
-### CONTRIBUTING
-
-If you want to contribute to improve it, it will be with pleasure !
-
 ### REMAINING TO DO
 
 - Add Notifications for Battery under 10%, etc 
@@ -67,6 +57,15 @@ If you want to contribute to improve it, it will be with pleasure !
 
 ![Screenshot](images/AirpodsDisconnected.png)
 
+### Why it is not on the App Store ?
+
+This is a MacOSX App build with xCode using Swift 5.0 and Sandbox Not activated in order to beneficiate from the bash permission.
+
+This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required. (Except if you manage to bribe some Apple Reviewers which I did not succeeded yet :))
+
+### CONTRIBUTING
+
+If you want to contribute to improve it, it will be with pleasure !
 
 ### Image Credits
 

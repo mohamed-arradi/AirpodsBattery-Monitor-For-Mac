@@ -20,19 +20,16 @@ On Mac OS, in order to get the battery information from your AirPods you need to
 
 This is why I build this tiny mac status bar app.
 
-## Getting Started
+### DEMO 
+
+![Demo-AirpodsBatteryMonitor](images/AirpodsBatteryMonitor-Demo.gif)
+
+### Why it is not on the App Store ?
 
 This is a MacOSX App build with xCode using Swift 5.0 and Sandbox Not activated in order to beneficiate from the bash permission.
 
 This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required. (Except if you manage to bribe some Apple Reviewers which I did not succeeded yet :))
 
-### DEMO 
-
-![Demo-AirpodsBatteryMonitor](images/AirpodsBatteryMonitor-Demo.gif)
-
-### Language handled
-
-- **English ONLY for now. (Don't hesite to contribute to translate if you feel the need)
 
 ### Screenshots
 
@@ -54,7 +51,7 @@ If you want to contribute to improve it, it will be with pleasure !
 - Add Notifications for Battery under 10%, etc 
 - Add TouchBar App in order to see the battery from the touch bar
 - Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
-
+- Support multiple languages
 ### HISTORY
 
 *1.0*

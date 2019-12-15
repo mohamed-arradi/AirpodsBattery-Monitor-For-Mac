@@ -27,7 +27,7 @@ class StatusMenuController: NSViewController {
     
     private var timer: Timer!
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private let tickingInterval: TimeInterval = 35
+    private let tickingInterval: TimeInterval = 300
     private lazy var aboutView: AboutWindow = {
         return AboutWindow()
     }()

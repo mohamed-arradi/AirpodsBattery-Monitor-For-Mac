@@ -100,7 +100,7 @@ class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             self.connectionStatus = .connected
             
             if let caseValue = Int(groups[0]) {
-                let value = caseValue > 0 ? "\(caseValue)%": "nc"
+                let value = caseValue > 0 ? "\(caseValue) %": "nc"
                 self.caseBatteryValue = value
                 self.caseBatteryProgressValue = CGFloat(caseValue)
             }

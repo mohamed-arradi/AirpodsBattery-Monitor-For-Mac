@@ -130,14 +130,14 @@ class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     func fetchAirpodsName(completion: @escaping (_ deviceName: String, _ deviceAddress: String) -> Void) {
         
-        let regexExpression = "(\\w+\\s?\\w+\\D\\w\\s?+AirPods\\s?.(\\w?|\\w)+)"
-        
         guard let devices = IOBluetoothDevice.pairedDevices() as? [IOBluetoothDevice] else {
             completion("", "")
             return
         }
         
-        guard let device = devices.first(where: { $0.name.matches(for: regexExpression).first?.isEmpty == false }) else {
+        guard let device = devices.first(where: { $0.isConnected()
+            && $0.deviceClassMajor == kBluetoothDeviceClassMajorAudio
+            && $0.deviceClassMinor == kBluetoothDeviceClassMinorAudioHeadphones }) else {
             completion("", "")
             return
         }

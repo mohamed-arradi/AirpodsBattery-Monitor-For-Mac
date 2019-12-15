@@ -90,6 +90,10 @@ class StatusMenuController: NSViewController {
     
     @objc fileprivate func updateBatteryValue() {
         
+        guard let devices = IOBluetoothDevice.pairedDevices(), devices.count > 0 else {
+            return
+        }
+        
         airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in
             
             guard let strongSelf = self else { return }

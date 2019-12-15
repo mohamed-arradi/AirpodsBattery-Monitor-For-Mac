@@ -20,12 +20,18 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>We use Apple Event to gather battery information on your connected AirPods</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We use bluetooth to fetch data </string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Mohamed Arradi. All rights reserved.</string>
 	<key>NSMainNibFile</key>
@@ -36,9 +42,5 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
-	<key>NSAppleEventsUsageDescription</key>
-	<string>We use Apple Event to gather battery information on your connected AirPods</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>We use bluetooth to fetch data </string>
 </dict>
 </plist>

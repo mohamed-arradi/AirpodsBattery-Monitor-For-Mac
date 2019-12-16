@@ -134,7 +134,7 @@ class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             completion("", "")
             return
         }
-        
+    
         guard let device = devices.first(where: { $0.isConnected()
             && $0.deviceClassMajor == kBluetoothDeviceClassMajorAudio
             && $0.deviceClassMinor == kBluetoothDeviceClassMinorAudioHeadphones }) else {

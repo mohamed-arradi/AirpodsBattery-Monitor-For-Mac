@@ -13,11 +13,12 @@ fileprivate enum MenuItemTypePosition: Int {
     case batteryView = 0
     case airpodsConnect = 2
     case credit = 5
-    case about = 7
-    case quitApp = 8
+    case about = 6
+    case refreshDevices = 8
+    case quitApp = 10
 }
 
-class StatusMenuController: NSViewController {
+class StatusMenuController: NSObject {
     
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var batteryStatusView: BatteryView!
@@ -27,7 +28,7 @@ class StatusMenuController: NSViewController {
     
     private var timer: Timer!
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private let tickingInterval: TimeInterval = 300
+    private let tickingInterval: TimeInterval = 200
     private lazy var aboutView: AboutWindow = {
         return AboutWindow()
     }()
@@ -36,27 +37,32 @@ class StatusMenuController: NSViewController {
         return CreditWindow()
     }()
     
-    override func awakeFromNib() {
-        
-        setupStatusMenu()
+    override init() {
+        super.init()
         let scriptHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt"])
         airpodsBatteryViewModel = BatteryViewModel(scriptHandler: scriptHandler)
+        
         updateBatteryValue()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
         
         timer = Timer.scheduledTimer(timeInterval: tickingInterval,
                                      target: self,
                                      selector: #selector(updateBatteryValue),
                                      userInfo: nil,
                                      repeats: true)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupStatusMenu()
     }
     
     deinit {
         timer.invalidate()
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
-        NotificationCenter.default.removeObserver(self, name: Notification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
     }
     
     fileprivate func updateStatusButtonImage(hide: Bool = false) {
@@ -78,7 +84,8 @@ class StatusMenuController: NSViewController {
         statusItem.menu = statusMenu
         updateStatusButtonImage()
         statusMenu.item(at: MenuItemTypePosition.quitApp.rawValue)?.title = "quit_app".localized
-        statusMenu.item(at: MenuItemTypePosition.about.rawValue)?.title = "about".localized
+        statusMenu.item(at: MenuItemTypePosition.refreshDevices.rawValue)?.title = "refresh_devices".localized
+        statusMenu.item(at: MenuItemTypePosition.about.rawValue)?.title = "feedback".localized
         statusItem.menu = statusMenu
         statusItem.button?.title = ""
         
@@ -126,6 +133,10 @@ class StatusMenuController: NSViewController {
         NSApplication.shared.terminate(self)
     }
     
+    @IBAction func refreshDevices(_ sender: NSMenuItem) {
+        updateBatteryValue()
+    }
+    
     @IBAction func aboutAppClicked(_ sender: NSMenuItem) {
         aboutView.showWindow(nil)
     }
@@ -135,14 +146,14 @@ class StatusMenuController: NSViewController {
     }
 }
 
-@available(OSX 10.12.1, *)
-extension StatusMenuController: NSTouchBarDelegate {
-    override func makeTouchBar() -> NSTouchBar? {
-        let touchBar = NSTouchBar()
-        touchBar.delegate = self
-        // touchBar.customizationIdentifier = .travelBar
-        //    touchBar.defaultItemIdentifiers = [.infoLabelItem]
-        //    touchBar.customizationAllowedItemIdentifiers = [.infoLabelItem]
-        return touchBar
-    }
-}
+//@available(OSX 10.12.1, *)
+//extension StatusMenuController: NSTouchBarDelegate {
+//    override func makeTouchBar() -> NSTouchBar? {
+//        let touchBar = NSTouchBar()
+//        touchBar.delegate = self
+//        // touchBar.customizationIdentifier = .travelBar
+//        //    touchBar.defaultItemIdentifiers = [.infoLabelItem]
+//        //    touchBar.customizationAllowedItemIdentifiers = [.infoLabelItem]
+//        return touchBar
+//    }
+//}

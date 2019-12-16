@@ -31,11 +31,11 @@ class AboutWindow: NSWindowController {
         
         appNameLabel.stringValue = "Airpods Battery Monitor"
        
-        guard let releaseVersionNumber = Bundle.main.releaseVersionNumber, let buildNumber = Bundle.main.buildVersionNumber else {
+        guard let releaseVersionNumber = Bundle.main.releaseVersionNumber else {
             return
         }
         
-        appBuildVersionLabel.stringValue = "Version ".appending(releaseVersionNumber).appending(String(format: ".%@", buildNumber))
+        appBuildVersionLabel.stringValue = "Version \(releaseVersionNumber)"
     }
     
     @IBAction func sendFeedback(sender: NSButton) {

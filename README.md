@@ -46,6 +46,10 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG
 
+**1.0.4**
+
+ * Add Feedback Options
+
 **1.0.1**
 
  * BugFix when Airpods Name is a phone number

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,9 +13,9 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AirpodsPro_Battery" customModuleProvider="target"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Airpods_Battery_Monitor" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="sS3-a3-GGc" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="AirpodsPro_Battery" customModuleProvider="target">
+        <customObject id="sS3-a3-GGc" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
             <connections>
                 <outlet property="batteryStatusView" destination="HhN-DY-IST" id="4JF-aM-aPS"/>
                 <outlet property="statusMenu" destination="qZp-Ad-uDX" id="XFG-js-aKj"/>
@@ -46,6 +47,13 @@
                         <action selector="aboutAppClicked:" target="sS3-a3-GGc" id="PrP-qV-bTI"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="JL2-pN-eUo"/>
+                <menuItem title="Refresh Devices" id="adh-CW-cfO">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="refreshDevices:" target="sS3-a3-GGc" id="8US-Vy-v0I"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="jPd-Xf-JXg"/>
                 <menuItem title="Quit" id="k4N-2W-XAy">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -56,7 +64,7 @@
             </items>
             <point key="canvasLocation" x="214" y="264"/>
         </menu>
-        <customView id="HhN-DY-IST" userLabel="BatteryStatusView" customClass="BatteryView" customModule="AirpodsPro_Battery" customModuleProvider="target">
+        <customView id="HhN-DY-IST" userLabel="BatteryStatusView" customClass="BatteryView" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="326" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -122,7 +130,7 @@
                                                 <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="-10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Df-Dy-hhz">
                                                     <rect key="frame" x="103" y="0.0" width="140" height="30"/>
                                                     <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="zKI-vd-AV0" customClass="JCGGProgressBar" customModule="AirpodsPro_Battery" customModuleProvider="target">
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="zKI-vd-AV0" customClass="JCGGProgressBar" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="140" id="I1n-qj-WUz"/>
@@ -257,7 +265,7 @@
                                                 <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="-10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38V-dz-H3J">
                                                     <rect key="frame" x="103" y="0.0" width="140" height="31"/>
                                                     <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Z5r-33-hcs" customClass="JCGGProgressBar" customModule="AirpodsPro_Battery" customModuleProvider="target">
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Z5r-33-hcs" customClass="JCGGProgressBar" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="140" height="31"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="barColor">
@@ -389,7 +397,7 @@
                                                 <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="-10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-Pb-1eZ">
                                                     <rect key="frame" x="103" y="0.0" width="140" height="30"/>
                                                     <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="M2g-G4-dAK" customClass="JCGGProgressBar" customModule="AirpodsPro_Battery" customModuleProvider="target">
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="M2g-G4-dAK" customClass="JCGGProgressBar" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="barColor">

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="AboutWindow" customModule="AirpodsPro_Battery" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutWindow" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
             <connections>
                 <outlet property="appBuildVersionLabel" destination="5d2-yC-2Fk" id="uz3-Qr-FRW"/>
                 <outlet property="appIconImageView" destination="91e-fi-Zxz" id="FhC-Eu-5pW"/>
@@ -42,6 +42,17 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fr4-4r-gw3">
+                                    <rect key="frame" x="163" y="61" width="155" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="push" title="Send Feedback" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5tF-at-G0e">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="sendFeedbackWithSender:" target="-2" id="Bfi-jV-aBi"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="7TA-D4-G9P" secondAttribute="bottom" constant="12" id="Tsp-rf-Rjz"/>
@@ -52,7 +63,7 @@
                         <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                     </box>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Na-4Q-nj9">
-                        <rect key="frame" x="28" y="121" width="424" height="29"/>
+                        <rect key="frame" x="28" y="148" width="424" height="29"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="29" id="CxT-MR-vFA"/>
                         </constraints>
@@ -63,7 +74,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5d2-yC-2Fk">
-                        <rect key="frame" x="28" y="65" width="424" height="29"/>
+                        <rect key="frame" x="28" y="113" width="424" height="29"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="29" id="PQ8-TZ-PMd"/>
                         </constraints>
@@ -83,12 +94,12 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5d2-yC-2Fk" firstAttribute="top" secondItem="4Na-4Q-nj9" secondAttribute="bottom" constant="27" id="5tH-q6-gET"/>
-                    <constraint firstItem="4Na-4Q-nj9" firstAttribute="top" secondItem="91e-fi-Zxz" secondAttribute="bottom" constant="36" id="8KX-RX-B6V"/>
+                    <constraint firstItem="5d2-yC-2Fk" firstAttribute="top" secondItem="4Na-4Q-nj9" secondAttribute="bottom" constant="6" id="5tH-q6-gET"/>
+                    <constraint firstItem="4Na-4Q-nj9" firstAttribute="top" secondItem="91e-fi-Zxz" secondAttribute="bottom" constant="9" id="8KX-RX-B6V"/>
                     <constraint firstItem="4Na-4Q-nj9" firstAttribute="leading" secondItem="uIp-0O-d4L" secondAttribute="leading" constant="30" id="8oB-5g-8qY"/>
                     <constraint firstItem="R8W-lr-PVn" firstAttribute="top" secondItem="uIp-0O-d4L" secondAttribute="top" id="ANW-zQ-dw0"/>
                     <constraint firstAttribute="bottom" secondItem="R8W-lr-PVn" secondAttribute="bottom" id="B6f-xO-Brh"/>
-                    <constraint firstItem="R8W-lr-PVn" firstAttribute="centerY" secondItem="4Na-4Q-nj9" secondAttribute="centerY" id="Dcu-KV-PmH"/>
+                    <constraint firstItem="R8W-lr-PVn" firstAttribute="centerY" secondItem="4Na-4Q-nj9" secondAttribute="centerY" constant="27" id="Dcu-KV-PmH"/>
                     <constraint firstItem="4Na-4Q-nj9" firstAttribute="trailing" secondItem="5d2-yC-2Fk" secondAttribute="trailing" id="KfX-LM-9yS"/>
                     <constraint firstItem="91e-fi-Zxz" firstAttribute="centerX" secondItem="R8W-lr-PVn" secondAttribute="centerX" id="YpU-Pt-3Le"/>
                     <constraint firstItem="R8W-lr-PVn" firstAttribute="leading" secondItem="uIp-0O-d4L" secondAttribute="leading" id="gzv-c6-yWN"/>
@@ -98,7 +109,7 @@
                     <constraint firstItem="91e-fi-Zxz" firstAttribute="centerX" secondItem="4Na-4Q-nj9" secondAttribute="centerX" id="wTW-ZV-BuU"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="547" y="155"/>
+            <point key="canvasLocation" x="550" y="153"/>
         </window>
     </objects>
     <resources>

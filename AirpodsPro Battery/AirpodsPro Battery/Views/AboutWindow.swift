@@ -14,6 +14,7 @@ class AboutWindow: NSWindowController {
     @IBOutlet weak var appIconImageView: NSImageView!
     @IBOutlet weak var appNameLabel: NSTextField!
     @IBOutlet weak var appBuildVersionLabel: NSTextField!
+    @IBOutlet weak var feedbackButton: NSButton!
     
     override var windowNibName: NSNib.Name? {
         return NSNib.Name("AboutWindow")
@@ -35,6 +36,15 @@ class AboutWindow: NSWindowController {
         }
         
         appBuildVersionLabel.stringValue = "Version ".appending(releaseVersionNumber).appending(String(format: ".%@", buildNumber))
+    }
+    
+    @IBAction func sendFeedback(sender: NSButton) {
         
+        guard let service = NSSharingService(named: NSSharingService.Name.composeEmail) else {
+            return
+        }
+        service.recipients = ["hello@arradimohamed.fr"]
+        service.subject = "Feedback"
+        service.perform(withItems: ["Write your feedback here"])
     }
 }

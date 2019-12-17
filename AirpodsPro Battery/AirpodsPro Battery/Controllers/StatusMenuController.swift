@@ -24,9 +24,9 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var batteryStatusView: BatteryView!
     
     var statusMenuItem: NSMenuItem!
-    var airpodsBatteryViewModel: BatteryViewModel!
+    var airpodsBatteryViewModel: AirPodsBatteryViewModel!
     
-    private var timer: Timer!
+    private var timer: Timer?
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let tickingInterval: TimeInterval = 200
     private lazy var aboutView: AboutWindow = {
@@ -39,28 +39,28 @@ class StatusMenuController: NSObject {
     
     override init() {
         super.init()
-        let scriptHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt"])
-        airpodsBatteryViewModel = BatteryViewModel(scriptHandler: scriptHandler)
+        let scriptHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt", "apple-devices-verification.sh"])
+        
+        airpodsBatteryViewModel = AirPodsBatteryViewModel(scriptHandler: scriptHandler)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(detectChange), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
         
         updateBatteryValue()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryValue), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
-        
-        timer = Timer.scheduledTimer(timeInterval: tickingInterval,
-                                     target: self,
-                                     selector: #selector(updateBatteryValue),
-                                     userInfo: nil,
-                                     repeats: true)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupStatusMenu()
+        
+        timer = Timer.scheduledTimer(timeInterval: tickingInterval,
+                                         target: self,
+                                         selector: #selector(updateBatteryValue),
+                                         userInfo: nil,
+                                         repeats: true)
     }
     
     deinit {
-        timer.invalidate()
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
     }
@@ -95,6 +95,21 @@ class StatusMenuController: NSObject {
         statusMenu.item(at: MenuItemTypePosition.credit.rawValue)?.title = "credits".localized
     }
     
+    @objc fileprivate func detectChange() {
+        
+        if timer?.isValid == false {
+            timer = Timer.scheduledTimer(timeInterval: tickingInterval,
+                                             target: self,
+                                             selector: #selector(updateBatteryValue),
+                                             userInfo: nil,
+                                             repeats: true)
+        }
+    }
+    
+    @objc fileprivate func undoTimer() {
+        timer?.invalidate()
+        updateBatteryValue()
+    }
     @objc fileprivate func updateBatteryValue() {
         
         airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in

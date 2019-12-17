@@ -25,7 +25,7 @@ class BatteryView: NSView {
         super.awakeFromNib()
     }
     
-    func updateViewData(airpodsBatteryViewModel: BatteryViewModel) {
+    func updateViewData(airpodsBatteryViewModel: AirPodsBatteryViewModel) {
         
         caseBatteryLevelLabel.stringValue = airpodsBatteryViewModel.caseBatteryValue
         batteryLevelCaseProgressBar.progressValue = airpodsBatteryViewModel.caseBatteryProgressValue

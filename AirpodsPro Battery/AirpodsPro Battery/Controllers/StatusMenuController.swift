@@ -97,7 +97,7 @@ class StatusMenuController: NSObject {
     }
     
     @objc fileprivate func detectChange() {
-        updateBatteryValue()
+
     }
     
     @objc fileprivate func undoTimer() {

@@ -9,31 +9,7 @@
 import Foundation
 import IOBluetooth
 
-enum AirpodsConnectionStatus {
-    case connected
-    case disconnected
-}
-
-protocol BluetoothAirpodsBatteryManagementProtocol {
-    
-    var connectionStatus: AirpodsConnectionStatus { get set }
-    var leftBatteryValue: String { get set }
-    var leftBatteryProgressValue: CGFloat { get set }
-    var rightBatteryValue: String { get set }
-    var rightBatteryProgressValue: CGFloat { get set }
-    var caseBatteryValue: String { get set }
-    var caseBatteryProgressValue: CGFloat { get set }
-    var displayStatusMessage: String { get set }
-    var deviceName: String { get }
-    var deviceAddress: String { get }
-    
-    func updateBatteryInformation(completion: @escaping (_ success: Bool, _ connectionStatus: AirpodsConnectionStatus) -> Void)
-    func processBatteryEntries(groups: [String])
-    func fetchAirpodsName(completion: @escaping (_ deviceName: String,_ deviceAddress: String) -> Void)
-    func toogleCurrentBluetoothDevice()
-}
-
-class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
+class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var leftBatteryValue: String = "--"
     var rightBatteryValue: String = "--"
@@ -59,7 +35,8 @@ class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     private (set) var scriptHandler: ScriptsHandler!
     private (set) var preferenceManager: PreferencePersistanceManager!
     
-    init(scriptHandler: ScriptsHandler, preferenceManager: PreferencePersistanceManager = PreferencePersistanceManager()) {
+    init(scriptHandler: ScriptsHandler,
+         preferenceManager: PreferencePersistanceManager = PreferencePersistanceManager()) {
         self.scriptHandler = scriptHandler
         self.preferenceManager = preferenceManager
     }
@@ -77,19 +54,18 @@ class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 let pattern = "\\d+"
                 let groups = value.groups(for: pattern).flatMap({$0})
                 self.processBatteryEntries(groups: groups)
-                self.fetchAirpodsName { (deviceName, deviceAddress) in
-                    guard !deviceName.isEmpty, !deviceAddress.isEmpty else {
-                        return
-                    }
-                    self.preferenceManager.savePreferences(key: .deviceName, value: deviceName)
-                    self.preferenceManager.savePreferences(key: .deviceAddress, value: deviceAddress)
-                }
+                self.processAirpodsDetails()
                 completion(true, self.connectionStatus)
             case .failure(let error):
                 print(error)
                 completion(false, self.connectionStatus)
             }
         }
+    }
+    
+    fileprivate func updateAirpodsNameAndAddress(name: String, address: String) {
+        preferenceManager.savePreferences(key: .deviceName, value: deviceName)
+        preferenceManager.savePreferences(key: .deviceAddress, value: deviceAddress)
     }
     
     func processBatteryEntries(groups: [String]) {
@@ -128,21 +104,44 @@ class BatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
     }
     
+    func processAirpodsDetails() {
+        self.fetchAirpodsName { (deviceName, deviceAddress) in
+            self.isAppleDevice(deviceAddress: deviceAddress) { (success) in
+                
+                guard !deviceName.isEmpty, !deviceAddress.isEmpty else {
+                    return
+                }
+                self.updateAirpodsNameAndAddress(name: deviceName, address: deviceAddress)
+            }
+        }
+    }
+    
     func fetchAirpodsName(completion: @escaping (_ deviceName: String, _ deviceAddress: String) -> Void) {
         
         guard let devices = IOBluetoothDevice.pairedDevices() as? [IOBluetoothDevice] else {
             completion("", "")
             return
         }
-    
+        
         guard let device = devices.first(where: { $0.isConnected()
             && $0.deviceClassMajor == kBluetoothDeviceClassMajorAudio
             && $0.deviceClassMinor == kBluetoothDeviceClassMinorAudioHeadphones }) else {
-            completion("", "")
-            return
+                completion("", "")
+                return
         }
         
         completion(device.name, device.addressString)
+    }
+    
+    func isAppleDevice(deviceAddress: String, completion: @escaping (Bool) -> Void) {
+        
+        let script = scriptHandler.scriptDiskFilePath(scriptName: "apple-devices-verification.sh")
+        let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "mapmac.txt")
+        
+        scriptHandler.execute(commandName: "sh", arguments: ["\(script)", "\(deviceAddress)","\(macMappingFile)"]) { (result) in
+            
+            completion(true)
+        }
     }
     
     func toogleCurrentBluetoothDevice() {

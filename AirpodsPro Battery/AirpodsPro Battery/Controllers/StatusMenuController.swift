@@ -47,17 +47,18 @@ class StatusMenuController: NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
         
         updateBatteryValue()
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupStatusMenu()
         
         timer = Timer.scheduledTimer(timeInterval: tickingInterval,
                                          target: self,
                                          selector: #selector(updateBatteryValue),
                                          userInfo: nil,
                                          repeats: true)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupStatusMenu()
+        updateBatteryValue()
     }
     
     deinit {
@@ -96,14 +97,7 @@ class StatusMenuController: NSObject {
     }
     
     @objc fileprivate func detectChange() {
-        
-        if timer?.isValid == false {
-            timer = Timer.scheduledTimer(timeInterval: tickingInterval,
-                                             target: self,
-                                             selector: #selector(updateBatteryValue),
-                                             userInfo: nil,
-                                             repeats: true)
-        }
+        updateBatteryValue()
     }
     
     @objc fileprivate func undoTimer() {

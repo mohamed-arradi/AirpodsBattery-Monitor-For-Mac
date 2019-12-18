@@ -109,12 +109,15 @@ extension ScriptsHandler: ScriptingProtocol {
      */
     func writeScriptToDisk(scriptsFiles: [String]) {
         
-        guard let locationURL = FileManager.default.urls(for: searchPathDirectory, in: .userDomainMask).first else {
+        DispatchQueue.main.async {
+            
+            guard let locationURL = FileManager.default.urls(for: self.searchPathDirectory, in: .userDomainMask).first else {
             return
         }
         
         scriptsFiles.forEach { (file) in
             self.write(file: file, at: locationURL)
+        }
         }
     }
     

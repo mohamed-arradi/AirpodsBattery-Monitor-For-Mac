@@ -29,6 +29,7 @@ class StatusMenuController: NSObject {
     private var timer: Timer?
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let tickingInterval: TimeInterval = 200
+    
     private lazy var aboutView: AboutWindow = {
         return AboutWindow()
     }()
@@ -37,33 +38,31 @@ class StatusMenuController: NSObject {
         return CreditWindow()
     }()
     
-    override init() {
-        super.init()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
         let scriptHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt", "apple-devices-verification.sh"])
         
         airpodsBatteryViewModel = AirPodsBatteryViewModel(scriptHandler: scriptHandler)
         
+        setupStatusMenu()
+        
+        updateBatteryValue()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(detectChange), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
         
-        updateBatteryValue()
+        setUpRecurrentChecks()
+    }
+    
+    
+    fileprivate func setUpRecurrentChecks() {
         
         timer = Timer.scheduledTimer(timeInterval: tickingInterval,
-                                         target: self,
-                                         selector: #selector(updateBatteryValue),
-                                         userInfo: nil,
-                                         repeats: true)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupStatusMenu()
-        updateBatteryValue()
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
+                                     target: self,
+                                     selector: #selector(updateBatteryValue),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
     fileprivate func updateStatusButtonImage(hide: Bool = false) {
@@ -82,22 +81,22 @@ class StatusMenuController: NSObject {
     
     fileprivate func setupStatusMenu() {
         
-        statusItem.menu = statusMenu
         updateStatusButtonImage()
+        
         statusMenu.item(at: MenuItemTypePosition.quitApp.rawValue)?.title = "quit_app".localized
         statusMenu.item(at: MenuItemTypePosition.refreshDevices.rawValue)?.title = "refresh_devices".localized
         statusMenu.item(at: MenuItemTypePosition.about.rawValue)?.title = "feedback".localized
-        statusItem.menu = statusMenu
+        statusMenu.item(at: MenuItemTypePosition.credit.rawValue)?.title = "credits".localized
         statusItem.button?.title = ""
+        statusItem.menu = statusMenu
         
         statusMenuItem = statusMenu.item(at: MenuItemTypePosition.batteryView.rawValue)
         statusMenuItem.view = batteryStatusView
-        
-        statusMenu.item(at: MenuItemTypePosition.credit.rawValue)?.title = "credits".localized
     }
     
     @objc fileprivate func detectChange() {
-
+        setUpRecurrentChecks()
+        updateBatteryValue()
     }
     
     @objc fileprivate func undoTimer() {
@@ -106,26 +105,31 @@ class StatusMenuController: NSObject {
     }
     @objc fileprivate func updateBatteryValue() {
         
+        guard airpodsBatteryViewModel != nil else {
+            return
+        }
+        
         airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in
             
-            guard let strongSelf = self else { return }
+            guard let self = self else { return }
             
             DispatchQueue.main.async {
                 
-                strongSelf.batteryStatusView.updateViewData(airpodsBatteryViewModel: strongSelf.airpodsBatteryViewModel)
+                self.batteryStatusView.updateViewData(airpodsBatteryViewModel: self.airpodsBatteryViewModel)
                 
-                strongSelf.statusItem.button?.title = strongSelf.airpodsBatteryViewModel.displayStatusMessage
+                self.statusItem.button?.title = self.airpodsBatteryViewModel.displayStatusMessage
                 
-                let connected = strongSelf.airpodsBatteryViewModel.connectionStatus == .connected
-                strongSelf.updateStatusButtonImage(hide: connected)
+                let pairedDevicesConnected = self.airpodsBatteryViewModel.connectionStatus == .connected
+                self.updateStatusButtonImage(hide: pairedDevicesConnected)
                 
-                if !strongSelf.airpodsBatteryViewModel.deviceName.isEmpty {
-                    let format = connected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
-                    let deviceName = strongSelf.airpodsBatteryViewModel.deviceName
+                let deviceName = self.airpodsBatteryViewModel.deviceName
+                
+                if !deviceName.isEmpty {
+                    let format = pairedDevicesConnected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
                     
-                    strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
+                    self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
                 } else {
-                    strongSelf.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
+                    self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
                 }
             }
         }

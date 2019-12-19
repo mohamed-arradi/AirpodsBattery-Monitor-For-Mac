@@ -42,11 +42,8 @@ class StatusMenuController: NSObject {
         super.awakeFromNib()
         
         let scriptHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt", "apple-devices-verification.sh"])
-        
         airpodsBatteryViewModel = AirPodsBatteryViewModel(scriptHandler: scriptHandler)
-        
         setupStatusMenu()
-        
         updateBatteryValue()
         
         NotificationCenter.default.addObserver(self, selector: #selector(detectChange), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
@@ -58,11 +55,13 @@ class StatusMenuController: NSObject {
     
     fileprivate func setUpRecurrentChecks() {
         
+        if timer?.isValid == false {
         timer = Timer.scheduledTimer(timeInterval: tickingInterval,
                                      target: self,
                                      selector: #selector(updateBatteryValue),
                                      userInfo: nil,
                                      repeats: true)
+        }
     }
     
     fileprivate func updateStatusButtonImage(hide: Bool = false) {

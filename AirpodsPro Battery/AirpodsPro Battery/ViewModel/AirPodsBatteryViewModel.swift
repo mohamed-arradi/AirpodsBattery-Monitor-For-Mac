@@ -33,10 +33,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var connectionStatus: AirpodsConnectionStatus = .disconnected
     private (set) var scriptHandler: ScriptsHandler!
-    private (set) var preferenceManager: PreferencePersistanceManager!
+    private (set) var preferenceManager: PrefsPersistanceManager!
     
     init(scriptHandler: ScriptsHandler,
-         preferenceManager: PreferencePersistanceManager = PreferencePersistanceManager()) {
+         preferenceManager: PrefsPersistanceManager = PrefsPersistanceManager()) {
         self.scriptHandler = scriptHandler
         self.preferenceManager = preferenceManager
     }

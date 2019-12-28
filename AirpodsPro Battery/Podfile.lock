@@ -1,0 +1,21 @@
+PODS:
+  - LoginServiceKit (2.1.0)
+
+DEPENDENCIES:
+  - LoginServiceKit (from `https://github.com/Clipy/LoginServiceKit.git`)
+
+EXTERNAL SOURCES:
+  LoginServiceKit:
+    :git: https://github.com/Clipy/LoginServiceKit.git
+
+CHECKOUT OPTIONS:
+  LoginServiceKit:
+    :commit: 0b25f256e07ca110c2883f4f5072a7fe525b5805
+    :git: https://github.com/Clipy/LoginServiceKit.git
+
+SPEC CHECKSUMS:
+  LoginServiceKit: 9a8b258c3111fa0d9585615052f778b08be92302
+
+PODFILE CHECKSUM: 45e442dcf90f87a91856025a13c4561ae2ff51c5
+
+COCOAPODS: 1.8.4

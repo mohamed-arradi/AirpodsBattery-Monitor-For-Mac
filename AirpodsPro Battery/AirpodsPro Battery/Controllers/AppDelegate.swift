@@ -8,14 +8,20 @@
 
 import Cocoa
 import UserNotifications
+import LoginServiceKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+      
         if #available(OSX 10.12.1, *) {
            NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
          }
+                
+        if LoginServiceKit.isExistLoginItems(at: Bundle.main.bundlePath) == false {
+            LoginServiceKit.addLoginItems(at: Bundle.main.bundlePath)
+        }
     }
 }
 

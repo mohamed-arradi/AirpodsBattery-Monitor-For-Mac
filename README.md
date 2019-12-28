@@ -46,6 +46,16 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG
 
+**1.0.8**
+* New Feature: Launch when MacOS Starts. 
+* Add French language support
+
+**1.0.7**
+* BugFix: Bluetooth Sync was not fast enough
+
+**1.0.6**
+* UI Minor improvements
+
 **1.0.5**
 * BugFix: Bluetooth Sync was not fast enough
 
@@ -63,6 +73,10 @@ This is why I build this tiny mac status bar app.
  * Connect / Disconnect from your Airpods
  * Detect Battery from Case / Left Ear / Right Ear
 
+
+### DEPENDANCIES
+
+* LoginServiceKit -> https://github.com/Clipy/LoginServiceKit
 
 ### SCREENSHOTS
 

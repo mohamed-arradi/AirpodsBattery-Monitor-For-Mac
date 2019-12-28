@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  AirpodsPro Battery
+
+  Created by Mohamed Arradi on 22/11/2019.
+  Copyright © 2019 Mohamed Arradi. All rights reserved.
+*/
+
+// General
+"quit_app" = "Quitter AirPods Monitor";
+
+// Status Bar Menu
+"connect_to_airpods" = "Se connecter à %@";
+"disconnect_from_airpods" = "Se déconnecter de %@";
+"credits"="Crédits";
+"verify_permissions" = "Veuillez vérifier que les permissions ont été acceptés dans vos préférences système.";
+"refresh_devices" = "Rafraîchir les données";
+"feedback" = " Donner un feedback ou une amélioration";

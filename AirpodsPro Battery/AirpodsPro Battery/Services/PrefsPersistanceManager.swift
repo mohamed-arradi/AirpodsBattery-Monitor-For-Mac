@@ -12,7 +12,7 @@ enum PreferenceKey: String {
     case deviceName
     case deviceAddress
 }
-struct PreferencePersistanceManager {
+struct PrefsPersistanceManager {
     
     func savePreferences(key: PreferenceKey, value: Any, preferenceManager: UserDefaults = UserDefaults.standard) {
         preferenceManager.set(value, forKey: key.rawValue)

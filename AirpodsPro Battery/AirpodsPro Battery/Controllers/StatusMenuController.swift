@@ -102,6 +102,7 @@ class StatusMenuController: NSObject {
         timer?.invalidate()
         updateBatteryValue()
     }
+    
     @objc fileprivate func updateBatteryValue() {
         
         guard airpodsBatteryViewModel != nil else {

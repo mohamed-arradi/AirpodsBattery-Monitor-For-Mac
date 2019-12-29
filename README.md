@@ -47,19 +47,32 @@ This is why I build this tiny mac status bar app.
 ### CHANGELOG
 
 **1.0.8**
+
 * New Feature: Launch when MacOS Starts. 
 * Add French language support
+
 **1.0.7**
+
 * BugFix: Bluetooth Sync was not fast enough
+
 **1.0.6**
+
 * UI Minor improvements
+
 **1.0.5**
+
 * BugFix: Bluetooth Sync was not fast enough
+
 **1.0.4**
+
  * Add Feedback Options
+ 
 **1.0.1**
+
  * BugFix when Airpods Name is a phone number
+ 
 **1.0.0**
+
  * V1 AirPods Battery Monitor
  * Connect / Disconnect from your Airpods
  * Detect Battery from Case / Left Ear / Right Ear

@@ -17,11 +17,11 @@ It is a shortcut to remove the long and painful access from the Bluetooth Tab th
 
 Just download the latest version here: 
 
-[![AirPods Battery Monitor Release](/images/downloadbutton.png)](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/raw/master/releases/AirpodsBatteryMonitor.zip)
+[![AirPods Battery Monitor Release](/images/downloadbutton.png)](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/raw/master/releases/Airpods%20Battery%20Monitor.zip)
 
 OR 
 
-click on https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/raw/master/releases/AirpodsBatteryMonitor.zip
+click on https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/releases/Airpods%20Battery%20Monitor.zip
 
 **Via Homebrew**
 
@@ -49,26 +49,17 @@ This is why I build this tiny mac status bar app.
 **1.0.8**
 * New Feature: Launch when MacOS Starts. 
 * Add French language support
-
 **1.0.7**
 * BugFix: Bluetooth Sync was not fast enough
-
 **1.0.6**
 * UI Minor improvements
-
 **1.0.5**
 * BugFix: Bluetooth Sync was not fast enough
-
 **1.0.4**
-
  * Add Feedback Options
-
 **1.0.1**
-
  * BugFix when Airpods Name is a phone number
-
 **1.0.0**
-
  * V1 AirPods Battery Monitor
  * Connect / Disconnect from your Airpods
  * Detect Battery from Case / Left Ear / Right Ear
@@ -76,7 +67,7 @@ This is why I build this tiny mac status bar app.
 
 ### DEPENDANCIES
 
-* LoginServiceKit -> https://github.com/Clipy/LoginServiceKit
+**LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit
 
 ### SCREENSHOTS
 

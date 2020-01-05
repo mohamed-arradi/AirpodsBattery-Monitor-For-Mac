@@ -80,16 +80,6 @@ This is why I build this tiny mac status bar app.
 
 **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit
 
-### SCREENSHOTS
-
-**AirPods Connected**
-
-![Screenshot](images/airpods-connected-min.png)
-
-**AirPods Disconnected**
-
-![Screenshot](images/AirpodsDisconnected.png)
-
 ### Why it is not on the App Store ?
 
 This is a MacOSX App build with xCode using Swift 5.0 and Sandbox Not activated in order to beneficiate from the bash permission.

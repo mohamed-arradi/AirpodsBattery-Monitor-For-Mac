@@ -19,9 +19,7 @@ Just download the latest version here:
 
 [![AirPods Battery Monitor Release](/images/downloadbutton.png)](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/raw/master/releases/Airpods%20Battery%20Monitor.zip)
 
-OR 
-
-click on https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/releases/Airpods%20Battery%20Monitor.zip
+Or click on https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/releases/Airpods%20Battery%20Monitor.zip
 
 **Via Homebrew**
 
@@ -101,6 +99,11 @@ This App cannot be allowed right now on the Mac App Store due to the necessary t
 ### CONTRIBUTING
 
 If you want to contribute to improve it, it will be with pleasure !
+
+### They Talk about it
+- https://www.cocoacontrols.com/controls/airpods-battery-monitor-widget-for-mac-os
+- (German Blog) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
+- (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html
 
 ### Image Credits
 

@@ -101,7 +101,7 @@ This App cannot be allowed right now on the Mac App Store due to the necessary t
 If you want to contribute to improve it, it will be with pleasure !
 
 ### They Talk about it
-- https://www.cocoacontrols.com/controls/airpods-battery-monitor-widget-for-mac-os
+
 - (German Blog) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
 - (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html
 

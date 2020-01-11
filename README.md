@@ -9,9 +9,7 @@ A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left
 
 It is a shortcut to remove the long and painful access from the Bluetooth Tab that Mac OS X provide.
 
-**Current Release Version: 1.0.5
-
-## HOW TO INSTALL IT ?
+## HOW TO DOWNLOAD IT ?
 
 **Direct Download Link**
 

@@ -42,6 +42,10 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG
 
+**1.0.9**
+
+* Battery level was not refreshing properly and obliged the user to refresh manually.  This is now fixed
+
 **1.0.8**
 
 * New Feature: Launch when MacOS Starts. 

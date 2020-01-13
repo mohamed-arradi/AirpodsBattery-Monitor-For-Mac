@@ -28,7 +28,7 @@ class StatusMenuController: NSObject {
     
     private var timer: Timer?
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private let tickingInterval: TimeInterval = 200
+    private let tickingInterval: TimeInterval = 30
     
     private lazy var aboutView: AboutWindow = {
         return AboutWindow()
@@ -55,13 +55,11 @@ class StatusMenuController: NSObject {
     
     fileprivate func setUpRecurrentChecks() {
         
-        if timer?.isValid == false {
         timer = Timer.scheduledTimer(timeInterval: tickingInterval,
                                      target: self,
                                      selector: #selector(updateBatteryValue),
                                      userInfo: nil,
                                      repeats: true)
-        }
     }
     
     fileprivate func updateStatusButtonImage(hide: Bool = false) {
@@ -99,7 +97,6 @@ class StatusMenuController: NSObject {
     }
     
     @objc fileprivate func undoTimer() {
-        timer?.invalidate()
         updateBatteryValue()
     }
     
@@ -158,15 +155,3 @@ class StatusMenuController: NSObject {
         creditView.showWindow(nil)
     }
 }
-
-//@available(OSX 10.12.1, *)
-//extension StatusMenuController: NSTouchBarDelegate {
-//    override func makeTouchBar() -> NSTouchBar? {
-//        let touchBar = NSTouchBar()
-//        touchBar.delegate = self
-//        // touchBar.customizationIdentifier = .travelBar
-//        //    touchBar.defaultItemIdentifiers = [.infoLabelItem]
-//        //    touchBar.customizationAllowedItemIdentifiers = [.infoLabelItem]
-//        return touchBar
-//    }
-//}

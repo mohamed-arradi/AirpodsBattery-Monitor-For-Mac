@@ -97,6 +97,7 @@ If you want to contribute to improve it, it will be with pleasure !
 - (German Blog) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
 - (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html
 - (English Software Online News) https://mac.softpedia.com/get/Utilities/AirPods-Battery-Monitor.shtml
+- ( German Article) https://www.giga.de/news/airpods-diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
 
 ### Image Credits
 

@@ -38,6 +38,16 @@
                ReferencedContainer = "container:AirpodsPro Battery.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EBA1C26A23CE450E00B1BE68"
+               BuildableName = "Airpods Battery MonitorTests.xctest"
+               BlueprintName = "Airpods Battery MonitorTests"
+               ReferencedContainer = "container:AirpodsPro Battery.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

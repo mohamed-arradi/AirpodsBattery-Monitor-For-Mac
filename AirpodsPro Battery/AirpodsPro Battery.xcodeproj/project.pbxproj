@@ -15,6 +15,7 @@
 		EB8E8E3A238E4A1600EBC5ED /* mapmac.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB8E8E39238E4A1600EBC5ED /* mapmac.txt */; };
 		EB925B5C23A8CCB500E8950C /* apple-devices-verification.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB925B5B23A8CCB500E8950C /* apple-devices-verification.sh */; };
 		EB925B5E23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB925B5D23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift */; };
+		EBA1C26E23CE450E00B1BE68 /* Airpods_Battery_MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA1C26D23CE450E00B1BE68 /* Airpods_Battery_MonitorTests.swift */; };
 		EBC7AD3F2386769700A53E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD3E2386769700A53E83 /* AppDelegate.swift */; };
 		EBC7AD412386769700A53E83 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7AD402386769700A53E83 /* StatusMenuController.swift */; };
 		EBC7AD432386769900A53E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC7AD422386769900A53E83 /* Assets.xcassets */; };
@@ -32,6 +33,16 @@
 		EBFE03DC23A4AC62006095DB /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE03DB23A4AC62006095DB /* AlertUtil.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EBA1C27023CE450E00B1BE68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBC7AD332386769700A53E83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBC7AD3A2386769700A53E83;
+			remoteInfo = "AirpodsPro Battery";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.release.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.release.xcconfig"; sourceTree = "<group>"; };
 		4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirpodsPro_Battery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +54,9 @@
 		EB8E8E39238E4A1600EBC5ED /* mapmac.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapmac.txt; sourceTree = "<group>"; };
 		EB925B5B23A8CCB500E8950C /* apple-devices-verification.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "apple-devices-verification.sh"; sourceTree = "<group>"; };
 		EB925B5D23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothAirpodsBatteryManagementProtocol.swift; sourceTree = "<group>"; };
+		EBA1C26B23CE450E00B1BE68 /* Airpods Battery MonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Airpods Battery MonitorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA1C26D23CE450E00B1BE68 /* Airpods_Battery_MonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airpods_Battery_MonitorTests.swift; sourceTree = "<group>"; };
+		EBA1C26F23CE450E00B1BE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC7AD3B2386769700A53E83 /* Airpods Battery Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airpods Battery Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC7AD3E2386769700A53E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC7AD402386769700A53E83 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
@@ -65,6 +79,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EBA1C26823CE450E00B1BE68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBC7AD382386769700A53E83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,10 +114,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EBA1C26C23CE450E00B1BE68 /* Airpods Battery MonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBA1C26D23CE450E00B1BE68 /* Airpods_Battery_MonitorTests.swift */,
+				EBA1C26F23CE450E00B1BE68 /* Info.plist */,
+			);
+			path = "Airpods Battery MonitorTests";
+			sourceTree = "<group>";
+		};
 		EBC7AD322386769700A53E83 = {
 			isa = PBXGroup;
 			children = (
 				EBC7AD3D2386769700A53E83 /* AirpodsPro Battery */,
+				EBA1C26C23CE450E00B1BE68 /* Airpods Battery MonitorTests */,
 				EBC7AD3C2386769700A53E83 /* Products */,
 				0934EA61DB65303CC7153D08 /* Pods */,
 				9BB432FC310C592562BB9CB4 /* Frameworks */,
@@ -107,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				EBC7AD3B2386769700A53E83 /* Airpods Battery Monitor.app */,
+				EBA1C26B23CE450E00B1BE68 /* Airpods Battery MonitorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +241,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EBA1C26A23CE450E00B1BE68 /* Airpods Battery MonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBA1C27423CE450E00B1BE68 /* Build configuration list for PBXNativeTarget "Airpods Battery MonitorTests" */;
+			buildPhases = (
+				EBA1C26723CE450E00B1BE68 /* Sources */,
+				EBA1C26823CE450E00B1BE68 /* Frameworks */,
+				EBA1C26923CE450E00B1BE68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBA1C27123CE450E00B1BE68 /* PBXTargetDependency */,
+			);
+			name = "Airpods Battery MonitorTests";
+			productName = "Airpods Battery MonitorTests";
+			productReference = EBA1C26B23CE450E00B1BE68 /* Airpods Battery MonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EBC7AD3A2386769700A53E83 /* AirpodsPro Battery */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC7AD4B2386769900A53E83 /* Build configuration list for PBXNativeTarget "AirpodsPro Battery" */;
@@ -238,6 +288,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Mohamed Arradi";
 				TargetAttributes = {
+					EBA1C26A23CE450E00B1BE68 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = EBC7AD3A2386769700A53E83;
+					};
 					EBC7AD3A2386769700A53E83 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -258,11 +312,19 @@
 			projectRoot = "";
 			targets = (
 				EBC7AD3A2386769700A53E83 /* AirpodsPro Battery */,
+				EBA1C26A23CE450E00B1BE68 /* Airpods Battery MonitorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EBA1C26923CE450E00B1BE68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBC7AD392386769700A53E83 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,6 +385,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EBA1C26723CE450E00B1BE68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA1C26E23CE450E00B1BE68 /* Airpods_Battery_MonitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBC7AD372386769700A53E83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +416,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EBA1C27123CE450E00B1BE68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBC7AD3A2386769700A53E83 /* AirpodsPro Battery */;
+			targetProxy = EBA1C27023CE450E00B1BE68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		EBC7AD622387D71E00A53E83 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -359,6 +437,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EBA1C27223CE450E00B1BE68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8JVK53ZY4C;
+				INFOPLIST_FILE = "Airpods Battery MonitorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.Airpods-Battery-MonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airpods Battery Monitor.app/Contents/MacOS/Airpods Battery Monitor";
+			};
+			name = Debug;
+		};
+		EBA1C27323CE450E00B1BE68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8JVK53ZY4C;
+				INFOPLIST_FILE = "Airpods Battery MonitorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.Airpods-Battery-MonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airpods Battery Monitor.app/Contents/MacOS/Airpods Battery Monitor";
+			};
+			name = Release;
+		};
 		EBC7AD492386769900A53E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -527,6 +647,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EBA1C27423CE450E00B1BE68 /* Build configuration list for PBXNativeTarget "Airpods Battery MonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA1C27223CE450E00B1BE68 /* Debug */,
+				EBA1C27323CE450E00B1BE68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBC7AD362386769700A53E83 /* Build configuration list for PBXProject "AirpodsPro Battery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

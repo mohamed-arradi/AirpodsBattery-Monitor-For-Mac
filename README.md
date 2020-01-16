@@ -21,7 +21,7 @@ Or click on https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blo
 
 **Via Homebrew**
 
-Work in progress
+Work in progress.. It need to be more popular
 
 ## Why this App can be useful to you ?
 
@@ -40,7 +40,7 @@ This is why I build this tiny mac status bar app.
 - Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
 - Support multiple languages
 
-### CHANGELOG
+### CHANGELOG (Latest)
 
 **1.0.9**
 
@@ -51,36 +51,9 @@ This is why I build this tiny mac status bar app.
 * New Feature: Launch when MacOS Starts. 
 * Add French language support
 
-**1.0.7**
-
-* BugFix: Bluetooth Sync was not fast enough
-
-**1.0.6**
-
-* UI Minor improvements
-
-**1.0.5**
-
-* BugFix: Bluetooth Sync was not fast enough
-
-**1.0.4**
-
- * Add Feedback Options
- 
-**1.0.1**
-
- * BugFix when Airpods Name is a phone number
- 
-**1.0.0**
-
- * V1 AirPods Battery Monitor
- * Connect / Disconnect from your Airpods
- * Detect Battery from Case / Left Ear / Right Ear
-
-
 ### DEPENDANCIES
 
-**LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit
+**LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit. It allows to run when MacOS Start.
 
 ### Why it is not on the App Store ?
 
@@ -88,17 +61,18 @@ This is a MacOSX App build with xCode using Swift 5.0 and Sandbox Not activated 
 
 This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required. (Except if you manage to bribe some Apple Reviewers which I did not succeeded yet :))
 
-### CONTRIBUTING
-
-If you want to contribute to improve it, it will be with pleasure !
-
-### They Talk about it
+### THEY TALK ABOUT IT
 
 - (German Blog - xgadget.de) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
 - (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html
 - (English Software Online News - Mac Softpedia) https://mac.softpedia.com/get/Utilities/AirPods-Battery-Monitor.shtml
 - ( German Article - giga.de) https://www.giga.de/news/airpods-diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
 - (German Article - itopnews.de) https://www.itopnews.de/2020/01/airpods-battery-monitor-mac-app-zeigt-airpods-akkustand-bequem-an/
+- (English Blog - AppsForMyPC) http://www.appsformypc.com/2020/01/airpods-battery-monitor-for-mac/
+
+### CONTRIBUTING
+
+If you want to contribute to improve it, it will be with pleasure !
 
 ### Image Credits
 

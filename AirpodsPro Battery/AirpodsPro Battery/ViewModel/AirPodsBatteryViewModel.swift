@@ -49,7 +49,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         scriptHandler.execute(commandName: "sh", arguments: ["\(script)","\(macMappingFile)"]) { (result) in
             
             switch result {
-                
             case .success(let value):
                 let pattern = "\\d+"
                 let groups = value.groups(for: pattern).flatMap({$0})
@@ -66,6 +65,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     fileprivate func updateAirpodsNameAndAddress(name: String, address: String) {
         preferenceManager.savePreferences(key: .deviceName, value: deviceName)
         preferenceManager.savePreferences(key: .deviceAddress, value: deviceAddress)
+        NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
     }
     
     func processBatteryEntries(groups: [String]) {

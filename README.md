@@ -42,6 +42,10 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG (Latest)
 
+**1.0.10**
+
+* AirPods names was not updated properly. A notification mechanism has been fired in case of new AirPods addition.
+
 **1.0.9**
 
 * Battery level was not refreshing properly and obliged the user to refresh manually.  This is now fixed

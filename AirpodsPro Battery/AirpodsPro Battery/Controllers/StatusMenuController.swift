@@ -50,6 +50,8 @@ class StatusMenuController: NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
         
         setUpRecurrentChecks()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDeviceName), name: NSNotification.Name("update_device_name"), object: nil)
     }
     
     
@@ -100,6 +102,21 @@ class StatusMenuController: NSObject {
         updateBatteryValue()
     }
     
+    @objc fileprivate func updateDeviceName() {
+        
+        let pairedDevicesConnected = self.airpodsBatteryViewModel.connectionStatus == .connected
+        
+        let deviceName = self.airpodsBatteryViewModel.deviceName
+        
+        if !deviceName.isEmpty {
+            let format = pairedDevicesConnected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
+            
+            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
+        } else {
+            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
+        }
+    }
+    
     @objc fileprivate func updateBatteryValue() {
         
         guard airpodsBatteryViewModel != nil else {
@@ -118,16 +135,8 @@ class StatusMenuController: NSObject {
                 
                 let pairedDevicesConnected = self.airpodsBatteryViewModel.connectionStatus == .connected
                 self.updateStatusButtonImage(hide: pairedDevicesConnected)
-                
-                let deviceName = self.airpodsBatteryViewModel.deviceName
-                
-                if !deviceName.isEmpty {
-                    let format = pairedDevicesConnected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
-                    
-                    self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
-                } else {
-                    self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
-                }
+   
+                self.updateDeviceName()
             }
         }
     }

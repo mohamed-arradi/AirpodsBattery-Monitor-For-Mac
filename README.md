@@ -42,6 +42,11 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG (Latest)
 
+**1.0.11**
+
+- AirPods Name was not getting properly update
+- Add Mac OS 13 compatibility
+
 **1.0.10**
 
 * AirPods names was not updated properly. A notification mechanism has been fired in case of new AirPods addition.

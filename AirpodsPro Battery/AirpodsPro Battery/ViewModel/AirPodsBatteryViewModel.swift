@@ -63,8 +63,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     }
     
     fileprivate func updateAirpodsNameAndAddress(name: String, address: String) {
-        preferenceManager.savePreferences(key: .deviceName, value: deviceName)
-        preferenceManager.savePreferences(key: .deviceAddress, value: deviceAddress)
+        preferenceManager.savePreferences(key: .deviceName, value: name)
+        preferenceManager.savePreferences(key: .deviceAddress, value: address)
         NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
     }
     
@@ -123,14 +123,23 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             return
         }
         
-        guard let device = devices.first(where: { $0.isConnected()
-            && $0.deviceClassMajor == kBluetoothDeviceClassMajorAudio
-            && $0.deviceClassMinor == kBluetoothDeviceClassMinorAudioHeadphones }) else {
-                completion("", "")
-                return
+        if let device = findLatestDevices(connected: true, devices: devices) {
+            completion(device.name, device.addressString)
+        } else if let device = findLatestDevices(connected: false, devices: devices) {
+             completion(device.name, device.addressString)
+        } else {
+             completion("", "")
         }
+    }
+    
+    fileprivate func findLatestDevices(connected: Bool, devices: [IOBluetoothDevice]) -> IOBluetoothDevice? {
         
-        completion(device.name, device.addressString)
+        guard let device = devices.first(where: { $0.isConnected() == connected
+              && $0.deviceClassMajor == kBluetoothDeviceClassMajorAudio
+              && $0.deviceClassMinor == kBluetoothDeviceClassMinorAudioHeadphones }) else {
+                return nil
+        }
+        return device
     }
     
     func isAppleDevice(deviceAddress: String, completion: @escaping (Bool) -> Void) {

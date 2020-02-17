@@ -149,6 +149,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         
         scriptHandler.execute(commandName: "sh", arguments: ["\(script)", "\(deviceAddress)","\(macMappingFile)"]) { (result) in
             
+            switch result {
+            case .success(let value):
+                value.trimmingCharacters(in: .whitespacesAndNewlines) == "0" ? completion(false) : completion(true)
+            case .failure( _):
+                completion(false)
+            }
+            
             completion(true)
         }
     }

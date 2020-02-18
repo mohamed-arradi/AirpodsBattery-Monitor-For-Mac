@@ -83,7 +83,7 @@
                                                 <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-aT-Ho4">
                                                     <rect key="frame" x="-2" y="7" width="61" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="L :" id="3ha-d4-bY0">
-                                                        <font key="font" size="16" name="Herculanum"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -167,7 +167,7 @@
                                                         <constraint firstAttribute="width" constant="47" id="sFa-Ua-eLh"/>
                                                     </constraints>
                                                     <textFieldCell key="cell" alignment="center" title="100 %" id="mOY-46-tTA">
-                                                        <font key="font" size="16" name="Herculanum"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -218,7 +218,7 @@
                                                 <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rco-mZ-qKQ">
                                                     <rect key="frame" x="-2" y="8" width="61" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="R :" id="Nw7-Ah-aNK">
-                                                        <font key="font" size="16" name="Herculanum"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -299,7 +299,7 @@
                                                         <constraint firstAttribute="width" constant="47" id="Rex-WF-bZr"/>
                                                     </constraints>
                                                     <textFieldCell key="cell" alignment="center" title="100 %" id="uB5-rn-ET5">
-                                                        <font key="font" size="16" name="Herculanum"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -350,7 +350,7 @@
                                                 <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7pI-bk-C9N">
                                                     <rect key="frame" x="-2" y="7" width="61" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="C :" id="smv-1F-l9d">
-                                                        <font key="font" size="16" name="Herculanum"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -431,7 +431,7 @@
                                                         <constraint firstAttribute="width" constant="47" id="Y9E-Mh-8hd"/>
                                                     </constraints>
                                                     <textFieldCell key="cell" alignment="center" title="100 %" id="KJZ-lm-b5X">
-                                                        <font key="font" size="16" name="Herculanum"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>

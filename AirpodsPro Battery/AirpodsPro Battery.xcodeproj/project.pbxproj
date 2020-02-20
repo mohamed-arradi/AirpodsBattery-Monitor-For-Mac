@@ -613,7 +613,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.12;
+				MARKETING_VERSION = 1.0.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
 				PRODUCT_NAME = "Airpods Battery Monitor";
 				SWIFT_VERSION = 5.0;
@@ -637,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.12;
+				MARKETING_VERSION = 1.0.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
 				PRODUCT_NAME = "Airpods Battery Monitor";
 				SWIFT_VERSION = 5.0;

@@ -32,10 +32,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     }
     
     var connectionStatus: AirpodsConnectionStatus = .disconnected
-    private (set) var scriptHandler: ScriptsHandler!
+    private (set) var scriptHandler: ScriptsHandler?
     private (set) var preferenceManager: PrefsPersistanceManager!
     
-    init(scriptHandler: ScriptsHandler,
+    init(scriptHandler: ScriptsHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt", "apple-devices-verification.sh"]),
          preferenceManager: PrefsPersistanceManager = PrefsPersistanceManager()) {
         self.scriptHandler = scriptHandler
         self.preferenceManager = preferenceManager
@@ -43,21 +43,28 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     func updateBatteryInformation(completion: @escaping (_ success: Bool, _ status: AirpodsConnectionStatus) -> Void) {
         
+        guard let scriptHandler = scriptHandler else {
+            completion(false, .disconnected)
+            return
+        }
+        
         let script = scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods.sh")
         let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "mapmac.txt")
         
-        scriptHandler.execute(commandName: "sh", arguments: ["\(script)","\(macMappingFile)"]) { (result) in
+        scriptHandler.execute(commandName: "sh", arguments: ["\(script)","\(macMappingFile)"]) { [weak self] (result) in
             
             switch result {
             case .success(let value):
                 let pattern = "\\d+"
                 let groups = value.groups(for: pattern).flatMap({$0})
-                self.processBatteryEntries(groups: groups)
-                self.processAirpodsDetails()
-                completion(true, self.connectionStatus)
-            case .failure(let error):
-                print(error)
-                completion(false, self.connectionStatus)
+                DispatchQueue.main.async {
+                self?.processBatteryEntries(groups: groups)
+                self?.processAirpodsDetails()
+                }
+               
+                completion(true, self?.connectionStatus ?? .disconnected)
+            case .failure( _):
+                completion(false, self?.connectionStatus ?? .disconnected)
             }
         }
     }
@@ -106,12 +113,12 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     func processAirpodsDetails() {
         self.fetchAirpodsName { (deviceName, deviceAddress) in
-            self.isAppleDevice(deviceAddress: deviceAddress) { (success) in
+            self.isAppleDevice(deviceAddress: deviceAddress) { [weak self] (success) in
                 
                 guard !deviceName.isEmpty, !deviceAddress.isEmpty else {
                     return
                 }
-                self.updateAirpodsNameAndAddress(name: deviceName, address: deviceAddress)
+                self?.updateAirpodsNameAndAddress(name: deviceName, address: deviceAddress)
             }
         }
     }
@@ -144,10 +151,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     func isAppleDevice(deviceAddress: String, completion: @escaping (Bool) -> Void) {
         
-        let script = scriptHandler.scriptDiskFilePath(scriptName: "apple-devices-verification.sh")
-        let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "mapmac.txt")
+        let script = scriptHandler?.scriptDiskFilePath(scriptName: "apple-devices-verification.sh") ?? ""
+        let macMappingFile = scriptHandler?.scriptDiskFilePath(scriptName: "mapmac.txt") ?? ""
         
-        scriptHandler.execute(commandName: "sh", arguments: ["\(script)", "\(deviceAddress)","\(macMappingFile)"]) { (result) in
+        scriptHandler?.execute(commandName: "sh", arguments: ["\(script)", "\(deviceAddress)","\(macMappingFile)"]) { (result) in
             
             switch result {
             case .success(let value):

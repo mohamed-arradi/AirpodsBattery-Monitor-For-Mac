@@ -40,6 +40,10 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG (Latest)
 
+**1.0.12**
+
+- Fixed Memory Leaks that was happening time to times and freeze the software.
+
 **1.0.11**
 
 - AirPods Name was not getting properly update

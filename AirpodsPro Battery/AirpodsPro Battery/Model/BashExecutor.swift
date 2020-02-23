@@ -51,10 +51,14 @@ final class BashExecutor: CommandExecuting {
         let pipe = Pipe()
         process.standardOutput = pipe
         process.launch()
-        process.waitUntilExit()
+        
+        DispatchQueue.global().async {
+             process.waitUntilExit()
+        }
         
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = String(data: data, encoding: String.Encoding.utf8)
+        
         return output
     }
 }

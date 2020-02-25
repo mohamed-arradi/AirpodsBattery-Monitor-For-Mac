@@ -40,6 +40,10 @@ This is why I build this tiny mac status bar app.
 
 ### CHANGELOG (Latest)
 
+**1.0.14**
+
+- Fixed Process freezing on reading pipe
+
 **1.0.12**
 
 - Fixed Memory Leaks that was happening time to times and freeze the software.
@@ -48,19 +52,6 @@ This is why I build this tiny mac status bar app.
 
 - AirPods Name was not getting properly update
 - Add Mac OS 13 compatibility
-
-**1.0.10**
-
-* AirPods names was not updated properly. A notification mechanism has been fired in case of new AirPods addition.
-
-**1.0.9**
-
-* Battery level was not refreshing properly and obliged the user to refresh manually.  This is now fixed
-
-**1.0.8**
-
-* New Feature: Launch when MacOS Starts. 
-* Add French language support
 
 ### DEPENDANCIES
 
@@ -75,11 +66,19 @@ This App cannot be allowed right now on the Mac App Store due to the necessary t
 ### THEY TALK ABOUT IT
 
 - (German Blog - xgadget.de) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
+
+- (German Online Article - Mobiflip.de) https://www.mobiflip.de/shortnews/airpods-battery-monitor-fuer-macos/
+
 - (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html
+
 - (English Software Online News - Mac Softpedia) https://mac.softpedia.com/get/Utilities/AirPods-Battery-Monitor.shtml
+
 - ( German Article - giga.de) https://www.giga.de/news/airpods-diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
+
 - (German Article - itopnews.de) https://www.itopnews.de/2020/01/airpods-battery-monitor-mac-app-zeigt-airpods-akkustand-bequem-an/
+
 - (English Blog - AppsForMyPC) http://www.appsformypc.com/2020/01/airpods-battery-monitor-for-mac/
+
 - (German Article - WorldUnion.info) https://worldunion.info/diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
 
 ### CONTRIBUTING

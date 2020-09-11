@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -82,7 +82,7 @@
                                             <subviews>
                                                 <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-aT-Ho4">
                                                     <rect key="frame" x="-2" y="7" width="61" height="16"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="L :" id="3ha-d4-bY0">
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Left :" id="3ha-d4-bY0">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -217,7 +217,7 @@
                                             <subviews>
                                                 <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rco-mZ-qKQ">
                                                     <rect key="frame" x="-2" y="8" width="61" height="16"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="R :" id="Nw7-Ah-aNK">
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Right :" id="Nw7-Ah-aNK">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -349,7 +349,7 @@
                                             <subviews>
                                                 <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7pI-bk-C9N">
                                                     <rect key="frame" x="-2" y="7" width="61" height="16"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="C :" id="smv-1F-l9d">
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Case :" id="smv-1F-l9d">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

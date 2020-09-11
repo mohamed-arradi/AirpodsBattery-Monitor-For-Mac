@@ -91,13 +91,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             if let leftValue = Int(groups[1]) {
                 self.leftBatteryValue = "\(leftValue) %"
                 self.leftBatteryProgressValue = CGFloat(leftValue)
-                self.displayStatusMessage.append("L: \(leftValue)% - ")
+                self.displayStatusMessage.append("Left: \(leftValue)% - ")
             }
             
             if let rightValue = Int(groups[2]) {
                 self.rightBatteryValue = "\(rightValue) %"
                 self.rightBatteryProgressValue = CGFloat(rightValue)
-                self.displayStatusMessage.append("R: \(rightValue)%")
+                self.displayStatusMessage.append("Right: \(rightValue)%")
             }
         } else {
             self.connectionStatus = .disconnected
@@ -105,7 +105,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             self.leftBatteryProgressValue = CGFloat(0)
             self.rightBatteryValue = "--"
             self.rightBatteryProgressValue = CGFloat(0)
-            self.caseBatteryValue = "NC"
+            self.caseBatteryValue = "--"
             self.caseBatteryProgressValue = CGFloat(0)
             self.displayStatusMessage = ""
         }

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A34BB46F3EBC83AA782B6A38 /* Pods_AirpodsPro_Battery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */; };
+		EB367CE7250B8BDC00E890FF /* mapmac.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB367CE6250B8BDC00E890FF /* mapmac.txt */; };
 		EB5874E5239E19F7005C6E04 /* ScriptsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */; };
 		EB8CF6B123A2154900C59492 /* PrefsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */; };
 		EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */; };
 		EB8E8E38238DBDD800EBC5ED /* BashExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E8E37238DBDD800EBC5ED /* BashExecutor.swift */; };
-		EB8E8E3A238E4A1600EBC5ED /* mapmac.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB8E8E39238E4A1600EBC5ED /* mapmac.txt */; };
 		EB925B5C23A8CCB500E8950C /* apple-devices-verification.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB925B5B23A8CCB500E8950C /* apple-devices-verification.sh */; };
 		EB925B5E23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB925B5D23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift */; };
 		EBA1C26E23CE450E00B1BE68 /* Airpods_Battery_MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA1C26D23CE450E00B1BE68 /* Airpods_Battery_MonitorTests.swift */; };
@@ -47,11 +47,11 @@
 		1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.release.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.release.xcconfig"; sourceTree = "<group>"; };
 		4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirpodsPro_Battery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD417C15AE3C9D3617883FB /* Pods-AirpodsPro Battery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.debug.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.debug.xcconfig"; sourceTree = "<group>"; };
+		EB367CE6250B8BDC00E890FF /* mapmac.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapmac.txt; sourceTree = "<group>"; };
 		EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsHandler.swift; sourceTree = "<group>"; };
 		EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsPersistanceManager.swift; sourceTree = "<group>"; };
 		EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "battery-airpods.sh"; sourceTree = "<group>"; };
 		EB8E8E37238DBDD800EBC5ED /* BashExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BashExecutor.swift; sourceTree = "<group>"; };
-		EB8E8E39238E4A1600EBC5ED /* mapmac.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapmac.txt; sourceTree = "<group>"; };
 		EB925B5B23A8CCB500E8950C /* apple-devices-verification.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "apple-devices-verification.sh"; sourceTree = "<group>"; };
 		EB925B5D23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothAirpodsBatteryManagementProtocol.swift; sourceTree = "<group>"; };
 		EBA1C26B23CE450E00B1BE68 /* Airpods Battery MonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Airpods Battery MonitorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +206,7 @@
 		EBC7AD672387DF6100A53E83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB8E8E39238E4A1600EBC5ED /* mapmac.txt */,
+				EB367CE6250B8BDC00E890FF /* mapmac.txt */,
 				EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */,
 				EB925B5B23A8CCB500E8950C /* apple-devices-verification.sh */,
 			);
@@ -330,13 +330,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB925B5C23A8CCB500E8950C /* apple-devices-verification.sh in Resources */,
-				EB8E8E3A238E4A1600EBC5ED /* mapmac.txt in Resources */,
 				EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */,
 				EBFE03AA23A3644B006095DB /* CreditsWindow.xib in Resources */,
 				EBFE03A423A36339006095DB /* AboutWindow.xib in Resources */,
 				EBC7AD432386769900A53E83 /* Assets.xcassets in Resources */,
 				EBC7AD602387D71E00A53E83 /* Localizable.strings in Resources */,
 				EBC7AD512386791E00A53E83 /* MainMenu.xib in Resources */,
+				EB367CE7250B8BDC00E890FF /* mapmac.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +613,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.14;
+				MARKETING_VERSION = 1.0.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
 				PRODUCT_NAME = "Airpods Battery Monitor";
 				SWIFT_VERSION = 5.0;
@@ -637,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.14;
+				MARKETING_VERSION = 1.0.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
 				PRODUCT_NAME = "Airpods Battery Monitor";
 				SWIFT_VERSION = 5.0;

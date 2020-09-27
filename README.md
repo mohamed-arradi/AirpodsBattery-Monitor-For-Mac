@@ -65,6 +65,8 @@ This App cannot be allowed right now on the Mac App Store due to the necessary t
 
 ### THEY TALK ABOUT IT
 
+-  (Japanese Youtube Video Demo) https://www.youtube.com/watch?v=F8lBL62iYD4 
+
 - (German Blog - xgadget.de) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
 
 - (German Online Article - Mobiflip.de) https://www.mobiflip.de/shortnews/airpods-battery-monitor-fuer-macos/

@@ -113,7 +113,7 @@ class StatusMenuController: NSObject {
         if !deviceName.isEmpty {
             let format = pairedDevicesConnected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
             
-            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
+            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.attributedTitle = NSAttributedString(string: String(format: format, deviceName))  
         } else {
             self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
         }

@@ -70,7 +70,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     }
     
     fileprivate func updateAirpodsNameAndAddress(name: String, address: String) {
-        preferenceManager.savePreferences(key: .deviceName, value: name)
+        
+        if !address.isEmpty && address.count > 4 {
+            preferenceManager.savePreferences(key: .deviceName, value: "\n \(name) \r\n -\(address)-")
+        } else {
+            preferenceManager.savePreferences(key: .deviceName, value: name)
+        }
+        
         preferenceManager.savePreferences(key: .deviceAddress, value: address)
         NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
     }
@@ -114,7 +120,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     func processAirpodsDetails() {
         self.fetchAirpodsName { (deviceName, deviceAddress) in
             self.isAppleDevice(deviceAddress: deviceAddress) { [weak self] (success) in
-                
                 guard !deviceName.isEmpty, !deviceAddress.isEmpty else {
                     return
                 }
@@ -131,9 +136,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
         
         if let device = findLatestDevices(connected: true, devices: devices) {
-            completion(device.name, device.addressString)
+            completion(device.nameOrAddress, device.addressString)
         } else if let device = findLatestDevices(connected: false, devices: devices) {
-             completion(device.name, device.addressString)
+             completion(device.nameOrAddress, device.addressString)
         } else {
              completion("", "")
         }

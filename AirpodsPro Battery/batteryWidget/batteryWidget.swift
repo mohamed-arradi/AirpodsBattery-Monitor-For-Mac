@@ -58,8 +58,8 @@ struct batteryWidget: Widget {
             batteryWidgetEntryView(entry: entry)
         }
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Airpods Battery Monitor")
+        .description("This widget help you monitoring your battery level from your mac")
     }
 }
 

@@ -19,9 +19,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
            NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
          }
                 
-        if LoginServiceKit.isExistLoginItems(at: Bundle.main.bundlePath) == false {
-            LoginServiceKit.addLoginItems(at: Bundle.main.bundlePath)
-        }
+//        if LoginServiceKit.isExistLoginItems(at: Bundle.main.bundlePath) == false {
+//            LoginServiceKit.addLoginItems(at: Bundle.main.bundlePath)
+//        }
     }
 }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import IOBluetooth
+import WidgetKit
 
 class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
@@ -21,13 +22,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var deviceName: String {
         get {
-            return preferenceManager.getValuePreferences(from: .deviceName) as? String ?? ""
+            return preferenceManager.getValuePreferences(from: PreferenceKey.deviceName.rawValue) as? String ?? ""
         }
     }
     
     var deviceAddress: String {
         get {
-            return preferenceManager.getValuePreferences(from: .deviceAddress) as? String ?? ""
+            return preferenceManager.getValuePreferences(from: PreferenceKey.deviceAddress.rawValue) as? String ?? ""
         }
     }
     
@@ -72,12 +73,12 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     fileprivate func updateAirpodsNameAndAddress(name: String, address: String) {
         
         if !address.isEmpty && address.count > 4 {
-            preferenceManager.savePreferences(key: .deviceName, value: "\n \(name) \r\n -\(address)-")
+            preferenceManager.savePreferences(key: PreferenceKey.deviceName.rawValue, value: "\n \(name) \r\n -\(address)-")
         } else {
-            preferenceManager.savePreferences(key: .deviceName, value: name)
+            preferenceManager.savePreferences(key: PreferenceKey.deviceName.rawValue, value: name)
         }
         
-        preferenceManager.savePreferences(key: .deviceAddress, value: address)
+        preferenceManager.savePreferences(key: PreferenceKey.deviceAddress.rawValue, value: address)
         NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
     }
     
@@ -115,8 +116,17 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             self.caseBatteryProgressValue = CGFloat(0)
             self.displayStatusMessage = ""
         }
+        
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: "com.mac.AirpodsPro-Battery.batteryWidget")
+        }
     }
     
+    func processBatteryLevelUserDefaults(left: Int? = nil, right: Int? = nil, case: Int? = nil) {
+        if let left = left {
+            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.left.rawValue, value: left)
+        }
+    }
     func processAirpodsDetails() {
         self.fetchAirpodsName { (deviceName, deviceAddress) in
             self.isAppleDevice(deviceAddress: deviceAddress) { [weak self] (success) in

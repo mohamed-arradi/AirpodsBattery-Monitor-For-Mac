@@ -106,3 +106,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)
+
+```
+AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.
+```

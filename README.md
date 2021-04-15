@@ -1,11 +1,11 @@
 ![AppIcon-AirPodsBattery-Monitor](/images/appIcon.png)
 # AirPods Battery Monitor For MAC OS ! [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
 
+![MacStadium](/images/macstadium.png)
+
 Airpods Mac OS App which show you the battery percentage of your airpods and Airpods Pro.
 
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.png)
-
-Powered by MacStadium![MacStadium](/images/macstadium.png)
 
 A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left / Right) in real-time ! 
 

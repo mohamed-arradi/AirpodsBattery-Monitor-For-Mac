@@ -6,7 +6,7 @@
 	<false/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>com.mac.airpodsbatterygroup</string>
+		<string>group.mac.airpodsbatterygroup</string>
 	</array>
 	<key>com.apple.security.automation.apple-events</key>
 	<true/>

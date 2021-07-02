@@ -47,8 +47,8 @@ class StatusMenuController: NSObject {
                
         updateBatteryValue()
         NotificationCenter.default.addObserver(self, selector: #selector(detectChange), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
-             NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
-             NotificationCenter.default.addObserver(self, selector: #selector(updateDeviceName), name: NSNotification.Name("update_device_name"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDeviceName), name: NSNotification.Name("update_device_name"), object: nil)
        
     
     }
@@ -83,7 +83,10 @@ class StatusMenuController: NSObject {
         }
         
         updateStatusButtonImage()
-        
+        refreshStatusMenu()
+    }
+    
+    fileprivate func refreshStatusMenu() {
         statusMenu.item(at: MenuItemTypePosition.quitApp.rawValue)?.title = "quit_app".localized
         statusMenu.item(at: MenuItemTypePosition.refreshDevices.rawValue)?.title = "refresh_devices".localized
         statusMenu.item(at: MenuItemTypePosition.about.rawValue)?.title = "feedback".localized
@@ -115,7 +118,7 @@ class StatusMenuController: NSObject {
             
             self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.attributedTitle = NSAttributedString(string: String(format: format, deviceName))  
         } else {
-            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
+            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No Airpods devices paired"
         }
     }
     
@@ -127,7 +130,7 @@ class StatusMenuController: NSObject {
                 
                 self?.batteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
                 
-                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.displayStatusMessage ?? ""
+                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.displayStatusMessage.appending("\u{24}") ?? ""
                 
                 let pairedDevicesConnected = self?.airpodsBatteryViewModel.connectionStatus == .connected
                 self?.updateStatusButtonImage(hide: pairedDevicesConnected)

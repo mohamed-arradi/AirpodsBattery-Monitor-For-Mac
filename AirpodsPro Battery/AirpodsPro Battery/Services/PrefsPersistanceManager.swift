@@ -8,9 +8,12 @@
 
 import Foundation
 
+typealias PreferenceString = PreferenceKey
+
 enum PreferenceKey: String {
     case deviceName
     case deviceAddress
+    case listeningMode
     
     enum BatteryValue: String {
         case left
@@ -21,11 +24,11 @@ enum PreferenceKey: String {
 
 struct PrefsPersistanceManager {
     
-    func savePreferences(key: String, value: Any, preferenceManager: UserDefaults = UserDefaults.init(suiteName: "com.mac.airpodsbatterygroup")!) {
+    func savePreferences(key: String, value: Any, preferenceManager: UserDefaults = UserDefaults.init(suiteName: "group.mac.airpodsbatterygroup")!) {
         preferenceManager.set(value, forKey: key)
     }
     
-    func getValuePreferences(from key: String, preferenceManager: UserDefaults = UserDefaults.init(suiteName: "com.mac.airpodsbatterygroup")!) -> Any? {
+    func getValuePreferences(from key: String, preferenceManager: UserDefaults = UserDefaults.init(suiteName: "group.mac.airpodsbatterygroup")!) -> Any? {
         return preferenceManager.value(forKey: key)
     }
 }

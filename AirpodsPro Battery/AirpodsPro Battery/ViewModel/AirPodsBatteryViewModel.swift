@@ -19,6 +19,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     var rightBatteryProgressValue: CGFloat = 0.0
     var caseBatteryProgressValue: CGFloat = 0.0
     var displayStatusMessage: String = ""
+
+    private let transparencyModeViewModel: TransparencyModeViewModel!
     
     var deviceName: String {
         get {
@@ -36,10 +38,14 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     private (set) var scriptHandler: ScriptsHandler?
     private (set) var preferenceManager: PrefsPersistanceManager!
     
-    init(scriptHandler: ScriptsHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "mapmac.txt", "apple-devices-verification.sh"]),
-         preferenceManager: PrefsPersistanceManager = PrefsPersistanceManager()) {
+    init(scriptHandler: ScriptsHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "oui.txt", "apple-devices-verification.sh"]),
+         preferenceManager: PrefsPersistanceManager = PrefsPersistanceManager(),
+         transparencyModeViewModel: TransparencyModeViewModel = TransparencyModeViewModel()) {
         self.scriptHandler = scriptHandler
         self.preferenceManager = preferenceManager
+        self.transparencyModeViewModel = transparencyModeViewModel
+        self.transparencyModeViewModel.deviceChangeDelegate = self
+        self.transparencyModeViewModel.startListening()
     }
     
     func updateBatteryInformation(completion: @escaping (_ success: Bool, _ status: AirpodsConnectionStatus) -> Void) {
@@ -50,7 +56,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
         
         let script = scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods.sh")
-        let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "mapmac.txt")
+        let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
         
         scriptHandler.execute(commandName: "sh", arguments: ["\(script)","\(macMappingFile)"]) { [weak self] (result) in
             
@@ -72,12 +78,11 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     fileprivate func updateAirpodsNameAndAddress(name: String, address: String) {
         
+        var nameToSave = name
         if !address.isEmpty && address.count > 4 {
-            preferenceManager.savePreferences(key: PreferenceKey.deviceName.rawValue, value: "\n \(name) \r\n -\(address)-")
-        } else {
-            preferenceManager.savePreferences(key: PreferenceKey.deviceName.rawValue, value: name)
+            nameToSave = "\n \(name) \r\n -\(address)-"
         }
-        
+        preferenceManager.savePreferences(key: PreferenceKey.deviceName.rawValue, value: nameToSave)
         preferenceManager.savePreferences(key: PreferenceKey.deviceAddress.rawValue, value: address)
         NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
     }
@@ -98,13 +103,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             if let leftValue = Int(groups[1]) {
                 self.leftBatteryValue = "\(leftValue) %"
                 self.leftBatteryProgressValue = CGFloat(leftValue)
-                self.displayStatusMessage.append("Left: \(leftValue)% - ")
+                self.displayStatusMessage.append("\("left".localized): \(leftValue)% / ")
             }
             
             if let rightValue = Int(groups[2]) {
                 self.rightBatteryValue = "\(rightValue) %"
                 self.rightBatteryProgressValue = CGFloat(rightValue)
-                self.displayStatusMessage.append("Right: \(rightValue)%")
+                self.displayStatusMessage.append("\("right".localized): \(rightValue)%")
             }
         } else {
             self.connectionStatus = .disconnected
@@ -120,6 +125,11 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadTimelines(ofKind: "com.mac.AirpodsPro-Battery.batteryWidget")
         }
+        
+        if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.listeningMode.rawValue) as? String {
+            self.displayStatusMessage.append(" - \("listening_mode".localized): \(listeningMode)")
+        }
+        
     }
     
     func processBatteryLevelUserDefaults(left: Int? = nil, right: Int? = nil, case: Int? = nil) {
@@ -129,10 +139,16 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     }
     func processAirpodsDetails() {
         self.fetchAirpodsName { (deviceName, deviceAddress) in
-            self.isAppleDevice(deviceAddress: deviceAddress) { [weak self] (success) in
-                guard !deviceName.isEmpty, !deviceAddress.isEmpty else {
+            DeviceChecker.isAppleDevice(deviceAddress: deviceAddress, scriptHandler: self.scriptHandler) { [weak self] (success) in
+                guard !deviceName.isEmpty,
+                      !deviceAddress.isEmpty,
+                      success else {
+                    self?.updateAirpodsNameAndAddress(name: "", address: "")
                     return
                 }
+                let transparencyType: String = self?.transparencyModeViewModel.listeningModeDisplayable ?? ""
+                self?.preferenceManager.savePreferences(key: PreferenceKey.listeningMode.rawValue,
+                                                        value: transparencyType)
                 self?.updateAirpodsNameAndAddress(name: deviceName, address: deviceAddress)
             }
         }
@@ -163,34 +179,16 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
         return device
     }
-    
-    func isAppleDevice(deviceAddress: String, completion: @escaping (Bool) -> Void) {
         
-        let script = scriptHandler?.scriptDiskFilePath(scriptName: "apple-devices-verification.sh") ?? ""
-        let macMappingFile = scriptHandler?.scriptDiskFilePath(scriptName: "mapmac.txt") ?? ""
-        
-        scriptHandler?.execute(commandName: "sh", arguments: ["\(script)", "\(deviceAddress)","\(macMappingFile)"]) { (result) in
-            
-            switch result {
-            case .success(let value):
-                value.trimmingCharacters(in: .whitespacesAndNewlines) == "0" ? completion(false) : completion(true)
-            case .failure( _):
-                completion(false)
-            }
-            
-            completion(true)
-        }
-    }
-    
     func toogleCurrentBluetoothDevice() {
         
         guard !deviceAddress.isEmpty, let bluetoothDevice = IOBluetoothDevice(addressString: deviceAddress) else {
-            print("Device not found")
+            Logger.da("Device not found")
             return
         }
         
         if !bluetoothDevice.isPaired() {
-            print("Device not paired")
+            Logger.da("Device not paired")
             return
         }
         
@@ -199,6 +197,18 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         } else {
             bluetoothDevice.openConnection()
         }
+    }
+}
+
+extension AirPodsBatteryViewModel: DeviceChangeDelegate {
+    func deviceChanged(device: NCDevice) {
+        DeviceChecker.isAppleDevice(deviceAddress: device.identifier, scriptHandler: scriptHandler) { success in
+            if success {
+                self.preferenceManager.savePreferences(key: PreferenceKey.listeningMode.rawValue, value: device.listeningMode.rawValue)
+                Logger.da("device listening mode \(device.listeningMode)")
+            }
+        }
+       
     }
 }
 

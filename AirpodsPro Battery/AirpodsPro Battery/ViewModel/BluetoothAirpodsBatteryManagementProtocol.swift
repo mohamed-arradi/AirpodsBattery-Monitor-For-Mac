@@ -29,6 +29,5 @@ protocol BluetoothAirpodsBatteryManagementProtocol {
     func updateBatteryInformation(completion: @escaping (_ success: Bool, _ connectionStatus: AirpodsConnectionStatus) -> Void)
     func processBatteryEntries(groups: [String])
     func fetchAirpodsName(completion: @escaping (_ deviceName: String,_ deviceAddress: String) -> Void)
-    func isAppleDevice(deviceAddress: String, completion: @escaping(_ isApple: Bool) -> Void)
     func toogleCurrentBluetoothDevice()
 }

@@ -130,7 +130,7 @@ class StatusMenuController: NSObject {
                 
                 self?.batteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
                 
-                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.displayStatusMessage.appending("\u{24}") ?? ""
+                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.displayStatusMessage ?? ""
                 
                 let pairedDevicesConnected = self?.airpodsBatteryViewModel.connectionStatus == .connected
                 self?.updateStatusButtonImage(hide: pairedDevicesConnected)

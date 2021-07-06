@@ -111,6 +111,11 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 self.rightBatteryProgressValue = CGFloat(rightValue)
                 self.displayStatusMessage.append("\("right".localized): \(rightValue)%")
             }
+            
+            
+            if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.listeningMode.rawValue) as? String {
+                self.displayStatusMessage.append(" - \("listening_mode".localized) : \(listeningMode)")
+            }
         } else {
             self.connectionStatus = .disconnected
             self.leftBatteryValue = "--"
@@ -125,11 +130,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadTimelines(ofKind: "com.mac.AirpodsPro-Battery.batteryWidget")
         }
-        
-        if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.listeningMode.rawValue) as? String {
-            self.displayStatusMessage.append(" - \("listening_mode".localized): \(listeningMode)")
-        }
-        
     }
     
     func processBatteryLevelUserDefaults(left: Int? = nil, right: Int? = nil, case: Int? = nil) {

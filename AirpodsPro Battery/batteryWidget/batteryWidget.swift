@@ -11,24 +11,23 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+    func placeholder(in context: Context) -> AirpodsBatteryEntry {
+        AirpodsBatteryEntry(date: Date(), configuration: ConfigurationIntent(), batteryInformation: BatteryInformation())
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (AirpodsBatteryEntry) -> ()) {
+        let entry = AirpodsBatteryEntry(date: Date(), configuration: configuration, batteryInformation: BatteryInformation())
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        var entries: [AirpodsBatteryEntry] = []
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .minute, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+        for secondOffset in stride(from: 20, to: 180, by: 40) {
+            if let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset + 40, to: currentDate) {
+            let entry = AirpodsBatteryEntry(date: entryDate, configuration: configuration, batteryInformation: BatteryInformation())
             entries.append(entry)
+            }
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -36,16 +35,40 @@ struct Provider: IntentTimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct BatteryInformation {    
+    var displayableText: String {
+        let leftP =   PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.left.rawValue) as? CGFloat
+        let rightP =   PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.right.rawValue) as? CGFloat
+        let caseP =   PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.case.rawValue) as? CGFloat
+        
+        guard let left = leftP,
+              let right = rightP else {
+            return "Not connected yet / No Data yet"
+        }
+        
+        return "\(left) % - \(right) %"
+    }
+}
+
+struct AirpodsBatteryEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
+    let batteryInformation: BatteryInformation
 }
 
 struct batteryWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+        Image("Airpods")
+            .resizable()
+            .frame(width: 80.0, height: 80.0)
+        Text(entry.batteryInformation.displayableText)
+            .bold()
+            .foregroundColor(.white)
+        
+        }
     }
 }
 
@@ -57,7 +80,7 @@ struct batteryWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             batteryWidgetEntryView(entry: entry)
         }
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium])
         .configurationDisplayName("Airpods Battery Monitor")
         .description("This widget help you monitoring your battery level from your mac")
     }
@@ -65,7 +88,7 @@ struct batteryWidget: Widget {
 
 struct batteryWidget_Previews: PreviewProvider {
     static var previews: some View {
-        batteryWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        batteryWidgetEntryView(entry: AirpodsBatteryEntry(date: Date(), configuration: ConfigurationIntent(), batteryInformation: BatteryInformation()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

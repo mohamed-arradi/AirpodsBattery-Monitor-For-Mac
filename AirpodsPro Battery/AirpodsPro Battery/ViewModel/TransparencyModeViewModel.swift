@@ -10,6 +10,7 @@ import Foundation
 
 protocol DeviceChangeDelegate: AnyObject {
     func deviceChanged(device: NCDevice)
+    func updateDeviceMode(mode: NCListeningMode)
 }
 
 class TransparencyModeViewModel {
@@ -17,15 +18,19 @@ class TransparencyModeViewModel {
     private let transparencyController: NCAVListeningModeController!
     private (set) var currentDevice: NCDevice?
     private let scriptHandler: ScriptsHandler?
-    
+    private (set) var refreshDataTimer: Timer?
     weak var deviceChangeDelegate: DeviceChangeDelegate?
     
     init(transparencyController: NCAVListeningModeController = NCAVListeningModeController(),
          delegate: DeviceChangeDelegate? = nil,
-         scriptHandler: ScriptsHandler? = nil) {
+         scriptHandler: ScriptsHandler? = ScriptsHandler.default,
+         currentDevice: NCDevice? = nil) {
         self.transparencyController = transparencyController
         self.deviceChangeDelegate = delegate
         self.scriptHandler = scriptHandler
+        self.currentDevice = currentDevice
+        refreshDataTimer?.invalidate()
+        refreshDataTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateListeningMode), userInfo: nil, repeats: true)
     }
     
     fileprivate var listeningMode: NCListeningMode {
@@ -42,6 +47,7 @@ class TransparencyModeViewModel {
             return "normal".localized
         }
     }
+    
     func startListening() {
         
         self.transparencyController.outputDeviceDidChange = { device in
@@ -53,12 +59,19 @@ class TransparencyModeViewModel {
                 if success {
                     self.currentDevice = device
                     self.deviceChangeDelegate?.deviceChanged(device: device)
+                    Logger.da("current device: \(self.currentDevice?._listeningMode ?? "")")
                 } else {
                     self.currentDevice = nil
+                    Logger.da("issue getting device")
                 }
             })
         }
         
-        self.transparencyController.startListeningForUpdates()
+        transparencyController.startListeningForUpdates()
+    }
+    
+    @objc func updateListeningMode() {
+        deviceChangeDelegate?.updateDeviceMode(mode: NCListeningMode(rawValue: self.transparencyController.listeningMode.rawValue) ?? .normal)
+        Logger.da("current mode: \(self.transparencyController._listeningMode)")
     }
 }

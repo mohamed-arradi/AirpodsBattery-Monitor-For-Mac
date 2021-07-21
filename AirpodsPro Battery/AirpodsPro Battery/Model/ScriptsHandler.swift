@@ -14,7 +14,7 @@ typealias ExecutingCompletionBlock = (Result<String, IOError>) -> Void
 protocol ScriptingProtocol {
     
     var scriptingFolderPath: String { get set }
-    var searchPathDirectory: FileManager.SearchPathDirectory {get set }
+    var searchPathDirectory: FileManager.SearchPathDirectory { get set }
     
     func askPermissionsForUser()
     func directoryExistsAtPath(_ path: String) -> Bool
@@ -30,6 +30,7 @@ struct ScriptsHandler {
     
     private(set) var bashExecutor: CommandExecuting
     private(set) var scriptsName: [String]
+    static let `default` = ScriptsHandler(scriptsName: ["battery-airpods.sh", "oui.txt", "apple-devices-verification.sh"])
     
     var scriptingFolderPath: String = "AirpodsProBattery/script/"
     var searchPathDirectory: FileManager.SearchPathDirectory = .libraryDirectory

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A34BB46F3EBC83AA782B6A38 /* Pods_AirpodsPro_Battery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */; };
+		D99B875026A8D1400036C56F /* PrefsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */; };
 		D9F95B60268F070E0066565A /* NCBTListeningModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */; };
 		D9F95B61268F070E0066565A /* NCBTListeningModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */; };
 		D9F95B62268F070E0066565A /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B55268F070E0066565A /* fishhook.c */; };
@@ -569,6 +570,7 @@
 				D9F9FF7F256838880086120E /* batteryWidget.swift in Sources */,
 				D9F95B63268F070E0066565A /* fishhook.c in Sources */,
 				D9F95B61268F070E0066565A /* NCBTListeningModeController.swift in Sources */,
+				D99B875026A8D1400036C56F /* PrefsPersistanceManager.swift in Sources */,
 				D9F95B69268F070E0066565A /* NCListeningMode.swift in Sources */,
 				D9F95B67268F070E0066565A /* NCDevice.m in Sources */,
 				D9F95B65268F070E0066565A /* NCAVListeningModeController.m in Sources */,

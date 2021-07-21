@@ -19,6 +19,6 @@
 "left" = "L";
 "right" = "R";
 "listening_mode" = "M";
-"anc" = "Noise Cancellation Active";
-"normal" = "Normal";
-"transparency" = "Transparency Active";
+"anc" = "Noise Cancellation";
+"normal" = "Normal Mode";
+"transparency" = "Transparency Mode";

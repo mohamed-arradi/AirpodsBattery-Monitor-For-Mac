@@ -24,9 +24,10 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var batteryStatusView: BatteryView!
     
     var statusMenuItem: NSMenuItem!
-    lazy var airpodsBatteryViewModel: AirPodsBatteryViewModel = AirPodsBatteryViewModel()
+    var airpodsBatteryViewModel: AirPodsBatteryViewModel!
     
     private var timer: Timer?
+    private var airpodsModeTimer: Timer?
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let tickingInterval: TimeInterval = 30
     
@@ -41,7 +42,8 @@ class StatusMenuController: NSObject {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
+        airpodsBatteryViewModel = AirPodsBatteryViewModel()
         setupStatusMenu()
         setUpRecurrentChecks()
                
@@ -58,6 +60,12 @@ class StatusMenuController: NSObject {
         timer = Timer.scheduledTimer(timeInterval: tickingInterval,
                                      target: self,
                                      selector: #selector(updateBatteryValue),
+                                     userInfo: nil,
+                                     repeats: true)
+        
+        airpodsModeTimer = Timer.scheduledTimer(timeInterval: 3,
+                                     target: self,
+                                     selector: #selector(updateAirpodsMode),
                                      userInfo: nil,
                                      repeats: true)
     }
@@ -130,7 +138,7 @@ class StatusMenuController: NSObject {
                 
                 self?.batteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
                 
-                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.displayStatusMessage ?? ""
+                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.fullStatusMessage ?? ""
                 
                 let pairedDevicesConnected = self?.airpodsBatteryViewModel.connectionStatus == .connected
                 self?.updateStatusButtonImage(hide: pairedDevicesConnected)
@@ -138,6 +146,11 @@ class StatusMenuController: NSObject {
                 self?.updateDeviceName()
             }
         }
+    }
+    
+    @objc fileprivate func updateAirpodsMode() {
+        airpodsBatteryViewModel.updateAirpodsMode()
+        statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage 
     }
     
     // MARK: IBAction

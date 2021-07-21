@@ -18,8 +18,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     var leftBatteryProgressValue: CGFloat = 0.0
     var rightBatteryProgressValue: CGFloat = 0.0
     var caseBatteryProgressValue: CGFloat = 0.0
-    var displayStatusMessage: String = ""
-
+    private var displayStatusMessage: String = ""
+    private var airpodsNoiseMode: String = ""
+    
     private let transparencyModeViewModel: TransparencyModeViewModel!
     
     var deviceName: String {
@@ -34,11 +35,20 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
     }
     
+    var fullStatusMessage: String {
+        if !airpodsNoiseMode.isEmpty
+            && !displayStatusMessage.isEmpty {
+            return "\(displayStatusMessage) - \(airpodsNoiseMode)"
+        } else {
+            return displayStatusMessage
+        }
+    }
+    
     var connectionStatus: AirpodsConnectionStatus = .disconnected
     private (set) var scriptHandler: ScriptsHandler?
     private (set) var preferenceManager: PrefsPersistanceManager!
     
-    init(scriptHandler: ScriptsHandler = ScriptsHandler(scriptsName: ["battery-airpods.sh", "oui.txt", "apple-devices-verification.sh"]),
+    init(scriptHandler: ScriptsHandler = ScriptsHandler.default,
          preferenceManager: PrefsPersistanceManager = PrefsPersistanceManager(),
          transparencyModeViewModel: TransparencyModeViewModel = TransparencyModeViewModel()) {
         self.scriptHandler = scriptHandler
@@ -59,7 +69,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
         
         scriptHandler.execute(commandName: "sh", arguments: ["\(script)","\(macMappingFile)"]) { [weak self] (result) in
-            
+              
             switch result {
             case .success(let value):
                 let pattern = "\\d+"
@@ -94,28 +104,37 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         if groups.count > 0 {
             self.connectionStatus = .connected
             
+            var left: CGFloat? = nil
+            var right: CGFloat? = nil
+            var caseBattery: CGFloat? = nil
+            
             if let caseValue = Int(groups[0]) {
                 let value = caseValue > 0 ? "\(caseValue) %": "nc"
-                self.caseBatteryValue = value
-                self.caseBatteryProgressValue = CGFloat(caseValue)
+                caseBatteryValue = value
+                caseBattery = CGFloat(caseValue)
+                caseBatteryProgressValue = CGFloat(caseValue)
             }
             
             if let leftValue = Int(groups[1]) {
                 self.leftBatteryValue = "\(leftValue) %"
                 self.leftBatteryProgressValue = CGFloat(leftValue)
                 self.displayStatusMessage.append("\("left".localized): \(leftValue)% / ")
+                left = CGFloat(leftValue)
             }
             
             if let rightValue = Int(groups[2]) {
                 self.rightBatteryValue = "\(rightValue) %"
                 self.rightBatteryProgressValue = CGFloat(rightValue)
                 self.displayStatusMessage.append("\("right".localized): \(rightValue)%")
+                right = CGFloat(rightValue)
             }
-            
             
             if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.listeningMode.rawValue) as? String {
-                self.displayStatusMessage.append(" - \("listening_mode".localized) : \(listeningMode)")
+                self.airpodsNoiseMode = listeningMode
             }
+            
+            saveBatteryLevelUserDefaults(left: left, right: right, caseBatt: caseBattery)
+            
         } else {
             self.connectionStatus = .disconnected
             self.leftBatteryValue = "--"
@@ -132,12 +151,19 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
     }
     
-    func processBatteryLevelUserDefaults(left: Int? = nil, right: Int? = nil, case: Int? = nil) {
+    func saveBatteryLevelUserDefaults(left: CGFloat? = nil, right: CGFloat? = nil, caseBatt: CGFloat? = nil) {
         if let left = left {
             preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.left.rawValue, value: left)
         }
+        if let right = right {
+            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.right.rawValue, value: right)
+        }
+        if let caseBatt = caseBatt {
+            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.case.rawValue, value: caseBatt)
+        }
     }
-    func processAirpodsDetails() {
+    
+     fileprivate func processAirpodsDetails() {
         self.fetchAirpodsName { (deviceName, deviceAddress) in
             DeviceChecker.isAppleDevice(deviceAddress: deviceAddress, scriptHandler: self.scriptHandler) { [weak self] (success) in
                 guard !deviceName.isEmpty,
@@ -152,6 +178,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 self?.updateAirpodsNameAndAddress(name: deviceName, address: deviceAddress)
             }
         }
+    }
+    
+    func updateAirpodsMode() {
+        airpodsNoiseMode = transparencyModeViewModel.listeningModeDisplayable
     }
     
     func fetchAirpodsName(completion: @escaping (_ deviceName: String, _ deviceAddress: String) -> Void) {
@@ -201,11 +231,15 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
 }
 
 extension AirPodsBatteryViewModel: DeviceChangeDelegate {
+    func updateDeviceMode(mode: NCListeningMode) {
+        preferenceManager.savePreferences(key: PreferenceKey.listeningMode.rawValue, value: mode.rawValue)
+        updateBatteryInformation { _, _ in }
+    }
+    
     func deviceChanged(device: NCDevice) {
-        DeviceChecker.isAppleDevice(deviceAddress: device.identifier, scriptHandler: scriptHandler) { success in
+        DeviceChecker.isAppleDevice(deviceAddress: device.identifier, scriptHandler: scriptHandler) { [weak self] success in
             if success {
-                self.preferenceManager.savePreferences(key: PreferenceKey.listeningMode.rawValue, value: device.listeningMode.rawValue)
-                Logger.da("device listening mode \(device.listeningMode)")
+                self?.updateDeviceMode(mode: device.listeningMode)
             }
         }
        

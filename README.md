@@ -31,6 +31,23 @@ This is why I build this tiny mac status bar app.
 
 ![Demo-AirpodsBatteryMonitor](images/AirpodsBatteryMonitor-Demo.gif)
 
+### CHANGELOG (Latest)
+
+**2.0.0**
+
+ - Add M1 Compatilibity Support
+ - Add Transparency Mode Listener (Ability to detect which mode are you with your Airpods (Transparency / Noice Cancellation / Normal))
+ - Add Basic Widget with Battery value for your MacOS Widget configuraiton.
+
+**1.0.14**
+- Fixed Process freezing on reading pipe
+**1.0.12**
+- Fixed Memory Leaks that was happening time to times and freeze the software.
+**1.0.11**
+- AirPods Name was not getting properly update
+- Add Mac OS 13 compatibility
+
+
 ### REMAINING TO DO
 
 - Add Notifications for Battery under 10%, etc 
@@ -38,24 +55,9 @@ This is why I build this tiny mac status bar app.
 - Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
 - Support multiple languages
 
-### CHANGELOG (Latest)
-
-**1.0.14**
-
-- Fixed Process freezing on reading pipe
-
-**1.0.12**
-
-- Fixed Memory Leaks that was happening time to times and freeze the software.
-
-**1.0.11**
-
-- AirPods Name was not getting properly update
-- Add Mac OS 13 compatibility
-
 ### DEPENDANCIES
 
-**LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit. It allows to run when MacOS Start.
+**TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo)
 
 ### Why it is not on the App Store ?
 
@@ -88,6 +90,8 @@ This App cannot be allowed right now on the Mac App Store due to the necessary t
 If you want to contribute to improve it, it will be with pleasure !
 
 ### Image Credits
+
+- Airpods widget icon made from FreePik https://www.freepik.com
 
 - Airpod Case by Joel Wisneski from the Noun Project
 

@@ -19,3 +19,6 @@
 "left" = "G";
 "right" = "D";
 "listening_mode" = "M";
+"anc" = "Réduction de bruit";
+"normal" = "Mode normal";
+"transparency" = "Mode transparence";

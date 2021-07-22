@@ -23,7 +23,7 @@ Work in progress...
 On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
 This is why I build this tiny mac status bar app.
 
-## CHANGELOG (Latest) ##
+## Latest CHANGELOG  ##
 
 **2.0.0**
 
@@ -31,21 +31,7 @@ This is why I build this tiny mac status bar app.
  - Add Transparency Mode Listener (Ability to detect which mode are you with your Airpods (Transparency / Noice Cancellation / Normal))
  - Add Basic Widget with Battery value for your MacOS Widget configuration.
  - Add Notification if left or right is lower than 20%
-
-**1.0.14**
-
-- Fixed Process freezing on reading pipe
-
-**1.0.12**
-
-- Fixed Memory Leaks that was happening time to times and freeze the software.
-
-**1.0.11**
-
-- AirPods Name was not getting properly update
-- Add Mac OS 13 compatibility
-
-
+ 
 ### REMAINING TO DO
 
 - Add TouchBar App in order to see the battery from the touch bar
@@ -54,8 +40,8 @@ This is why I build this tiny mac status bar app.
 
 ### DEPENDANCIES
 
-**TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo)
-**LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit
+- **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo).
+- **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
 
 ### Why it is not on the App Store ?
 

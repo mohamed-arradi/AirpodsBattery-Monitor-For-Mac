@@ -8,7 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		A34BB46F3EBC83AA782B6A38 /* Pods_AirpodsPro_Battery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */; };
-		EB367CE7250B8BDC00E890FF /* mapmac.txt in Resources */ = {isa = PBXBuildFile; fileRef = EB367CE6250B8BDC00E890FF /* mapmac.txt */; };
+		D99B875026A8D1400036C56F /* PrefsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */; };
+		D99B875426A984A90036C56F /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99B875326A984A90036C56F /* DateUtil.swift */; };
+		D99B875626A9DC910036C56F /* PreferenceSettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99B875526A9DC910036C56F /* PreferenceSettingsWindow.swift */; };
+		D99B875826A9DCA60036C56F /* PreferenceSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99B875726A9DCA60036C56F /* PreferenceSettingsWindow.xib */; };
+		D9F95B60268F070E0066565A /* NCBTListeningModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */; };
+		D9F95B61268F070E0066565A /* NCBTListeningModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */; };
+		D9F95B62268F070E0066565A /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B55268F070E0066565A /* fishhook.c */; };
+		D9F95B63268F070E0066565A /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B55268F070E0066565A /* fishhook.c */; };
+		D9F95B64268F070E0066565A /* NCAVListeningModeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B59268F070E0066565A /* NCAVListeningModeController.m */; };
+		D9F95B65268F070E0066565A /* NCAVListeningModeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B59268F070E0066565A /* NCAVListeningModeController.m */; };
+		D9F95B66268F070E0066565A /* NCDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B5C268F070E0066565A /* NCDevice.m */; };
+		D9F95B67268F070E0066565A /* NCDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B5C268F070E0066565A /* NCDevice.m */; };
+		D9F95B68268F070E0066565A /* NCListeningMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B5E268F070E0066565A /* NCListeningMode.swift */; };
+		D9F95B69268F070E0066565A /* NCListeningMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B5E268F070E0066565A /* NCListeningMode.swift */; };
+		D9F95B6B268F083A0066565A /* TransparencyModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B6A268F083A0066565A /* TransparencyModeViewModel.swift */; };
+		D9F95B6E268F23430066565A /* oui.txt in Resources */ = {isa = PBXBuildFile; fileRef = D9F95B6D268F23430066565A /* oui.txt */; };
+		D9F95B6F268F23430066565A /* oui.txt in Resources */ = {isa = PBXBuildFile; fileRef = D9F95B6D268F23430066565A /* oui.txt */; };
+		D9F95B71268F39BF0066565A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B70268F39BF0066565A /* Logger.swift */; };
+		D9F95B76268F3B6F0066565A /* AppleScriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B75268F3B6F0066565A /* AppleScriptExecutor.swift */; };
+		D9F95B78268F40950066565A /* DeviceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B77268F40950066565A /* DeviceChecker.swift */; };
+		D9F9FF7A256838880086120E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F9FF79256838880086120E /* WidgetKit.framework */; };
+		D9F9FF7C256838880086120E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F9FF7B256838880086120E /* SwiftUI.framework */; };
+		D9F9FF7F256838880086120E /* batteryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F9FF7E256838880086120E /* batteryWidget.swift */; };
+		D9F9FF82256838890086120E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F9FF81256838890086120E /* Assets.xcassets */; };
+		D9F9FF85256838890086120E /* batteryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D9F9FF80256838880086120E /* batteryWidget.intentdefinition */; };
+		D9F9FF86256838890086120E /* batteryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D9F9FF80256838880086120E /* batteryWidget.intentdefinition */; };
+		D9F9FF89256838890086120E /* batteryWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9F9FF78256838880086120E /* batteryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EB5874E5239E19F7005C6E04 /* ScriptsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */; };
 		EB8CF6B123A2154900C59492 /* PrefsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */; };
 		EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */; };
@@ -34,6 +60,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D9F9FF87256838890086120E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBC7AD332386769700A53E83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9F9FF77256838880086120E;
+			remoteInfo = batteryWidgetExtension;
+		};
 		EBA1C27023CE450E00B1BE68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EBC7AD332386769700A53E83 /* Project object */;
@@ -43,11 +76,53 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D9F9FF8D256838890086120E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D9F9FF89256838890086120E /* batteryWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.release.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.release.xcconfig"; sourceTree = "<group>"; };
 		4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirpodsPro_Battery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD417C15AE3C9D3617883FB /* Pods-AirpodsPro Battery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.debug.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.debug.xcconfig"; sourceTree = "<group>"; };
-		EB367CE6250B8BDC00E890FF /* mapmac.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mapmac.txt; sourceTree = "<group>"; };
+		D99B875326A984A90036C56F /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		D99B875526A9DC910036C56F /* PreferenceSettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceSettingsWindow.swift; sourceTree = "<group>"; };
+		D99B875726A9DCA60036C56F /* PreferenceSettingsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceSettingsWindow.xib; sourceTree = "<group>"; };
+		D9F95B51268F070D0066565A /* AirpodsPro Battery-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirpodsPro Battery-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9F95B52268F070D0066565A /* batteryWidgetExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "batteryWidgetExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCBTListeningModeController.swift; sourceTree = "<group>"; };
+		D9F95B55268F070E0066565A /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		D9F95B56268F070E0066565A /* AVFoundation-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVFoundation-Private.h"; sourceTree = "<group>"; };
+		D9F95B57268F070E0066565A /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		D9F95B58268F070E0066565A /* IOBluetooth-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IOBluetooth-Private.h"; sourceTree = "<group>"; };
+		D9F95B59268F070E0066565A /* NCAVListeningModeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCAVListeningModeController.m; sourceTree = "<group>"; };
+		D9F95B5A268F070E0066565A /* NCAVListeningModeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCAVListeningModeController.h; sourceTree = "<group>"; };
+		D9F95B5C268F070E0066565A /* NCDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCDevice.m; sourceTree = "<group>"; };
+		D9F95B5D268F070E0066565A /* NCDevice-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NCDevice-Private.h"; sourceTree = "<group>"; };
+		D9F95B5E268F070E0066565A /* NCListeningMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCListeningMode.swift; sourceTree = "<group>"; };
+		D9F95B5F268F070E0066565A /* NCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCDevice.h; sourceTree = "<group>"; };
+		D9F95B6A268F083A0066565A /* TransparencyModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparencyModeViewModel.swift; sourceTree = "<group>"; };
+		D9F95B6D268F23430066565A /* oui.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oui.txt; sourceTree = "<group>"; };
+		D9F95B70268F39BF0066565A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D9F95B75268F3B6F0066565A /* AppleScriptExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptExecutor.swift; sourceTree = "<group>"; };
+		D9F95B77268F40950066565A /* DeviceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceChecker.swift; sourceTree = "<group>"; };
+		D9F9FF78256838880086120E /* batteryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = batteryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F9FF79256838880086120E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D9F9FF7B256838880086120E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D9F9FF7E256838880086120E /* batteryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = batteryWidget.swift; sourceTree = "<group>"; };
+		D9F9FF80256838880086120E /* batteryWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = batteryWidget.intentdefinition; sourceTree = "<group>"; };
+		D9F9FF81256838890086120E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9F9FF83256838890086120E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F9FF84256838890086120E /* batteryWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = batteryWidget.entitlements; sourceTree = "<group>"; };
 		EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsHandler.swift; sourceTree = "<group>"; };
 		EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsPersistanceManager.swift; sourceTree = "<group>"; };
 		EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "battery-airpods.sh"; sourceTree = "<group>"; };
@@ -79,6 +154,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D9F9FF75256838880086120E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F9FF7C256838880086120E /* SwiftUI.framework in Frameworks */,
+				D9F9FF7A256838880086120E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBA1C26823CE450E00B1BE68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,8 +194,66 @@
 			isa = PBXGroup;
 			children = (
 				4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */,
+				D9F9FF79256838880086120E /* WidgetKit.framework */,
+				D9F9FF7B256838880086120E /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9F95B38268F06520066565A /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D9F95B50268F06FE0066565A /* TransparencyCore */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D9F95B50268F06FE0066565A /* TransparencyCore */ = {
+			isa = PBXGroup;
+			children = (
+				D9F95B5B268F070E0066565A /* Models */,
+				D9F95B5A268F070E0066565A /* NCAVListeningModeController.h */,
+				D9F95B59268F070E0066565A /* NCAVListeningModeController.m */,
+				D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */,
+				D9F95B54268F070E0066565A /* Support */,
+				D9F95B51268F070D0066565A /* AirpodsPro Battery-Bridging-Header.h */,
+				D9F95B52268F070D0066565A /* batteryWidgetExtension-Bridging-Header.h */,
+			);
+			path = TransparencyCore;
+			sourceTree = "<group>";
+		};
+		D9F95B54268F070E0066565A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D9F95B55268F070E0066565A /* fishhook.c */,
+				D9F95B56268F070E0066565A /* AVFoundation-Private.h */,
+				D9F95B57268F070E0066565A /* fishhook.h */,
+				D9F95B58268F070E0066565A /* IOBluetooth-Private.h */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		D9F95B5B268F070E0066565A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9F95B5C268F070E0066565A /* NCDevice.m */,
+				D9F95B5D268F070E0066565A /* NCDevice-Private.h */,
+				D9F95B5E268F070E0066565A /* NCListeningMode.swift */,
+				D9F95B5F268F070E0066565A /* NCDevice.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D9F9FF7D256838880086120E /* batteryWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D9F9FF7E256838880086120E /* batteryWidget.swift */,
+				D9F9FF80256838880086120E /* batteryWidget.intentdefinition */,
+				D9F9FF81256838890086120E /* Assets.xcassets */,
+				D9F9FF83256838890086120E /* Info.plist */,
+				D9F9FF84256838890086120E /* batteryWidget.entitlements */,
+			);
+			path = batteryWidget;
 			sourceTree = "<group>";
 		};
 		EBA1C26C23CE450E00B1BE68 /* Airpods Battery MonitorTests */ = {
@@ -128,6 +270,7 @@
 			children = (
 				EBC7AD3D2386769700A53E83 /* AirpodsPro Battery */,
 				EBA1C26C23CE450E00B1BE68 /* Airpods Battery MonitorTests */,
+				D9F9FF7D256838880086120E /* batteryWidget */,
 				EBC7AD3C2386769700A53E83 /* Products */,
 				0934EA61DB65303CC7153D08 /* Pods */,
 				9BB432FC310C592562BB9CB4 /* Frameworks */,
@@ -139,6 +282,7 @@
 			children = (
 				EBC7AD3B2386769700A53E83 /* Airpods Battery Monitor.app */,
 				EBA1C26B23CE450E00B1BE68 /* Airpods Battery MonitorTests.xctest */,
+				D9F9FF78256838880086120E /* batteryWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +290,7 @@
 		EBC7AD3D2386769700A53E83 /* AirpodsPro Battery */ = {
 			isa = PBXGroup;
 			children = (
+				D9F95B38268F06520066565A /* External */,
 				EBFE03DA23A4AC52006095DB /* Utils */,
 				EBFE03AB23A374E0006095DB /* ViewModel */,
 				EBC7AD682387E09200A53E83 /* Services */,
@@ -167,6 +312,7 @@
 			children = (
 				EB8E8E37238DBDD800EBC5ED /* BashExecutor.swift */,
 				EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */,
+				D9F95B75268F3B6F0066565A /* AppleScriptExecutor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +345,8 @@
 				EBFE03A223A36339006095DB /* AboutWindow.xib */,
 				EBFE03A723A36401006095DB /* CreditsWindow.swift */,
 				EBFE03A923A3644B006095DB /* CreditsWindow.xib */,
+				D99B875526A9DC910036C56F /* PreferenceSettingsWindow.swift */,
+				D99B875726A9DCA60036C56F /* PreferenceSettingsWindow.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,7 +354,7 @@
 		EBC7AD672387DF6100A53E83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB367CE6250B8BDC00E890FF /* mapmac.txt */,
+				D9F95B6D268F23430066565A /* oui.txt */,
 				EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */,
 				EB925B5B23A8CCB500E8950C /* apple-devices-verification.sh */,
 			);
@@ -226,6 +374,7 @@
 			children = (
 				EBFE03AC23A374F0006095DB /* AirPodsBatteryViewModel.swift */,
 				EB925B5D23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift */,
+				D9F95B6A268F083A0066565A /* TransparencyModeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,7 +382,10 @@
 		EBFE03DA23A4AC52006095DB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D9F95B70268F39BF0066565A /* Logger.swift */,
 				EBFE03DB23A4AC62006095DB /* AlertUtil.swift */,
+				D9F95B77268F40950066565A /* DeviceChecker.swift */,
+				D99B875326A984A90036C56F /* DateUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -241,6 +393,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D9F9FF77256838880086120E /* batteryWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F9FF8A256838890086120E /* Build configuration list for PBXNativeTarget "batteryWidgetExtension" */;
+			buildPhases = (
+				D9F9FF74256838880086120E /* Sources */,
+				D9F9FF75256838880086120E /* Frameworks */,
+				D9F9FF76256838880086120E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = batteryWidgetExtension;
+			productName = batteryWidgetExtension;
+			productReference = D9F9FF78256838880086120E /* batteryWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EBA1C26A23CE450E00B1BE68 /* Airpods Battery MonitorTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBA1C27423CE450E00B1BE68 /* Build configuration list for PBXNativeTarget "Airpods Battery MonitorTests" */;
@@ -268,10 +437,12 @@
 				EBC7AD382386769700A53E83 /* Frameworks */,
 				EBC7AD392386769700A53E83 /* Resources */,
 				674D600EE85F284238567152 /* [CP] Embed Pods Frameworks */,
+				D9F9FF8D256838890086120E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D9F9FF88256838890086120E /* PBXTargetDependency */,
 			);
 			name = "AirpodsPro Battery";
 			productName = "AirpodsPro Battery";
@@ -284,16 +455,21 @@
 		EBC7AD332386769700A53E83 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Mohamed Arradi";
 				TargetAttributes = {
+					D9F9FF77256838880086120E = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1250;
+					};
 					EBA1C26A23CE450E00B1BE68 = {
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = EBC7AD3A2386769700A53E83;
 					};
 					EBC7AD3A2386769700A53E83 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -313,11 +489,21 @@
 			targets = (
 				EBC7AD3A2386769700A53E83 /* AirpodsPro Battery */,
 				EBA1C26A23CE450E00B1BE68 /* Airpods Battery MonitorTests */,
+				D9F9FF77256838880086120E /* batteryWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D9F9FF76256838880086120E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F95B6F268F23430066565A /* oui.txt in Resources */,
+				D9F9FF82256838890086120E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBA1C26923CE450E00B1BE68 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,6 +515,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F95B6E268F23430066565A /* oui.txt in Resources */,
+				D99B875826A9DCA60036C56F /* PreferenceSettingsWindow.xib in Resources */,
 				EB925B5C23A8CCB500E8950C /* apple-devices-verification.sh in Resources */,
 				EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */,
 				EBFE03AA23A3644B006095DB /* CreditsWindow.xib in Resources */,
@@ -336,7 +524,6 @@
 				EBC7AD432386769900A53E83 /* Assets.xcassets in Resources */,
 				EBC7AD602387D71E00A53E83 /* Localizable.strings in Resources */,
 				EBC7AD512386791E00A53E83 /* MainMenu.xib in Resources */,
-				EB367CE7250B8BDC00E890FF /* mapmac.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +572,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D9F9FF74256838880086120E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F9FF85256838890086120E /* batteryWidget.intentdefinition in Sources */,
+				D9F9FF7F256838880086120E /* batteryWidget.swift in Sources */,
+				D9F95B63268F070E0066565A /* fishhook.c in Sources */,
+				D9F95B61268F070E0066565A /* NCBTListeningModeController.swift in Sources */,
+				D99B875026A8D1400036C56F /* PrefsPersistanceManager.swift in Sources */,
+				D9F95B69268F070E0066565A /* NCListeningMode.swift in Sources */,
+				D9F95B67268F070E0066565A /* NCDevice.m in Sources */,
+				D9F95B65268F070E0066565A /* NCAVListeningModeController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBA1C26723CE450E00B1BE68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,25 +600,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB925B5E23A8D1F400E8950C /* BluetoothAirpodsBatteryManagementProtocol.swift in Sources */,
+				D9F95B71268F39BF0066565A /* Logger.swift in Sources */,
 				EBFE03DC23A4AC62006095DB /* AlertUtil.swift in Sources */,
+				D9F95B62268F070E0066565A /* fishhook.c in Sources */,
 				EBC7AD4F2386776000A53E83 /* String+Localized.swift in Sources */,
 				EBC7AD5923867D9400A53E83 /* JCGGProgressBar.swift in Sources */,
+				D99B875426A984A90036C56F /* DateUtil.swift in Sources */,
 				EB8E8E38238DBDD800EBC5ED /* BashExecutor.swift in Sources */,
 				EBC7AD412386769700A53E83 /* StatusMenuController.swift in Sources */,
+				D9F95B76268F3B6F0066565A /* AppleScriptExecutor.swift in Sources */,
 				EBFE03A823A36401006095DB /* CreditsWindow.swift in Sources */,
+				D9F95B64268F070E0066565A /* NCAVListeningModeController.m in Sources */,
+				D9F95B78268F40950066565A /* DeviceChecker.swift in Sources */,
 				EBC7AD5323867CF400A53E83 /* BatteryView.swift in Sources */,
 				EB5874E5239E19F7005C6E04 /* ScriptsHandler.swift in Sources */,
+				D9F95B68268F070E0066565A /* NCListeningMode.swift in Sources */,
 				EB8CF6B123A2154900C59492 /* PrefsPersistanceManager.swift in Sources */,
+				D99B875626A9DC910036C56F /* PreferenceSettingsWindow.swift in Sources */,
 				EBFE03AD23A374F0006095DB /* AirPodsBatteryViewModel.swift in Sources */,
+				D9F95B66268F070E0066565A /* NCDevice.m in Sources */,
+				D9F95B6B268F083A0066565A /* TransparencyModeViewModel.swift in Sources */,
+				D9F95B60268F070E0066565A /* NCBTListeningModeController.swift in Sources */,
 				EBC7AD3F2386769700A53E83 /* AppDelegate.swift in Sources */,
 				EBFE03A323A36339006095DB /* AboutWindow.swift in Sources */,
 				EBFE03A623A36356006095DB /* Bundle+Versioning.swift in Sources */,
+				D9F9FF86256838890086120E /* batteryWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D9F9FF88256838890086120E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9F9FF77256838880086120E /* batteryWidgetExtension */;
+			targetProxy = D9F9FF87256838890086120E /* PBXContainerItemProxy */;
+		};
 		EBA1C27123CE450E00B1BE68 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EBC7AD3A2386769700A53E83 /* AirpodsPro Battery */;
@@ -437,6 +656,65 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D9F9FF8B256838890086120E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = batteryWidget/batteryWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = 8JVK53ZY4C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = batteryWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery.batteryWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AirpodsPro Battery/External/TransparencyCore/batteryWidgetExtension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D9F9FF8C256838890086120E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = batteryWidget/batteryWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = 8JVK53ZY4C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = batteryWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery.batteryWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AirpodsPro Battery/External/TransparencyCore/batteryWidgetExtension-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		EBA1C27223CE450E00B1BE68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -506,6 +784,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -568,6 +847,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -600,31 +880,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4CD417C15AE3C9D3617883FB /* Pods-AirpodsPro Battery.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "AirpodsPro Battery/AirpodsPro_Battery.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 863647XUVV;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "AirpodsPro Battery/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0.15;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
-				PRODUCT_NAME = "Airpods Battery Monitor";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		EBC7AD4D2386769900A53E83 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "AirpodsPro Battery/AirpodsPro_Battery.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -637,9 +895,38 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.15;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
 				PRODUCT_NAME = "Airpods Battery Monitor";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirpodsPro Battery/External/TransparencyCore/AirpodsPro Battery-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EBC7AD4D2386769900A53E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "AirpodsPro Battery/AirpodsPro_Battery.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = 8JVK53ZY4C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "AirpodsPro Battery/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
+				PRODUCT_NAME = "Airpods Battery Monitor";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirpodsPro Battery/External/TransparencyCore/AirpodsPro Battery-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -647,6 +934,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D9F9FF8A256838890086120E /* Build configuration list for PBXNativeTarget "batteryWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F9FF8B256838890086120E /* Debug */,
+				D9F9FF8C256838890086120E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBA1C27423CE450E00B1BE68 /* Build configuration list for PBXNativeTarget "Airpods Battery MonitorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

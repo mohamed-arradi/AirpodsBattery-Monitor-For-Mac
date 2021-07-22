@@ -15,4 +15,11 @@
 "credits"="Credits";
 "verify_permissions" = "Please verify that all permissions has been accepted in your system preferences";
 "refresh_devices" = "Refresh Devices";
-"feedback" = " Give a Feedback";
+"feedback" = "Give a Feedback";
+"left" = "L";
+"right" = "R";
+"listening_mode" = "M";
+"anc" = "Noise Cancellation";
+"normal" = "Normal Mode";
+"transparency" = "Transparency Mode";
+"settings" = "Settings";

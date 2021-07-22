@@ -49,7 +49,7 @@ extension String {
                 return ""
             }
         } catch let error {
-            print("invalid regex: \(error.localizedDescription)")
+            Logger.da("invalid regex: \(error.localizedDescription)")
             return []
         }
     }

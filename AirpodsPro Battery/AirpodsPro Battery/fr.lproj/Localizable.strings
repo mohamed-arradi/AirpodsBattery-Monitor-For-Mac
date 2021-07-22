@@ -16,3 +16,10 @@
 "verify_permissions" = "Veuillez vérifier que les permissions ont été acceptés dans vos préférences système.";
 "refresh_devices" = "Rafraîchir les données";
 "feedback" = "Donner un Feedback";
+"left" = "G";
+"right" = "D";
+"listening_mode" = "M";
+"anc" = "Réduction de bruit";
+"normal" = "Mode normal";
+"transparency" = "Mode transparence";
+"settings" = "Paramètres";

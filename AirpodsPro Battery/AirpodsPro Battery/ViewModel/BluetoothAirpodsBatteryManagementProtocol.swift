@@ -22,13 +22,11 @@ protocol BluetoothAirpodsBatteryManagementProtocol {
     var rightBatteryProgressValue: CGFloat { get set }
     var caseBatteryValue: String { get set }
     var caseBatteryProgressValue: CGFloat { get set }
-    var displayStatusMessage: String { get set }
     var deviceName: String { get }
     var deviceAddress: String { get }
     
     func updateBatteryInformation(completion: @escaping (_ success: Bool, _ connectionStatus: AirpodsConnectionStatus) -> Void)
     func processBatteryEntries(groups: [String])
     func fetchAirpodsName(completion: @escaping (_ deviceName: String,_ deviceAddress: String) -> Void)
-    func isAppleDevice(deviceAddress: String, completion: @escaping(_ isApple: Bool) -> Void)
     func toogleCurrentBluetoothDevice()
 }

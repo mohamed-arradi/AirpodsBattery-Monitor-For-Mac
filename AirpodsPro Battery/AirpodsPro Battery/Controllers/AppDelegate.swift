@@ -18,9 +18,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if #available(OSX 10.12.1, *) {
            NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
          }
-                
-        if LoginServiceKit.isExistLoginItems(at: Bundle.main.bundlePath) == false {
-            LoginServiceKit.addLoginItems(at: Bundle.main.bundlePath)
+            
+        let isExistLoginItem = LoginServiceKit.isExistLoginItems()
+        let preferenceLogin: Bool? = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.SystemData.startupSystemAllowed.rawValue) as? Bool
+        
+        if !isExistLoginItem && preferenceLogin == nil {
+            LoginServiceKit.addLoginItems()
+            PrefsPersistanceManager().savePreferences(key: PreferenceKey.SystemData.startupSystemAllowed.rawValue, value: true)
+        } else if !isExistLoginItem,
+                  let pref = preferenceLogin,
+                  pref {
+            LoginServiceKit.addLoginItems()
         }
     }
 }

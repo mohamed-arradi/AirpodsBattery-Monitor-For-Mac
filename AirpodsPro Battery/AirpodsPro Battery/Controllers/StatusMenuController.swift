@@ -8,6 +8,7 @@
 
 import Cocoa
 import IOBluetooth
+import WidgetKit
 
 fileprivate enum MenuItemTypePosition: Int {
     case batteryView = 0
@@ -15,7 +16,8 @@ fileprivate enum MenuItemTypePosition: Int {
     case credit = 5
     case about = 6
     case refreshDevices = 8
-    case quitApp = 10
+    case startupLaunch = 10
+    case quitApp = 12
 }
 
 class StatusMenuController: NSObject {
@@ -24,9 +26,10 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var batteryStatusView: BatteryView!
     
     var statusMenuItem: NSMenuItem!
-    lazy var airpodsBatteryViewModel: AirPodsBatteryViewModel = AirPodsBatteryViewModel()
+    var airpodsBatteryViewModel: AirPodsBatteryViewModel!
     
     private var timer: Timer?
+    private var airpodsModeTimer: Timer?
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let tickingInterval: TimeInterval = 30
     
@@ -38,19 +41,23 @@ class StatusMenuController: NSObject {
         return CreditWindow()
     }()
     
+    private lazy var settingsView: PreferenceSettingsWindow = {
+        return PreferenceSettingsWindow()
+    }()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
+        airpodsBatteryViewModel = AirPodsBatteryViewModel()
         setupStatusMenu()
         setUpRecurrentChecks()
                
-        updateBatteryValue()
         NotificationCenter.default.addObserver(self, selector: #selector(detectChange), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
-             NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
-             NotificationCenter.default.addObserver(self, selector: #selector(updateDeviceName), name: NSNotification.Name("update_device_name"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDeviceName), name: NSNotification.Name("update_device_name"), object: nil)
        
-    
+        self.updateBatteryValue()
     }
     
     fileprivate func setUpRecurrentChecks() {
@@ -58,6 +65,12 @@ class StatusMenuController: NSObject {
         timer = Timer.scheduledTimer(timeInterval: tickingInterval,
                                      target: self,
                                      selector: #selector(updateBatteryValue),
+                                     userInfo: nil,
+                                     repeats: true)
+        
+        airpodsModeTimer = Timer.scheduledTimer(timeInterval: 3,
+                                     target: self,
+                                     selector: #selector(updateAirpodsMode),
                                      userInfo: nil,
                                      repeats: true)
     }
@@ -83,11 +96,16 @@ class StatusMenuController: NSObject {
         }
         
         updateStatusButtonImage()
-        
+        refreshStatusMenu()
+    }
+    
+    fileprivate func refreshStatusMenu() {
         statusMenu.item(at: MenuItemTypePosition.quitApp.rawValue)?.title = "quit_app".localized
         statusMenu.item(at: MenuItemTypePosition.refreshDevices.rawValue)?.title = "refresh_devices".localized
         statusMenu.item(at: MenuItemTypePosition.about.rawValue)?.title = "feedback".localized
         statusMenu.item(at: MenuItemTypePosition.credit.rawValue)?.title = "credits".localized
+        statusMenu.item(at: MenuItemTypePosition.startupLaunch.rawValue)?.title = "settings".localized
+        
         statusItem.button?.title = ""
         statusItem.menu = statusMenu
         
@@ -113,9 +131,9 @@ class StatusMenuController: NSObject {
         if !deviceName.isEmpty {
             let format = pairedDevicesConnected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
             
-            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = String(format: format, deviceName)
+            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.attributedTitle = NSAttributedString(string: String(format: format, deviceName))  
         } else {
-            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No devices paired yet"
+            self.statusMenu.item(at: MenuItemTypePosition.airpodsConnect.rawValue)?.title = "No Airpods devices paired"
         }
     }
     
@@ -124,16 +142,22 @@ class StatusMenuController: NSObject {
         airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in
             
             DispatchQueue.main.async {
-                
                 self?.batteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
-                
-                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.displayStatusMessage ?? ""
+                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.fullStatusMessage ?? ""
                 
                 let pairedDevicesConnected = self?.airpodsBatteryViewModel.connectionStatus == .connected
                 self?.updateStatusButtonImage(hide: pairedDevicesConnected)
                 
                 self?.updateDeviceName()
             }
+        }
+    }
+    
+    @objc fileprivate func updateAirpodsMode() {
+        airpodsBatteryViewModel.updateAirpodsMode()
+        statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
         }
     }
     
@@ -153,10 +177,17 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func aboutAppClicked(_ sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
         aboutView.showWindow(nil)
     }
     
     @IBAction func creditAppClicked(_ sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
         creditView.showWindow(nil)
+    }
+    
+    @IBAction func settingsAppClicked(_ sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
+        settingsView.showWindow(nil)
     }
 }

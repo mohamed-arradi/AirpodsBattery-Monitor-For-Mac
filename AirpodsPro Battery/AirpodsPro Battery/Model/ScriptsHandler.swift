@@ -14,7 +14,7 @@ typealias ExecutingCompletionBlock = (Result<String, IOError>) -> Void
 protocol ScriptingProtocol {
     
     var scriptingFolderPath: String { get set }
-    var searchPathDirectory: FileManager.SearchPathDirectory {get set }
+    var searchPathDirectory: FileManager.SearchPathDirectory { get set }
     
     func askPermissionsForUser()
     func directoryExistsAtPath(_ path: String) -> Bool
@@ -30,6 +30,7 @@ struct ScriptsHandler {
     
     private(set) var bashExecutor: CommandExecuting
     private(set) var scriptsName: [String]
+    static let `default` = ScriptsHandler(scriptsName: ["battery-airpods.sh", "oui.txt", "apple-devices-verification.sh"])
     
     var scriptingFolderPath: String = "AirpodsProBattery/script/"
     var searchPathDirectory: FileManager.SearchPathDirectory = .libraryDirectory
@@ -52,7 +53,7 @@ struct ScriptsHandler {
         let scriptURL = URL(fileURLWithPath: directoryPath, isDirectory: true)
         if !directoryExistsAtPath(directoryPath) {
             guard let _ = try? FileManager.default.createDirectory(at: scriptURL, withIntermediateDirectories: true) else {
-                print("directory should be created and permissions allowed")
+                Logger.da("directory should be created and permissions allowed")
                 return
             }
         }
@@ -65,13 +66,13 @@ struct ScriptsHandler {
             let ext = fileExtension,
             let fName = fileName,
             let localScriptPath = Bundle.main.path(forResource: fileName, ofType: fileExtension) else {
-                print("File \(fileName ?? "") does not exist")
+            Logger.da("File \(fileName ?? "") does not exist")
                 return
         }
         
         let finalFileURL = scriptURL.appendingPathComponent("\(fName).\(ext)").relativePath
         guard let _ = try? FileManager.default.createFile(atPath: finalFileURL, contents: Data(contentsOf: URL(fileURLWithPath: localScriptPath)), attributes: nil) else {
-            print("File has not been created at \(finalFileURL)")
+            Logger.da("File has not been created at \(finalFileURL)")
             return
         }
     }
@@ -171,19 +172,19 @@ extension ScriptsHandler: ScriptingProtocol {
                           do {
                               try fileManager.copyItem(at: sourceURL, to: destinationURL)
                           } catch let error {
-                              print("\(#function) error = \(error)")
+                            Logger.da("\(#function) error = \(error)")
                               if (error as NSError?)?.code == NSFileWriteFileExistsError {
                                   do {
                                       try fileManager.removeItem(at: destinationURL)
-                                      print("Existing file deleted.")
+                                    Logger.da("Existing file deleted.")
                                   } catch {
-                                      print("Failed to delete existing file:\n\((error as NSError).description)")
+                                    Logger.da("Failed to delete existing file:\n\((error as NSError).description)")
                                   }
                                   do {
                                       try fileManager.copyItem(at: sourceURL, to: destinationURL)
-                                      print("Existing file copied.")
+                                    Logger.da("Existing file copied.")
                                   } catch {
-                                      print("Failed to delete not copied:\n\((error as NSError).description)")
+                                    Logger.da("Failed to delete not copied:\n\((error as NSError).description)")
                                   }
                               } else {
                                   // the item couldn't be copied, try again

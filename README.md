@@ -70,21 +70,13 @@ This App cannot be allowed right now on the Mac App Store due to the necessary t
 ### THEY TALK ABOUT IT
 
 -  (Japanese Youtube Video Demo) https://www.youtube.com/watch?v=F8lBL62iYD4 
-
 - (German Blog - xgadget.de) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
-
 - (German Online Article - Mobiflip.de) https://www.mobiflip.de/shortnews/airpods-battery-monitor-fuer-macos/
-
 - (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html
-
 - (English Software Online News - Mac Softpedia) https://mac.softpedia.com/get/Utilities/AirPods-Battery-Monitor.shtml
-
 - ( German Article - giga.de) https://www.giga.de/news/airpods-diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
-
 - (German Article - itopnews.de) https://www.itopnews.de/2020/01/airpods-battery-monitor-mac-app-zeigt-airpods-akkustand-bequem-an/
-
 - (English Blog - AppsForMyPC) http://www.appsformypc.com/2020/01/airpods-battery-monitor-for-mac/
-
 - (German Article - WorldUnion.info) https://worldunion.info/diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
 
 ### CONTRIBUTING
@@ -94,16 +86,12 @@ If you want to contribute to improve it, it will be with pleasure !
 ### Image Credits
 
 - Airpods Case Widget made from <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-
 - Airpods widget icon made from FreePik https://www.freepik.com
-
 - Airpod Case by Joel Wisneski from the Noun Project
-
 - AirPods case by Mathijs Boogaert from the Noun Project
-
 - https://icon-icons.com/fr/icone/airpods/110461#32
-
 - https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32
+- M1 Logo from https://seeklogo.com/vector-logo/391016/apple-m1
 
 ### LICENCE
 

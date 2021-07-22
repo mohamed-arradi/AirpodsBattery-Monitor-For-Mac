@@ -91,6 +91,7 @@ If you want to contribute to improve it, it will be with pleasure !
 
 ### Image Credits
 
+- Airpods Case Widget made from <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 - Airpods widget icon made from FreePik https://www.freepik.com
 
 - Airpod Case by Joel Wisneski from the Noun Project

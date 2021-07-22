@@ -81,6 +81,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                
                 completion(true, self?.connectionStatus ?? .disconnected)
             case .failure( _):
+                if #available(OSX 11, *) {
+                    WidgetCenter.shared.reloadTimelines(ofKind: "com.mac.AirpodsPro-Battery.batteryWidget")
+                }
                 completion(false, self?.connectionStatus ?? .disconnected)
             }
         }
@@ -144,6 +147,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             self.caseBatteryValue = "--"
             self.caseBatteryProgressValue = CGFloat(0)
             self.displayStatusMessage = ""
+            saveBatteryLevelUserDefaults(left: nil, right: nil, caseBatt: nil)
         }
         
         if #available(OSX 11, *) {
@@ -152,15 +156,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     }
     
     func saveBatteryLevelUserDefaults(left: CGFloat? = nil, right: CGFloat? = nil, caseBatt: CGFloat? = nil) {
-        if let left = left {
-            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.left.rawValue, value: left)
-        }
-        if let right = right {
-            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.right.rawValue, value: right)
-        }
-        if let caseBatt = caseBatt {
-            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.case.rawValue, value: caseBatt)
-        }
+            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.left.rawValue, value: left ?? -1)
+            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.right.rawValue, value: right ?? -1)
+            preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.case.rawValue, value: caseBatt ?? -1)
     }
     
      fileprivate func processAirpodsDetails() {

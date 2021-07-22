@@ -9,7 +9,7 @@
 import Foundation
 
 struct AppleScriptType {
-   fileprivate let batteryNotification: String = "display notification \"Airpods Battery Monitor\" with title \"Low Battery\" subtitle \"Battery less than \" & percentLeft & \"%. Please connect to power now!\" sound name \"Frog\""
+    static let batteryNotification = "display notification \"Airpods Battery Monitor\" with title \"Low Battery\" subtitle \"Battery less than \" & %@ & \"%. Please connect to power now!\" sound name \"Frog\""
 }
 
 struct AppleScriptExecutor {
@@ -17,7 +17,7 @@ struct AppleScriptExecutor {
     func executeAction(script: String) {
         var error: NSDictionary?
         if let scriptObject = NSAppleScript(source: script) {
-            let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(&error)
+            let output = scriptObject.executeAndReturnError(&error)
             if error == nil {
                 Logger.da(output.stringValue ?? "")
             } else {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,17 +16,17 @@
         <window title="Credits Images" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="428" height="212"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="428" height="234"/>
+            <rect key="contentRect" x="196" y="240" width="503" height="293"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <view key="contentView" wantsLayer="YES" misplaced="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="18" width="503" height="275"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zti-FB-3eZ">
-                        <rect key="frame" x="20" y="20" width="388" height="194"/>
+                        <rect key="frame" x="20" y="20" width="463" height="235"/>
                         <subviews>
                             <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPk-ij-PHk">
-                                <rect key="frame" x="0.0" y="164" width="356" height="30"/>
+                                <rect key="frame" x="0.0" y="205" width="296" height="30"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4F-cX-9sB">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -36,8 +36,8 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AirpodsCase" id="yZ9-DR-Bg6"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5HU-BD-9ax">
-                                        <rect key="frame" x="38" y="14" width="320" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Airpod Case by Joel Wisneski from the Noun Project" id="cER-Rz-YEU">
+                                        <rect key="frame" x="38" y="14" width="260" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Airpod Case by Pixel perfect from Flaticon" id="cER-Rz-YEU">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -46,6 +46,37 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ata-VE-Jbp"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-PW-Rux">
+                                <rect key="frame" x="0.0" y="164" width="184" height="30"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2TE-Gn-iao">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Quz-5Q-JIy"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AirpodsWidget" id="YTe-NL-ZyV"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uRI-a3-cDz">
+                                        <rect key="frame" x="38" y="14" width="148" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Airpods Icon by FreePik" id="8gV-30-LHd">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VK8-0f-LvT"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -187,8 +218,10 @@
                             <integer value="1000"/>
                             <integer value="1000"/>
                             <integer value="1000"/>
+                            <integer value="1000"/>
                         </visibilityPriorities>
                         <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
                             <real value="3.4028234663852886e+38"/>
                             <real value="3.4028234663852886e+38"/>
                             <real value="3.4028234663852886e+38"/>
@@ -204,16 +237,17 @@
                     <constraint firstAttribute="trailing" secondItem="Zti-FB-3eZ" secondAttribute="trailing" constant="20" symbolic="YES" id="uZD-zh-sfY"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="247" y="-36"/>
+            <point key="canvasLocation" x="284.5" y="-76.5"/>
         </window>
         <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" id="dGO-lk-0h9">
             <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
-            <point key="canvasLocation" x="139" y="-33"/>
+            <point key="canvasLocation" x="-10" y="-116"/>
         </stackView>
     </objects>
     <resources>
-        <image name="AirpodsCase" width="264.5" height="293.5"/>
+        <image name="AirpodsCase" width="171.5" height="171.5"/>
+        <image name="AirpodsWidget" width="171.5" height="171.5"/>
         <image name="LeftAirpodEar" width="120" height="256"/>
         <image name="RightAirpodEar" width="117.5" height="256"/>
         <image name="StatusAppDisconnected" width="256" height="256"/>

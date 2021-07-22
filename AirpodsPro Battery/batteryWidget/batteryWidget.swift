@@ -23,8 +23,8 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [AirpodsBatteryEntry] = []
         let currentDate = Date()
-        for secondOffset in stride(from: 20, to: 180, by: 40) {
-            if let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset + 40, to: currentDate) {
+        for secondOffset in stride(from: 10, to: 20, by: 5) {
+            if let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate) {
                 let entry = AirpodsBatteryEntry(date: entryDate, configuration: configuration, batteryInformation: BatteryInformation())
                 entries.append(entry)
             }
@@ -38,6 +38,7 @@ struct Provider: IntentTimelineProvider {
 struct BatteryInformation {
     
     var displayableBatteryText: String {
+        
         let leftP =   PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.left.rawValue) as? CGFloat
         let rightP =  PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.right.rawValue) as? CGFloat
         
@@ -46,14 +47,30 @@ struct BatteryInformation {
             return "Not connected"
         }
         
-        return "\(left)%        \(right)%"
+        var display = ""
+        
+        if let left = leftP {
+            display = display.appending("\(left)%")
+        }
+        
+        if let _ = leftP,
+           let right = rightP {
+            display = display.appending("       \(right)%")
+        }
+        if leftP == nil || left == -1,
+           let right = rightP {
+            display = "\(right)%"
+        }
+        
+        return display
     }
     
     var displayableCaseBattery: String {
         
         let caseP = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.case.rawValue) as? CGFloat
         
-        guard let caseP = caseP, caseP > 0.0 else {
+        guard let caseP = caseP,
+              caseP > 0.0 else {
             return "--"
         }
         
@@ -71,24 +88,27 @@ struct batteryWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        VStack(alignment: .center, spacing: nil, content: {
-            VStack {
-                Image("Airpods")
-                    .resizable()
-                    .frame(width: 80.0, height: 80.0)
-                Text(entry.batteryInformation.displayableBatteryText)
-                    .bold()
-                    .foregroundColor(.white)
-            }
-            HStack {
-                Image("CaseAirpods")
-                    .resizable()
-                    .frame(width: 15, height: 15, alignment: .leading)
-                Text(entry.batteryInformation.displayableCaseBattery)
-                    .fontWeight(.regular)
-                    .foregroundColor(.white)
-            }
-        })
+        Color("WidgetBackground")
+            .overlay(
+                VStack(alignment: .center, spacing: nil, content: {
+                    VStack {
+                        Image("Airpods")
+                            .resizable()
+                            .frame(width: 80.0, height: 80.0)
+                        Text(entry.batteryInformation.displayableBatteryText)
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    HStack {
+                        Image("CaseAirpods")
+                            .resizable()
+                            .frame(width: 15, height: 15, alignment: .leading)
+                        Text(entry.batteryInformation.displayableCaseBattery)
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                })
+            )
     }
 }
 

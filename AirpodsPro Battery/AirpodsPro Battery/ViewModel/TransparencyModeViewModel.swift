@@ -62,7 +62,6 @@ class TransparencyModeViewModel {
                     Logger.da("current device: \(self.currentDevice?._listeningMode ?? "")")
                 } else {
                     self.currentDevice = nil
-                    Logger.da("issue getting device")
                 }
             })
         }
@@ -71,7 +70,7 @@ class TransparencyModeViewModel {
     }
     
     @objc func updateListeningMode() {
-        deviceChangeDelegate?.updateDeviceMode(mode: NCListeningMode(rawValue: self.transparencyController.listeningMode.rawValue) ?? .normal)
-        Logger.da("current mode: \(self.transparencyController._listeningMode)")
+        let mode = NCListeningMode(rawValue: self.transparencyController.listeningMode.rawValue) ?? .normal
+        deviceChangeDelegate?.updateDeviceMode(mode: mode)
     }
 }

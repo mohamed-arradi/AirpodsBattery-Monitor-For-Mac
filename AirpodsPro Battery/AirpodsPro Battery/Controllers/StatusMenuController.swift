@@ -8,6 +8,7 @@
 
 import Cocoa
 import IOBluetooth
+import WidgetKit
 
 fileprivate enum MenuItemTypePosition: Int {
     case batteryView = 0
@@ -47,12 +48,11 @@ class StatusMenuController: NSObject {
         setupStatusMenu()
         setUpRecurrentChecks()
                
-        updateBatteryValue()
         NotificationCenter.default.addObserver(self, selector: #selector(detectChange), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateDeviceName), name: NSNotification.Name("update_device_name"), object: nil)
        
-    
+        self.updateBatteryValue()
     }
     
     fileprivate func setUpRecurrentChecks() {
@@ -135,9 +135,7 @@ class StatusMenuController: NSObject {
         airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in
             
             DispatchQueue.main.async {
-                
                 self?.batteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
-                
                 self?.statusItem.button?.title = self?.airpodsBatteryViewModel.fullStatusMessage ?? ""
                 
                 let pairedDevicesConnected = self?.airpodsBatteryViewModel.connectionStatus == .connected
@@ -150,7 +148,10 @@ class StatusMenuController: NSObject {
     
     @objc fileprivate func updateAirpodsMode() {
         airpodsBatteryViewModel.updateAirpodsMode()
-        statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage 
+        statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+        }
     }
     
     // MARK: IBAction
@@ -169,10 +170,12 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func aboutAppClicked(_ sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
         aboutView.showWindow(nil)
     }
     
     @IBAction func creditAppClicked(_ sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
         creditView.showWindow(nil)
     }
 }

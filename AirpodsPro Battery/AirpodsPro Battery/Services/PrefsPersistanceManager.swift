@@ -10,10 +10,21 @@ import Foundation
 
 typealias PreferenceString = PreferenceKey
 
-enum PreferenceKey: String {
-    case deviceName
-    case deviceAddress
-    case listeningMode
+enum Threshold: Int {
+    case minBatteryLow = 20
+}
+
+enum PreferenceKey {
+    
+    enum SystemData: String {
+        case latestNotificationSendDate
+    }
+    enum AirpodsMetaData: String {
+        case deviceName
+        case deviceAddress
+        case listeningMode
+        case latestBatteryLevel
+    }
     
     enum BatteryValue: String {
         case left
@@ -24,7 +35,7 @@ enum PreferenceKey: String {
 
 struct PrefsPersistanceManager {
     
-    func savePreferences(key: String, value: Any, preferenceManager: UserDefaults = UserDefaults.init(suiteName: "group.mac.airpodsbatterygroup")!) {
+    func savePreferences(key: String, value: Any?, preferenceManager: UserDefaults = UserDefaults.init(suiteName: "group.mac.airpodsbatterygroup")!) {
         preferenceManager.set(value, forKey: key)
     }
     

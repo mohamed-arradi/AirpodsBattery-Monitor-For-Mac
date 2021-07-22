@@ -1,11 +1,9 @@
-![AppIcon-AirPodsBattery-Monitor](/images/appIcon.png)
-# AirPods Battery Monitor For MAC OS ! [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
+![Image of AirPods Widget](/images/widget_demo_small.png)
 
-[![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)
+# AirPods Battery Monitor For MAC OS ! [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
 
 Airpods Mac OS App which show you the battery percentage of your airpods and Airpods Pro.
 
-![Image of AirPods Widget](/images/widget_demo_small.png)
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.jpg)
 
 A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left / Right) in real-time !. It is a shortcut to remove the long and painful access from the Bluetooth Tab that Mac OS X provide.
@@ -105,3 +103,5 @@ You like it ? help supporting this app by giving me **Coffee** in order for me t
 ```
 AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.
 ```
+
+[![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)

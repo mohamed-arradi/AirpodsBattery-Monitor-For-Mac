@@ -23,20 +23,21 @@ Work in progress...
 On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
 This is why I build this tiny mac status bar app.
 
-## Latest CHANGELOG  ##
+## Latest Changelog  ##
 
 **2.0.0**
 
  - Add M1 Compatilibity Support.
  - Add Transparency Mode Listener (Ability to detect which mode are you with your Airpods (Transparency / Noice Cancellation / Normal))
  - Add Basic Widget with Battery value for your MacOS Widget configuration.
- - Add Notification if left or right is lower than 20%
+ - Add Start on Launch as a Settings (before there were any :( ). 
  
 ### REMAINING TO DO
 
+- Activate Desktop Notification when battery is low. (it is developed but not yet activated, require some testing effort)
 - Add TouchBar App in order to see the battery from the touch bar
 - Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
-- Support multiple languages
+- Support more languages.
 
 ### DEPENDANCIES
 

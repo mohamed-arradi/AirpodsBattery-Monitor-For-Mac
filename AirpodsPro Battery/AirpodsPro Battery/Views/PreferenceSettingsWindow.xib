@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferenceSettingsWindow" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
+            <connections>
+                <outlet property="startupLaunchSettingCheckbox" destination="vAd-Cn-4q9" id="Tuo-C3-cT4"/>
+                <outlet property="window" destination="BM2-N9-ib9" id="SPf-r4-zRb"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="BM2-N9-ib9">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="206" width="450" height="225"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <view key="contentView" id="1W0-lG-UzZ">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="225"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vAd-Cn-4q9">
+                        <rect key="frame" x="18" y="188" width="144" height="18"/>
+                        <buttonCell key="cell" type="check" title="Launch on startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Xf1-rI-cbB">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="systemBold"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toogleStartupLaunchSettingsWithSender:" target="-2" id="9IB-8z-pP6"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vAd-Cn-4q9" firstAttribute="leading" secondItem="1W0-lG-UzZ" secondAttribute="leading" constant="20" symbolic="YES" id="6Ct-mX-Df0"/>
+                    <constraint firstItem="vAd-Cn-4q9" firstAttribute="top" secondItem="1W0-lG-UzZ" secondAttribute="top" constant="20" symbolic="YES" id="kjQ-RS-Hyf"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="159" y="94.5"/>
+        </window>
+    </objects>
+</document>

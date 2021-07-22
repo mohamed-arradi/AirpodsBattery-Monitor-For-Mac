@@ -18,7 +18,9 @@ enum PreferenceKey {
     
     enum SystemData: String {
         case latestNotificationSendDate
+        case startupSystemAllowed
     }
+    
     enum AirpodsMetaData: String {
         case deviceName
         case deviceAddress

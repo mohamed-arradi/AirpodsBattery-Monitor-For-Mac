@@ -16,7 +16,8 @@ fileprivate enum MenuItemTypePosition: Int {
     case credit = 5
     case about = 6
     case refreshDevices = 8
-    case quitApp = 10
+    case startupLaunch = 10
+    case quitApp = 12
 }
 
 class StatusMenuController: NSObject {
@@ -38,6 +39,10 @@ class StatusMenuController: NSObject {
     
     private lazy var creditView: CreditWindow = {
         return CreditWindow()
+    }()
+    
+    private lazy var settingsView: PreferenceSettingsWindow = {
+        return PreferenceSettingsWindow()
     }()
     
     
@@ -99,6 +104,8 @@ class StatusMenuController: NSObject {
         statusMenu.item(at: MenuItemTypePosition.refreshDevices.rawValue)?.title = "refresh_devices".localized
         statusMenu.item(at: MenuItemTypePosition.about.rawValue)?.title = "feedback".localized
         statusMenu.item(at: MenuItemTypePosition.credit.rawValue)?.title = "credits".localized
+        statusMenu.item(at: MenuItemTypePosition.startupLaunch.rawValue)?.title = "settings".localized
+        
         statusItem.button?.title = ""
         statusItem.menu = statusMenu
         
@@ -177,5 +184,10 @@ class StatusMenuController: NSObject {
     @IBAction func creditAppClicked(_ sender: NSMenuItem) {
         NSApp.activate(ignoringOtherApps: true)
         creditView.showWindow(nil)
+    }
+    
+    @IBAction func settingsAppClicked(_ sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
+        settingsView.showWindow(nil)
     }
 }

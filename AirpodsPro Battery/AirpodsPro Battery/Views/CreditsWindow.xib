@@ -19,7 +19,7 @@
             <rect key="contentRect" x="196" y="240" width="503" height="293"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <view key="contentView" wantsLayer="YES" misplaced="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="18" width="503" height="275"/>
+                <rect key="frame" x="0.0" y="0.0" width="503" height="293"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zti-FB-3eZ">
@@ -239,11 +239,6 @@
             </view>
             <point key="canvasLocation" x="284.5" y="-76.5"/>
         </window>
-        <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" id="dGO-lk-0h9">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <point key="canvasLocation" x="-10" y="-116"/>
-        </stackView>
     </objects>
     <resources>
         <image name="AirpodsCase" width="171.5" height="171.5"/>

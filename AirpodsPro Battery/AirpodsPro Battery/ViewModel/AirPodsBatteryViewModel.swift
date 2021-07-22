@@ -164,11 +164,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         
         let lowerBatteryValue = min(left ?? -1, right ?? -1)
 
-        if lowerBatteryValue != -1 {
-            preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.latestBatteryLevel.rawValue,
-                                              value: lowerBatteryValue)
-            prepareNotificationIfNeeded(batteryValue: Int(lowerBatteryValue))
-        }
+       // prepareNotificationIfNeeded(batteryValue: Int(lowerBatteryValue))
         
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
@@ -176,6 +172,12 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     }
     
     fileprivate func prepareNotificationIfNeeded(batteryValue: Int) {
+        
+        if batteryValue != -1 {
+            preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.latestBatteryLevel.rawValue,
+                                              value: batteryValue)
+            prepareNotificationIfNeeded(batteryValue: Int(batteryValue))
+        }
         
         let latestNotificationSendDate = preferenceManager.getValuePreferences(from: PreferenceKey.SystemData.latestNotificationSendDate.rawValue)
         
@@ -190,6 +192,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         preferenceManager.savePreferences(key: PreferenceKey.SystemData.latestNotificationSendDate.rawValue,
                                           value: DateUtil().toDefaultStringFormat(date: Date()))
     }
+    
     
     fileprivate func resetNotificationState(batteryValue: Int) {
         

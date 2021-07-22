@@ -10,6 +10,8 @@
 		A34BB46F3EBC83AA782B6A38 /* Pods_AirpodsPro_Battery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */; };
 		D99B875026A8D1400036C56F /* PrefsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */; };
 		D99B875426A984A90036C56F /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99B875326A984A90036C56F /* DateUtil.swift */; };
+		D99B875626A9DC910036C56F /* PreferenceSettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99B875526A9DC910036C56F /* PreferenceSettingsWindow.swift */; };
+		D99B875826A9DCA60036C56F /* PreferenceSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99B875726A9DCA60036C56F /* PreferenceSettingsWindow.xib */; };
 		D9F95B60268F070E0066565A /* NCBTListeningModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */; };
 		D9F95B61268F070E0066565A /* NCBTListeningModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */; };
 		D9F95B62268F070E0066565A /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F95B55268F070E0066565A /* fishhook.c */; };
@@ -93,6 +95,8 @@
 		4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirpodsPro_Battery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD417C15AE3C9D3617883FB /* Pods-AirpodsPro Battery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.debug.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B875326A984A90036C56F /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		D99B875526A9DC910036C56F /* PreferenceSettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceSettingsWindow.swift; sourceTree = "<group>"; };
+		D99B875726A9DCA60036C56F /* PreferenceSettingsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceSettingsWindow.xib; sourceTree = "<group>"; };
 		D9F95B51268F070D0066565A /* AirpodsPro Battery-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirpodsPro Battery-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9F95B52268F070D0066565A /* batteryWidgetExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "batteryWidgetExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9F95B53268F070E0066565A /* NCBTListeningModeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCBTListeningModeController.swift; sourceTree = "<group>"; };
@@ -341,6 +345,8 @@
 				EBFE03A223A36339006095DB /* AboutWindow.xib */,
 				EBFE03A723A36401006095DB /* CreditsWindow.swift */,
 				EBFE03A923A3644B006095DB /* CreditsWindow.xib */,
+				D99B875526A9DC910036C56F /* PreferenceSettingsWindow.swift */,
+				D99B875726A9DCA60036C56F /* PreferenceSettingsWindow.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F95B6E268F23430066565A /* oui.txt in Resources */,
+				D99B875826A9DCA60036C56F /* PreferenceSettingsWindow.xib in Resources */,
 				EB925B5C23A8CCB500E8950C /* apple-devices-verification.sh in Resources */,
 				EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */,
 				EBFE03AA23A3644B006095DB /* CreditsWindow.xib in Resources */,
@@ -609,6 +616,7 @@
 				EB5874E5239E19F7005C6E04 /* ScriptsHandler.swift in Sources */,
 				D9F95B68268F070E0066565A /* NCListeningMode.swift in Sources */,
 				EB8CF6B123A2154900C59492 /* PrefsPersistanceManager.swift in Sources */,
+				D99B875626A9DC910036C56F /* PreferenceSettingsWindow.swift in Sources */,
 				EBFE03AD23A374F0006095DB /* AirPodsBatteryViewModel.swift in Sources */,
 				D9F95B66268F070E0066565A /* NCDevice.m in Sources */,
 				D9F95B6B268F083A0066565A /* TransparencyModeViewModel.swift in Sources */,

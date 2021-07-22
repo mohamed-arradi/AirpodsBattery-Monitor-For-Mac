@@ -91,7 +91,6 @@ If you want to contribute to improve it, it will be with pleasure !
 - AirPods case by Mathijs Boogaert from the Noun Project
 - https://icon-icons.com/fr/icone/airpods/110461#32
 - https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32
-- M1 Logo from https://seeklogo.com/vector-logo/391016/apple-m1
 
 ### LICENCE
 

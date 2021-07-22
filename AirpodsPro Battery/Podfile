@@ -1,7 +1,6 @@
-# Uncomment the next line to define a global platform for your project
-  platform :osx, '10.14'
+platform :osx, '10.14'
 
 target 'AirpodsPro Battery' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  pod 'LoginServiceKit', :git => 'https://github.com/Clipy/LoginServiceKit'
 end

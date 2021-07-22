@@ -163,7 +163,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.case.rawValue, value: caseBatt ?? -1)
         
         let lowerBatteryValue = min(left ?? -1, right ?? -1)
-        
+
         if lowerBatteryValue != -1 {
             preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.latestBatteryLevel.rawValue,
                                               value: lowerBatteryValue)

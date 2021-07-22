@@ -12,7 +12,7 @@ A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left
 
 ### Direct Download Link ###
 
-Just download the latest version here:  https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/releases
+Just download the latest version here: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/releases
 
 ### Via Homebrew ###
 

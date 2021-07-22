@@ -30,7 +30,7 @@ This is why I build this tiny mac status bar app.
 
 **2.0.0**
 
- - Add M1 Compatilibity Support. ![Image of AirPods Widget](/images/apple-m1.png)
+ - Add M1 Compatilibity Support.
  - Add Transparency Mode Listener (Ability to detect which mode are you with your Airpods (Transparency / Noice Cancellation / Normal))
  - Add Basic Widget with Battery value for your MacOS Widget configuration.
  ![Image of AirPods Widget](/images/widget_demo.png)

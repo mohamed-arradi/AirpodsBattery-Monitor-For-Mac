@@ -100,8 +100,7 @@ You like it ? help supporting this app by giving me **Coffee** in order for me t
 
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/momolette)
 
-```
-AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.
-```
+
+**AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
 
 [![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)

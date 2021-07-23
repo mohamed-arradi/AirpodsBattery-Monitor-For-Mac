@@ -46,9 +46,9 @@ This is why I build this tiny mac status bar app.
 
 ### Why it is not on the App Store ?
 
-This is a MacOSX App build with xCode using Swift 5.0 and Sandbox Not activated in order to beneficiate from the bash permission.
+- Sandbox is not activated in order to beneficiate from the scripting tool permission.
 
-This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required. (Except if you manage to bribe some Apple Reviewers which I did not succeeded yet :))
+This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required.
 
 ### THEY TALK ABOUT IT
 

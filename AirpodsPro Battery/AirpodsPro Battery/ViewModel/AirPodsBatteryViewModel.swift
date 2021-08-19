@@ -14,6 +14,16 @@ enum WidgetIdentifiers: String {
     case batteryMonitor = "com.mac.AirpodsPro-Battery.batteryWidget"
 }
 
+struct Airpods {
+    var leftBatteryValue: String = "--"
+    var rightBatteryValue: String = "--"
+    var caseBatteryValue: String = "--"
+}
+
+struct AirpodsMax {
+    var batteryValue: String
+}
+
 class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var leftBatteryValue: String = "--"
@@ -76,11 +86,28 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             
             switch result {
             case .success(let value):
+                let valueGroupedBySpaces = value.split(separator: "\n")
+                guard valueGroupedBySpaces.count > 0,
+                      let topMostDeviceData = valueGroupedBySpaces.first else {
+                    return
+                }
                 let pattern = "\\d+"
-                let groups = value.groups(for: pattern).flatMap({$0})
+                let datas = String(topMostDeviceData).components(separatedBy: "@@")
+                
+                guard datas.count > 1,
+                      let macAddress = datas.first,
+                      let dataDevice = datas.last else {
+                      return
+                }
+                
+                let groups = dataDevice.groups(for: pattern).flatMap({$0})
+                if groups.count > 1 {
                 DispatchQueue.main.async {
-                    self?.processBatteryEntries(groups: groups)
+                    self?.processBatteryEntries(groups:groups)
                     self?.processAirpodsDetails()
+                }
+                } else {
+                    
                 }
                 
                 completion(true, self?.connectionStatus ?? .disconnected)

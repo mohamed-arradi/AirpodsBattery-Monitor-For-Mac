@@ -23,7 +23,7 @@ fileprivate enum MenuItemTypePosition: Int {
 class StatusMenuController: NSObject {
     
     @IBOutlet weak var statusMenu: NSMenu!
-    @IBOutlet weak var batteryStatusView: BatteryView!
+    @IBOutlet weak var batteryStatusView: BatteryAirpodsView!
     
     var statusMenuItem: NSMenuItem!
     var airpodsBatteryViewModel: AirPodsBatteryViewModel!

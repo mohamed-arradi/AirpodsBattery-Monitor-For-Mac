@@ -17,16 +17,16 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="503" height="293"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
-            <view key="contentView" wantsLayer="YES" misplaced="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="503" height="293"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="503" height="316"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zti-FB-3eZ">
-                        <rect key="frame" x="20" y="20" width="463" height="235"/>
+                        <rect key="frame" x="20" y="20" width="463" height="276"/>
                         <subviews>
                             <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPk-ij-PHk">
-                                <rect key="frame" x="0.0" y="205" width="296" height="30"/>
+                                <rect key="frame" x="0.0" y="246" width="296" height="30"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4F-cX-9sB">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -57,7 +57,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-PW-Rux">
-                                <rect key="frame" x="0.0" y="164" width="184" height="30"/>
+                                <rect key="frame" x="0.0" y="205" width="184" height="30"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2TE-Gn-iao">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -88,7 +88,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfF-VT-awM">
-                                <rect key="frame" x="0.0" y="123" width="210" height="30"/>
+                                <rect key="frame" x="0.0" y="164" width="210" height="30"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IrI-xt-xXw">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -119,7 +119,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j41-f0-L85">
-                                <rect key="frame" x="0.0" y="82" width="344" height="30"/>
+                                <rect key="frame" x="0.0" y="123" width="344" height="30"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HG8-D0-NOj">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -150,7 +150,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ouf-vx-CN2">
-                                <rect key="frame" x="0.0" y="41" width="344" height="30"/>
+                                <rect key="frame" x="0.0" y="82" width="344" height="30"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aLI-UW-6eI">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -181,7 +181,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-cT-RM4">
-                                <rect key="frame" x="0.0" y="0.0" width="210" height="30"/>
+                                <rect key="frame" x="0.0" y="41" width="210" height="30"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRw-YK-2Vr">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -211,6 +211,37 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <stackView distribution="fillProportionally" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wq0-dw-Td4">
+                                <rect key="frame" x="0.0" y="0.0" width="243" height="30"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KNd-Tp-gRc">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Nyz-ET-Dke"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="HeadSetIcon" id="aYL-Zu-ReH"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TqS-bC-w2g">
+                                        <rect key="frame" x="38" y="14" width="207" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Aiprods by Monkik (FlatIcon.com)" id="BNx-Oq-SoL">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vDo-oH-tTj"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <visibilityPriorities>
                             <integer value="1000"/>
@@ -219,8 +250,10 @@
                             <integer value="1000"/>
                             <integer value="1000"/>
                             <integer value="1000"/>
+                            <integer value="1000"/>
                         </visibilityPriorities>
                         <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
                             <real value="3.4028234663852886e+38"/>
                             <real value="3.4028234663852886e+38"/>
                             <real value="3.4028234663852886e+38"/>
@@ -241,8 +274,9 @@
         </window>
     </objects>
     <resources>
-        <image name="AirpodsCase" width="171.5" height="171.5"/>
+        <image name="AirpodsCase" width="171" height="171"/>
         <image name="AirpodsWidget" width="171.5" height="171.5"/>
+        <image name="HeadSetIcon" width="171" height="171"/>
         <image name="LeftAirpodEar" width="120" height="256"/>
         <image name="RightAirpodEar" width="117.5" height="256"/>
         <image name="StatusAppDisconnected" width="256" height="256"/>

@@ -71,7 +71,7 @@
             </items>
             <point key="canvasLocation" x="214" y="264"/>
         </menu>
-        <customView id="HhN-DY-IST" userLabel="BatteryStatusView" customClass="BatteryView" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
+        <customView id="HhN-DY-IST" userLabel="BatteryStatusView" customClass="BatteryAirpodsView" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="326" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -545,9 +545,208 @@
             </connections>
             <point key="canvasLocation" x="-95" y="296.5"/>
         </customView>
+        <customView identifier="BatteryHeadsetView" id="mIV-o1-Um7" userLabel="BatteryHeadsetView" customClass="BatteryHeadsetView" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="22" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJ9-8T-1zQ">
+                    <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
+                    <subviews>
+                        <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYp-4k-O9s">
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
+                            <subviews>
+                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZP-az-b1K">
+                                    <rect key="frame" x="0.0" y="0.0" width="326" height="40"/>
+                                    <subviews>
+                                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jae-QQ-dgo">
+                                            <rect key="frame" x="0.0" y="0.0" width="298" height="39"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lft-ik-JK1">
+                                                    <rect key="frame" x="-2" y="12" width="61" height="16"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Headset" id="RnA-rt-CT4">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdo-iA-k0O">
+                                                    <rect key="frame" x="65" y="0.0" width="30" height="39"/>
+                                                    <subviews>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Lsn-9j-b2z">
+                                                            <rect key="frame" x="0.0" y="36" width="20" height="3"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="i4F-FT-Rnw"/>
+                                                                <constraint firstAttribute="height" constant="3" id="zg1-p2-fez"/>
+                                                            </constraints>
+                                                        </customView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-Ii-bcS">
+                                                            <rect key="frame" x="0.0" y="3" width="20" height="33"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="SVR-0N-kae"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="HeadSetIcon" id="KWh-Ck-2sk"/>
+                                                        </imageView>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="HEe-Jg-E8g">
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="3"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="ocb-30-rwZ"/>
+                                                                <constraint firstAttribute="height" constant="3" id="pcm-bq-ZZi"/>
+                                                            </constraints>
+                                                        </customView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="7Lq-4T-dk5"/>
+                                                    </constraints>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                                <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="-10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3v-B7-Mg4">
+                                                    <rect key="frame" x="103" y="0.0" width="140" height="39"/>
+                                                    <subviews>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Ay-9S-iAL" customClass="JCGGProgressBar" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="39"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="140" id="HCt-jj-P65"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                                    <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                                                    <color key="value" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="barThickness">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="progressValue">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </customView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="df5-bF-Mi9"/>
+                                                    </constraints>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HFN-IY-Bit">
+                                                    <rect key="frame" x="249" y="12" width="51" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="47" id="vBZ-bF-RZM"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" alignment="center" title="100 %" id="CkT-7f-gJV">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="W3v-B7-Mg4" firstAttribute="top" secondItem="jae-QQ-dgo" secondAttribute="top" id="ChG-EB-J6X"/>
+                                                <constraint firstAttribute="bottom" secondItem="W3v-B7-Mg4" secondAttribute="bottom" id="YiC-N0-CRe"/>
+                                            </constraints>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="7MP-8E-JyW">
+                                            <rect key="frame" x="306" y="0.0" width="20" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="ArC-Ib-MLz"/>
+                                            </constraints>
+                                        </customView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jae-QQ-dgo" firstAttribute="top" secondItem="dZP-az-b1K" secondAttribute="top" constant="1" id="hah-Gq-pQP"/>
+                                    </constraints>
+                                    <visibilityPriorities>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                    </visibilityPriorities>
+                                    <customSpacing>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                    </customSpacing>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="dZP-az-b1K" secondAttribute="trailing" id="Efy-ty-GC0"/>
+                            </constraints>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="gYp-4k-O9s" secondAttribute="bottom" id="9Dc-Np-LZs"/>
+                        <constraint firstItem="gYp-4k-O9s" firstAttribute="top" secondItem="CJ9-8T-1zQ" secondAttribute="top" id="Jy6-x4-DzD"/>
+                        <constraint firstAttribute="trailing" secondItem="gYp-4k-O9s" secondAttribute="trailing" id="Pfo-lh-WVu"/>
+                        <constraint firstAttribute="height" constant="40" id="T2B-F1-7US"/>
+                        <constraint firstAttribute="bottom" secondItem="gYp-4k-O9s" secondAttribute="bottom" id="ZMZ-Gv-vGl"/>
+                        <constraint firstItem="gYp-4k-O9s" firstAttribute="top" secondItem="CJ9-8T-1zQ" secondAttribute="top" id="aD6-g3-biA"/>
+                        <constraint firstItem="gYp-4k-O9s" firstAttribute="leading" secondItem="CJ9-8T-1zQ" secondAttribute="leading" id="c0g-VU-4X7"/>
+                        <constraint firstAttribute="bottom" secondItem="gYp-4k-O9s" secondAttribute="bottom" id="egQ-x4-wHO"/>
+                        <constraint firstItem="gYp-4k-O9s" firstAttribute="top" secondItem="CJ9-8T-1zQ" secondAttribute="top" id="gCv-ba-Sf7"/>
+                        <constraint firstItem="gYp-4k-O9s" firstAttribute="top" secondItem="CJ9-8T-1zQ" secondAttribute="top" id="hzp-OC-22W"/>
+                        <constraint firstAttribute="bottom" secondItem="gYp-4k-O9s" secondAttribute="bottom" id="mJs-sL-gQX"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="CJ9-8T-1zQ" firstAttribute="top" secondItem="mIV-o1-Um7" secondAttribute="top" id="3HR-cb-Q5F"/>
+                <constraint firstAttribute="bottom" secondItem="CJ9-8T-1zQ" secondAttribute="bottom" id="563-8g-uhc"/>
+                <constraint firstItem="CJ9-8T-1zQ" firstAttribute="top" secondItem="mIV-o1-Um7" secondAttribute="top" id="Iw5-12-fhb"/>
+                <constraint firstItem="CJ9-8T-1zQ" firstAttribute="leading" secondItem="mIV-o1-Um7" secondAttribute="leading" id="LN3-fU-csI"/>
+                <constraint firstAttribute="bottom" secondItem="CJ9-8T-1zQ" secondAttribute="bottom" id="XLm-tT-Aqz"/>
+                <constraint firstItem="CJ9-8T-1zQ" firstAttribute="top" secondItem="mIV-o1-Um7" secondAttribute="top" id="g9q-LQ-1b9"/>
+                <constraint firstItem="CJ9-8T-1zQ" firstAttribute="top" secondItem="mIV-o1-Um7" secondAttribute="top" id="kYv-i3-ymI"/>
+                <constraint firstAttribute="bottom" secondItem="CJ9-8T-1zQ" secondAttribute="bottom" id="mID-OV-Hyy"/>
+                <constraint firstAttribute="bottom" secondItem="CJ9-8T-1zQ" secondAttribute="bottom" id="n00-g7-f0e"/>
+                <constraint firstAttribute="trailing" secondItem="CJ9-8T-1zQ" secondAttribute="trailing" id="p1O-cm-nvW"/>
+            </constraints>
+            <connections>
+                <outlet property="batteryLevelLabel" destination="HFN-IY-Bit" id="XFn-zu-BVe"/>
+                <outlet property="batteryLevelProgressBar" destination="2Ay-9S-iAL" id="jWQ-VU-BAZ"/>
+                <outlet property="headsetImageView" destination="BFt-Ii-bcS" id="TKj-YI-j9T"/>
+                <outlet property="menu" destination="qZp-Ad-uDX" id="iaI-ec-Pfv"/>
+            </connections>
+            <point key="canvasLocation" x="-107" y="484"/>
+        </customView>
     </objects>
     <resources>
-        <image name="AirpodsCase" width="171.5" height="171.5"/>
+        <image name="AirpodsCase" width="171" height="171"/>
+        <image name="HeadSetIcon" width="171" height="171"/>
         <image name="LeftAirpodEar" width="120" height="256"/>
         <image name="RightAirpodEar" width="117.5" height="256"/>
     </resources>

@@ -25,6 +25,12 @@ This is why I build this tiny mac status bar app.
 
 ## Latest Changelog  ##
 
+**2.1.0**
+
+- Add Airpods Max compatibility.
+- Stability Improvements.
+- Handle multiple devices connected at the same time (Taking the very top first one connected thought to display battery).
+
 **2.0.0**
 
  - Add M1 Compatilibity Support.
@@ -73,8 +79,9 @@ If you want to contribute to improve it, it will be with pleasure !
 - Airpods widget icon made from FreePik https://www.freepik.com
 - Airpod Case by Joel Wisneski from the Noun Project
 - AirPods case by Mathijs Boogaert from the Noun Project
-- https://icon-icons.com/fr/icone/airpods/110461#32
-- https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32
+- Connected Airpods Icon made by Vincent Le Moign. Link -> https://icon-icons.com/fr/icone/airpods/110461#32
+- Not connected Airpods Icon made by Vincent Le Moign. Link ->  https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32
+- HeadSet icon made by <div><a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>. Link -> https://www.flaticon.com/free-icon/music_2503535?term=headset&related_id=2503535
 
 ### LICENCE
 

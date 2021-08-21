@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class BatteryView: NSView {
+class BatteryAirpodsView: NSView {
     
     @IBOutlet weak var rightEarBatteryLevelLabel: NSTextField!
     @IBOutlet weak var leftEarBatteryLevelLabel: NSTextField!
@@ -31,12 +31,12 @@ class BatteryView: NSView {
             return
         }
         
-        caseBatteryLevelLabel.stringValue = airpodsBatteryViewModel.caseBatteryValue
-        batteryLevelCaseProgressBar.progressValue = airpodsBatteryViewModel.caseBatteryProgressValue
-        leftEarBatteryLevelLabel.stringValue = airpodsBatteryViewModel.leftBatteryValue
-        batteryLevelLeftProgressBar.progressValue = airpodsBatteryViewModel.leftBatteryProgressValue
-        rightEarBatteryLevelLabel.stringValue = airpodsBatteryViewModel.rightBatteryValue
-        batteryLevelRightProgressBar.progressValue = airpodsBatteryViewModel.rightBatteryProgressValue
+        caseBatteryLevelLabel.stringValue = airpodsBatteryViewModel.airpodsInfo?.caseDisplayBatteryValue ?? "--"
+        batteryLevelCaseProgressBar.progressValue = airpodsBatteryViewModel.airpodsInfo?.caseBatteryValue ?? 0.0
+        leftEarBatteryLevelLabel.stringValue = airpodsBatteryViewModel.airpodsInfo?.leftDisplayBatteryValue ?? "--"
+        batteryLevelLeftProgressBar.progressValue = airpodsBatteryViewModel.airpodsInfo?.leftBatteryValue ?? 0.0
+        rightEarBatteryLevelLabel.stringValue = airpodsBatteryViewModel.airpodsInfo?.rightDisplayBatteryValue ?? "--"
+        batteryLevelRightProgressBar.progressValue = airpodsBatteryViewModel.airpodsInfo?.rightBatteryValue ?? 0.0
         
         switch airpodsBatteryViewModel.connectionStatus {
         case .connected:
@@ -49,5 +49,4 @@ class BatteryView: NSView {
             caseImageView.image = NSImage(imageLiteralResourceName: "AirpodsCaseDisconnected")
         }
     }
-    
 }

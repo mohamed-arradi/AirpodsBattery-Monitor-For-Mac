@@ -36,7 +36,7 @@ do
                   [[ -n "${!info}" ]] && OUTPUT="${OUTPUT} $(awk '/BatteryPercent/{print substr($0,15)": "}' <<<"${info}")${!info}%"
                 done
                 newVar=$(echo "${OUTPUT}" | perl -pe 's/([:%])|([A-Z])\w+//g')
-                if [ -z "$var" ]
+                if [ -z "$newVar" ]
                   then
                   echo ""
                 else

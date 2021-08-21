@@ -20,6 +20,7 @@ class BatteryAirpodsView: NSView {
     @IBOutlet weak var caseImageView: NSImageView!
     @IBOutlet weak var leftEarImageView: NSImageView!
     @IBOutlet weak var rightEarImageView: NSImageView!
+    @IBOutlet weak var headsetBatteryView: BatteryHeadsetView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,17 @@ class BatteryAirpodsView: NSView {
         guard let airpodsBatteryViewModel = viewModel else {
             return
         }
+        
+        if airpodsBatteryViewModel.airpodsInfo != nil {
+            updateData(airpodsBatteryViewModel: airpodsBatteryViewModel)
+            headsetBatteryView.isHidden = true
+        } else if airpodsBatteryViewModel.headsetInfo != nil {
+            headsetBatteryView.isHidden = false
+            headsetBatteryView.updateViewData(viewModel)
+        }
+    }
+    
+    fileprivate func updateData(airpodsBatteryViewModel: AirPodsBatteryViewModel) {
         
         caseBatteryLevelLabel.stringValue = airpodsBatteryViewModel.airpodsInfo?.caseDisplayBatteryValue ?? "--"
         batteryLevelCaseProgressBar.progressValue = airpodsBatteryViewModel.airpodsInfo?.caseBatteryValue ?? 0.0

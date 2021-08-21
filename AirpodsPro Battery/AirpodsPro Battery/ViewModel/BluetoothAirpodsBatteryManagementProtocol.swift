@@ -13,6 +13,12 @@ enum AirpodsConnectionStatus {
     case disconnected
 }
 
+enum DeviceType {
+    case airpods
+    case headset
+    case unknown
+}
+
 struct AirpodsInfo {
     
     var leftDisplayBatteryValue: String {
@@ -56,7 +62,7 @@ protocol BluetoothAirpodsBatteryManagementProtocol {
     var deviceName: String { get }
     var deviceAddress: String { get }
     
-    func updateBatteryInformation(completion: @escaping (_ success: Bool, _ connectionStatus: AirpodsConnectionStatus) -> Void)
+    func updateBatteryInformation(completion: @escaping BatteryInfoCompletion)
     func processAirpodsBatteryInfo(groups: [String])
     func fetchAirpodsName(completion: @escaping (_ deviceName: String,_ deviceAddress: String) -> Void)
     func toogleCurrentBluetoothDevice()

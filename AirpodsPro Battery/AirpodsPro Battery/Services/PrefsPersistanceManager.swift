@@ -32,6 +32,7 @@ enum PreferenceKey {
         case left
         case right
         case `case`
+        case headset
     }
 }
 

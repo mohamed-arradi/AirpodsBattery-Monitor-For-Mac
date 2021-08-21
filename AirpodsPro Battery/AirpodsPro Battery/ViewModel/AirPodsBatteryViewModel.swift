@@ -14,6 +14,8 @@ enum WidgetIdentifiers: String {
     case batteryMonitor = "com.mac.AirpodsPro-Battery.batteryWidget"
 }
 
+typealias BatteryInfoCompletion = (_ success: Bool, _ status: AirpodsConnectionStatus, _ deviceType: DeviceType) -> Void
+
 class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var airpodsInfo: AirpodsInfo?
@@ -48,6 +50,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
     }
     
+    // MARK: - Init
+    
     init(scriptHandler: ScriptsHandler = ScriptsHandler.default,
          preferenceManager: PrefsPersistanceManager = PrefsPersistanceManager(),
          transparencyModeViewModel: TransparencyModeViewModel = TransparencyModeViewModel()) {
@@ -58,15 +62,19 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         self.transparencyModeViewModel.startListening()
     }
     
-    func updateBatteryInformation(completion: @escaping (_ success: Bool, _ status: AirpodsConnectionStatus) -> Void) {
+    // MARK: - Update Functions
+    
+    func updateBatteryInformation(completion: @escaping BatteryInfoCompletion) {
         
         guard let scriptHandler = scriptHandler else {
-            completion(false, .disconnected)
+            completion(false, .disconnected, .unknown)
             return
         }
         
         let script = scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods.sh")
         let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
+        
+        var deviceType: DeviceType = .unknown
         
         scriptHandler.execute(commandName: "sh", arguments: ["\(script)","\(macMappingFile)"]) { [weak self] (result) in
             
@@ -82,30 +90,43 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 
                 guard datas.count > 1,
                       let dataDevice = datas.last else {
-                      return
+                    return
                 }
                 
                 let groups = dataDevice.groups(for: pattern).flatMap({$0})
                 if groups.count > 1 {
-                DispatchQueue.main.async {
-                    self?.processAirpodsBatteryInfo(groups:groups)
-                    self?.processDeviceDetails()
-                }
-                } else {
                     DispatchQueue.main.async {
-                   self?.processHeadSetBatteryInfo(info: groups.first ?? "")
-                   self?.processDeviceDetails()
-                  }
+                        deviceType = .airpods
+                        self?.processAirpodsBatteryInfo(groups:groups)
+                        self?.processDeviceDetails()
+                    }
+                } else if groups.count == 1 {
+                    deviceType = .headset
+                    DispatchQueue.main.async {
+                        self?.processHeadSetBatteryInfo(info: groups.first ?? "")
+                        self?.processDeviceDetails()
+                    }
+                } else {
+                    self?.resetAllDevicesBatteryState()
                 }
                 
-                completion(true, self?.connectionStatus ?? .disconnected)
+                completion(true, self?.connectionStatus ?? .disconnected, deviceType)
             case .failure( _):
                 if #available(OSX 11, *) {
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
                 }
-                completion(false, self?.connectionStatus ?? .disconnected)
+                completion(false, self?.connectionStatus ?? .disconnected, deviceType)
             }
         }
+    }
+    
+    fileprivate func resetAllDevicesBatteryState() {
+        connectionStatus = .disconnected
+        airpodsInfo = AirpodsInfo(-1, -1, -1)
+        headsetInfo = HeadsetInfo(batteryValue: -1)
+        displayStatusMessage = ""
+        storeAirpodsBatteryLevelInCache(left: nil, right: nil, caseBatt: nil)
+        storeHeadSetBatteryLevelInCache(batteryLevel: -1)
     }
     
     fileprivate func updateStoredDeviceInfos(name: String, address: String) {
@@ -126,7 +147,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             displayStatusMessage = ""
             return
         }
-        
+        airpodsInfo = nil
         headsetInfo = HeadsetInfo(batteryValue: CGFloat(battValue))
         displayStatusMessage = "\("headset_battery".localized): \(battValue) %"
         
@@ -166,32 +187,40 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             }
             
             storeAirpodsBatteryLevelInCache(left: left, right: right, caseBatt: caseBattery)
-            
         } else {
             self.connectionStatus = .disconnected
-            self.airpodsInfo = AirpodsInfo(-1, -1, -1)
             self.displayStatusMessage = ""
             storeAirpodsBatteryLevelInCache(left: nil, right: nil, caseBatt: nil)
         }
     }
     
-    func storeAirpodsBatteryLevelInCache(left: CGFloat? = nil, right: CGFloat? = nil, caseBatt: CGFloat? = nil) {
+    fileprivate func storeAirpodsBatteryLevelInCache(left: CGFloat? = nil, right: CGFloat? = nil, caseBatt: CGFloat? = nil) {
         
-        self.airpodsInfo = AirpodsInfo(left ?? -1, right ?? -1, caseBatt ?? -1)
-        
+        airpodsInfo = AirpodsInfo(left ?? -1, right ?? -1, caseBatt ?? -1)
+        headsetInfo = nil
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.left.rawValue, value: left ?? -1)
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.right.rawValue, value: right ?? -1)
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.case.rawValue, value: caseBatt ?? -1)
         
         let lowerBatteryValue = min(left ?? -1, right ?? -1)
-
-       // prepareNotificationIfNeeded(batteryValue: Int(lowerBatteryValue))
+        
+        // prepareNotificationIfNeeded(batteryValue: Int(lowerBatteryValue))
         
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
         }
     }
     
+    fileprivate func storeHeadSetBatteryLevelInCache(batteryLevel: CGFloat? = nil) {
+        
+        preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.headset.rawValue, value: batteryLevel ?? -1)
+        
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+        }
+    }
+    
+    // MARK: - Notifications
     fileprivate func prepareNotificationIfNeeded(batteryValue: Int) {
         
         if batteryValue != -1 {
@@ -223,11 +252,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
     }
     
-    
     fileprivate func processDeviceDetails() {
         self.fetchAirpodsName { (deviceName, deviceAddress) in
             guard !deviceName.isEmpty, !deviceAddress.isEmpty else { return }
-           
+            
             DeviceChecker.isAppleDevice(deviceAddress: deviceAddress, scriptHandler: self.scriptHandler) { [weak self] (success) in
                 guard !deviceName.isEmpty,
                       !deviceAddress.isEmpty,
@@ -247,6 +275,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         listeningNoiseMode = transparencyModeViewModel.listeningModeDisplayable
     }
     
+    // MARK: - BLE
     func fetchAirpodsName(completion: @escaping (_ deviceName: String, _ deviceAddress: String) -> Void) {
         
         guard let devices = IOBluetoothDevice.pairedDevices() as? [IOBluetoothDevice] else {
@@ -296,7 +325,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
 extension AirPodsBatteryViewModel: DeviceChangeDelegate {
     func updateDeviceMode(mode: NCListeningMode) {
         preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.listeningMode.rawValue, value: mode.rawValue)
-        updateBatteryInformation { _, _ in }
+        updateBatteryInformation { _, _,_  in }
     }
     
     func deviceChanged(device: NCDevice) {

@@ -11,7 +11,7 @@ import Intents
 import WidgetKit
 
 
-struct AirpodsBatteryEntry: TimelineEntry {
+struct BatteryEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     let batteryInformation: BatteryInformation
@@ -19,21 +19,21 @@ struct AirpodsBatteryEntry: TimelineEntry {
 
 struct AirpodsBatteryProvider: IntentTimelineProvider {
     
-    func placeholder(in context: Context) -> AirpodsBatteryEntry {
-        AirpodsBatteryEntry(date: Date(), configuration: ConfigurationIntent(), batteryInformation: BatteryInformation())
+    func placeholder(in context: Context) -> BatteryEntry {
+        BatteryEntry(date: Date(), configuration: ConfigurationIntent(), batteryInformation: BatteryInformation())
     }
     
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (AirpodsBatteryEntry) -> ()) {
-        let entry = AirpodsBatteryEntry(date: Date(), configuration: configuration, batteryInformation: BatteryInformation())
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (BatteryEntry) -> ()) {
+        let entry = BatteryEntry(date: Date(), configuration: configuration, batteryInformation: BatteryInformation())
         completion(entry)
     }
     
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<AirpodsBatteryEntry>) -> ()) {
-        var entries: [AirpodsBatteryEntry] = []
+    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<BatteryEntry>) -> ()) {
+        var entries: [BatteryEntry] = []
         let currentDate = Date()
-        for secondOffset in stride(from: 10, to: 20, by: 5) {
+        for secondOffset in stride(from: 10, to: 100, by: 10) {
             if let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset, to: currentDate) {
-                let entry = AirpodsBatteryEntry(date: entryDate, configuration: configuration, batteryInformation: BatteryInformation())
+                let entry = BatteryEntry(date: entryDate, configuration: configuration, batteryInformation: BatteryInformation())
                 entries.append(entry)
             }
         }

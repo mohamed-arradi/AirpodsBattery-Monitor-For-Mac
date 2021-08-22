@@ -14,6 +14,8 @@ struct BatteryAirpodsWidgetEntryView : View {
     var entry: AirpodsBatteryProvider.Entry
     
     var body: some View {
+        
+        if let deviceType = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.DeviceMetaData.deviceType.rawValue) as? Int, deviceType == DeviceType.airpods.rawValue {
         Color("WidgetBackground")
             .overlay(
                 VStack(alignment: .center, spacing: nil, content: {
@@ -21,7 +23,7 @@ struct BatteryAirpodsWidgetEntryView : View {
                         Image("Airpods")
                             .resizable()
                             .frame(width: 80.0, height: 80.0)
-                        Text(entry.batteryInformation.displayableBatteryText)
+                        Text(entry.batteryInformation.displayableAirpodsBatteryText)
                             .bold()
                             .foregroundColor(.white)
                     }
@@ -35,13 +37,50 @@ struct BatteryAirpodsWidgetEntryView : View {
                     }
                 })
             )
+        } else {
+            Color("WidgetBackground")
+                .overlay(
+                        VStack(alignment: .center, spacing: 8, content: {
+                            Image("HeadSet")
+                                .resizable()
+                                .frame(width: 80.0, height: 80.0)
+                            Text(entry.batteryInformation.displayableHeadsetBattery)
+                                .font(Font.system(size: 18.0, weight: .bold, design: .default))
+                                .foregroundColor(.white)
+                            Text(entry.batteryInformation.deviceName)
+                                .font(Font.system(size: 10.0, weight: .light, design: .default))
+                                .foregroundColor(.white)
+                        })
+                )
+        }
     }
 }
 
 
 struct BatteryInformation {
     
-    var displayableBatteryText: String {
+    var displayableHeadsetBattery: String {
+        
+        let batteryValue = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.headset.rawValue) as? CGFloat
+    
+        guard let batt = batteryValue,
+              batt > 0.0 else {
+            return "--"
+        }
+        
+        return "\(Int(batt)) %"
+    }
+    
+    var deviceName: String {
+        
+        guard let deviceName = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.DeviceMetaData.shortName.rawValue) as? String else {
+            return ""
+        }
+        
+        return deviceName
+    }
+    
+    var displayableAirpodsBatteryText: String {
         
         let leftP =  PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.left.rawValue) as? CGFloat
         let rightP = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.right.rawValue) as? CGFloat

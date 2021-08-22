@@ -157,7 +157,8 @@ class StatusMenuController: NSObject {
             airpodsBatteryViewModel.updateAirpodsMode()
             statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
             if #available(OSX 11, *) {
-                WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+                //WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }
     }

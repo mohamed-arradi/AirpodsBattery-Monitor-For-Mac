@@ -130,7 +130,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 completion(true, .connected, deviceType)
             case .failure( _):
                 if #available(OSX 11, *) {
-                    WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
                 completion(false, self?.connectionStatus ?? .disconnected, .unknown)
             }
@@ -227,6 +227,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+            WidgetCenter.shared.reloadAllTimelines()
         }
         //let lowerBatteryValue = min(left ?? -1, right ?? -1)
         
@@ -239,6 +240,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         
         if #available(OSX 11, *) {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
     

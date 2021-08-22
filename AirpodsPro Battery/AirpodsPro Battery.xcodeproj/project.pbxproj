@@ -16,8 +16,6 @@
 		D9A98BAC26D253EF0035A142 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BAB26D253EF0035A142 /* DeviceType.swift */; };
 		D9A98BAE26D254080035A142 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BAB26D253EF0035A142 /* DeviceType.swift */; };
 		D9A98BB126D255DC0035A142 /* AirpodsBatteryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BAF26D255B20035A142 /* AirpodsBatteryProvider.swift */; };
-		D9A98BB326D256920035A142 /* HeadsetBatteryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BB226D256920035A142 /* HeadsetBatteryProvider.swift */; };
-		D9A98BB726D257B70035A142 /* BatteryHeadsetWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BB626D257B70035A142 /* BatteryHeadsetWidgetEntryView.swift */; };
 		D9A98BB926D258140035A142 /* BatteryAirpodsWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BB826D258140035A142 /* BatteryAirpodsWidgetEntryView.swift */; };
 		D9A98BBB26D259860035A142 /* PreferencesKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BBA26D259860035A142 /* PreferencesKeys.swift */; };
 		D9A98BBC26D259970035A142 /* PreferencesKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A98BBA26D259860035A142 /* PreferencesKeys.swift */; };
@@ -112,8 +110,6 @@
 		D99B875726A9DCA60036C56F /* PreferenceSettingsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceSettingsWindow.xib; sourceTree = "<group>"; };
 		D9A98BAB26D253EF0035A142 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		D9A98BAF26D255B20035A142 /* AirpodsBatteryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirpodsBatteryProvider.swift; sourceTree = "<group>"; };
-		D9A98BB226D256920035A142 /* HeadsetBatteryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsetBatteryProvider.swift; sourceTree = "<group>"; };
-		D9A98BB626D257B70035A142 /* BatteryHeadsetWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHeadsetWidgetEntryView.swift; sourceTree = "<group>"; };
 		D9A98BB826D258140035A142 /* BatteryAirpodsWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryAirpodsWidgetEntryView.swift; sourceTree = "<group>"; };
 		D9A98BBA26D259860035A142 /* PreferencesKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesKeys.swift; sourceTree = "<group>"; };
 		D9D8846726D1624B0091AFEA /* BatteryHeadsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHeadsetView.swift; sourceTree = "<group>"; };
@@ -237,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				D9A98BAF26D255B20035A142 /* AirpodsBatteryProvider.swift */,
-				D9A98BB226D256920035A142 /* HeadsetBatteryProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -245,7 +240,6 @@
 		D9A98BB526D257A30035A142 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D9A98BB626D257B70035A142 /* BatteryHeadsetWidgetEntryView.swift */,
 				D9A98BB826D258140035A142 /* BatteryAirpodsWidgetEntryView.swift */,
 			);
 			path = View;
@@ -641,12 +635,10 @@
 				D9A98BB926D258140035A142 /* BatteryAirpodsWidgetEntryView.swift in Sources */,
 				D9F95B61268F070E0066565A /* NCBTListeningModeController.swift in Sources */,
 				D99B875026A8D1400036C56F /* PrefsPersistanceManager.swift in Sources */,
-				D9A98BB726D257B70035A142 /* BatteryHeadsetWidgetEntryView.swift in Sources */,
 				D9F95B69268F070E0066565A /* NCListeningMode.swift in Sources */,
 				D9A98BAE26D254080035A142 /* DeviceType.swift in Sources */,
 				D9A98BBC26D259970035A142 /* PreferencesKeys.swift in Sources */,
 				D9F95B67268F070E0066565A /* NCDevice.m in Sources */,
-				D9A98BB326D256920035A142 /* HeadsetBatteryProvider.swift in Sources */,
 				D9F95B65268F070E0066565A /* NCAVListeningModeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

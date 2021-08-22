@@ -13,48 +13,7 @@ enum AirpodsConnectionStatus {
     case disconnected
 }
 
-enum DeviceType {
-    case airpods
-    case headset
-    case unknown
-}
-
-struct AirpodsInfo {
-    
-    var leftDisplayBatteryValue: String {
-        return leftBatteryValue > 0.0 ? "\(Int(leftBatteryValue)) %" : "--"
-    }
-    
-    var rightDisplayBatteryValue: String {
-        return rightBatteryValue > 0.0 ? "\(Int(rightBatteryValue)) %" : "--"
-    }
-    
-    var caseDisplayBatteryValue: String {
-        return caseBatteryValue > 0.0 ? "\(Int(caseBatteryValue)) %" : "NC"
-    }
-    
-    let leftBatteryValue: CGFloat
-    let rightBatteryValue: CGFloat
-    let caseBatteryValue: CGFloat
-    
-    init(_ left: CGFloat,_ right: CGFloat,_ caseV: CGFloat) {
-        self.leftBatteryValue = left
-        self.rightBatteryValue = right
-        self.caseBatteryValue = caseV
-    }
-}
-
-struct HeadsetInfo {
-    
-    let batteryValue: CGFloat
-    
-    var displayBatteryValue: String {
-        return batteryValue > 0.0 ? "\(Int(batteryValue)) %" : "NC"
-    }
-}
-
 protocol BluetoothAirpodsBatteryManagementProtocol {
-    
     
     var airpodsInfo: AirpodsInfo? { get set }
     var headsetInfo: HeadsetInfo? { get set }

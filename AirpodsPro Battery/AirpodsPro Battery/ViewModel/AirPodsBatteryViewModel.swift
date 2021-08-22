@@ -31,13 +31,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var deviceName: String {
         get {
-            return preferenceManager.getValuePreferences(from: PreferenceKey.AirpodsMetaData.deviceName.rawValue) as? String ?? ""
+            return preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.deviceName.rawValue) as? String ?? ""
         }
     }
     
     var deviceAddress: String {
         get {
-            return preferenceManager.getValuePreferences(from: PreferenceKey.AirpodsMetaData.deviceAddress.rawValue) as? String ?? ""
+            return preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.deviceAddress.rawValue) as? String ?? ""
         }
     }
     
@@ -109,13 +109,14 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 } else {
                     self?.resetAllDevicesBatteryState()
                 }
-                
+                self?.preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.deviceType.rawValue, value: deviceType.rawValue)
                 completion(true, self?.connectionStatus ?? .disconnected, deviceType)
             case .failure( _):
                 if #available(OSX 11, *) {
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
                 }
                 completion(false, self?.connectionStatus ?? .disconnected, deviceType)
+                self?.preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.deviceType.rawValue, value: deviceType.rawValue)
             }
         }
     }
@@ -135,8 +136,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         if !address.isEmpty && address.count > 4 {
             nameToSave = "\n \(name) \r\n -\(address)-"
         }
-        preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.deviceName.rawValue, value: nameToSave)
-        preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.deviceAddress.rawValue, value: address)
+        preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.deviceName.rawValue, value: nameToSave)
+        preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.deviceAddress.rawValue, value: address)
         NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
     }
     
@@ -148,10 +149,11 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             return
         }
         airpodsInfo = nil
+        connectionStatus = .connected
         headsetInfo = HeadsetInfo(batteryValue: CGFloat(battValue))
         displayStatusMessage = "\("headset_battery".localized): \(battValue) %"
         
-        if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.AirpodsMetaData.listeningMode.rawValue) as? String {
+        if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.listeningMode.rawValue) as? String {
             self.listeningNoiseMode = listeningMode
         }
     }
@@ -182,7 +184,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 right = CGFloat(rightValue)
             }
             
-            if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.AirpodsMetaData.listeningMode.rawValue) as? String {
+            if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.listeningMode.rawValue) as? String {
                 self.listeningNoiseMode = listeningMode
             }
             
@@ -202,7 +204,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.right.rawValue, value: right ?? -1)
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.case.rawValue, value: caseBatt ?? -1)
         
-        let lowerBatteryValue = min(left ?? -1, right ?? -1)
+        //let lowerBatteryValue = min(left ?? -1, right ?? -1)
         
         // prepareNotificationIfNeeded(batteryValue: Int(lowerBatteryValue))
         
@@ -224,7 +226,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     fileprivate func prepareNotificationIfNeeded(batteryValue: Int) {
         
         if batteryValue != -1 {
-            preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.latestBatteryLevel.rawValue,
+            preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.latestBatteryLevel.rawValue,
                                               value: batteryValue)
             prepareNotificationIfNeeded(batteryValue: Int(batteryValue))
         }
@@ -264,7 +266,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                     return
                 }
                 let transparencyType: String =  self?.transparencyModeViewModel.listeningModeDisplayable ?? ""
-                self?.preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.listeningMode.rawValue,
+                self?.preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.listeningMode.rawValue,
                                                         value: transparencyType)
                 self?.updateStoredDeviceInfos(name: deviceName, address: deviceAddress)
             }
@@ -324,7 +326,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
 
 extension AirPodsBatteryViewModel: DeviceChangeDelegate {
     func updateDeviceMode(mode: NCListeningMode) {
-        preferenceManager.savePreferences(key: PreferenceKey.AirpodsMetaData.listeningMode.rawValue, value: mode.rawValue)
+        preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.listeningMode.rawValue, value: mode.rawValue)
         updateBatteryInformation { _, _,_  in }
     }
     

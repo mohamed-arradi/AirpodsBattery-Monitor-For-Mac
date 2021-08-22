@@ -31,7 +31,6 @@ class BatteryHeadsetView: NSView {
         switch airpodsBatteryViewModel.connectionStatus {
         case .connected:
             headsetImageView.image = NSImage(imageLiteralResourceName: "HeadSetIcon")
-
         default:
             headsetImageView.image = NSImage(imageLiteralResourceName: "HeadSetIcon")
         }

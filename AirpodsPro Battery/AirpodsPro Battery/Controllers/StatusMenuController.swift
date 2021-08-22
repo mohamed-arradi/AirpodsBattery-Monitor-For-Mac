@@ -23,7 +23,7 @@ fileprivate enum MenuItemTypePosition: Int {
 class StatusMenuController: NSObject {
     
     @IBOutlet weak var statusMenu: NSMenu!
-    @IBOutlet weak var airpodsBatteryStatusView: BatteryAirpodsView!
+    @IBOutlet weak var airpodsBatteryStatusView: BatteryView!
     
     var batteryStatusMenuItem: NSMenuItem!
     var airpodsBatteryViewModel: AirPodsBatteryViewModel!
@@ -110,8 +110,6 @@ class StatusMenuController: NSObject {
         
         statusItem.button?.title = ""
         statusItem.menu = statusMenu
-        
-        
     }
     
     @objc fileprivate func detectChange() {

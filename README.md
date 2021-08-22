@@ -82,6 +82,7 @@ If you want to contribute to improve it, it will be with pleasure !
 - Connected Airpods Icon made by Vincent Le Moign. Link -> https://icon-icons.com/fr/icone/airpods/110461#32
 - Not connected Airpods Icon made by Vincent Le Moign. Link ->  https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32
 - HeadSet icon made by <div><a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>. Link -> https://www.flaticon.com/free-icon/music_2503535?term=headset&related_id=2503535
+- Airpods Case Made by <div><a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 ### LICENCE
 

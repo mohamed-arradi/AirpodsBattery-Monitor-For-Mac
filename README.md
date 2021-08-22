@@ -80,7 +80,11 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 
 ### CONTRIBUTING ###
 
-If you want to contribute to improve it, it will be with pleasure !
+- To contribute, nothing has been easier ! Fork it and make a PR !
+
+### Thanks ###
+
+- Special thanks to patrickbdev (https://github.com/patrickbdev) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
 
 ### Image Credits - Attribution ###
 

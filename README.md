@@ -53,9 +53,9 @@ This is why I build this tiny mac status bar app.
 
 ### Why it is not on the App Store ?
 
-- Sandbox is not activated in order to beneficiate from the scripting tool permission.
+- Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
 
-This App cannot be allowed right now on the Mac App Store due to the necessary temporary exceptions required.
+Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this working.
 
 ### THEY TALK ABOUT IT
 

@@ -150,8 +150,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
         airpodsInfo = nil
         connectionStatus = .connected
-        headsetInfo = HeadsetInfo(batteryValue: CGFloat(battValue))
+        let batteryValue = CGFloat(battValue)
+        headsetInfo = HeadsetInfo(batteryValue: batteryValue)
         displayStatusMessage = "\("headset_battery".localized): \(battValue) %"
+        storeHeadSetBatteryLevelInCache(batteryLevel: batteryValue)
         
         if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.listeningMode.rawValue) as? String {
             self.listeningNoiseMode = listeningMode

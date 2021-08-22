@@ -187,10 +187,6 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="7Df-Dy-hhz" secondAttribute="bottom" id="HYh-uX-Jpa"/>
-                                                                <constraint firstItem="7Df-Dy-hhz" firstAttribute="top" secondItem="YOC-fe-fsa" secondAttribute="top" id="jSj-ct-Mxg"/>
-                                                            </constraints>
                                                             <visibilityPriorities>
                                                                 <integer value="1000"/>
                                                                 <integer value="1000"/>
@@ -321,7 +317,6 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="38V-dz-H3J" secondAttribute="bottom" id="76A-QF-E1D"/>
-                                                                <constraint firstItem="38V-dz-H3J" firstAttribute="top" secondItem="Eki-91-jaf" secondAttribute="top" id="VHz-nd-0NY"/>
                                                             </constraints>
                                                             <visibilityPriorities>
                                                                 <integer value="1000"/>

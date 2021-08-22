@@ -144,6 +144,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         displayStatusMessage = ""
         storeAirpodsBatteryLevelInCache(left: nil, right: nil, caseBatt: nil, deviceState: .disconnected)
         storeHeadSetBatteryLevelInCache(batteryLevel: -1)
+        if #available(OSX 11, *) {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
     
     fileprivate func updateStoredDeviceInfos(name: String, address: String) {
@@ -226,7 +229,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.case.rawValue, value: caseBatt ?? -1)
         
         if #available(OSX 11, *) {
-            WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
             WidgetCenter.shared.reloadAllTimelines()
         }
         //let lowerBatteryValue = min(left ?? -1, right ?? -1)
@@ -239,7 +241,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         preferenceManager.savePreferences(key: PreferenceKey.BatteryValue.headset.rawValue, value: batteryLevel ?? -1)
         
         if #available(OSX 11, *) {
-            WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
             WidgetCenter.shared.reloadAllTimelines()
         }
     }

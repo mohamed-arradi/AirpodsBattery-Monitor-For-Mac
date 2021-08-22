@@ -11,15 +11,8 @@ import Cocoa
 
 class BatteryView: NSView {
     
-    @IBOutlet weak var rightEarBatteryLevelLabel: NSTextField!
-    @IBOutlet weak var leftEarBatteryLevelLabel: NSTextField!
-    @IBOutlet weak var caseBatteryLevelLabel: NSTextField!
-    @IBOutlet weak var batteryLevelRightProgressBar: JCGGProgressBar!
-    @IBOutlet weak var batteryLevelLeftProgressBar: JCGGProgressBar!
-    @IBOutlet weak var batteryLevelCaseProgressBar: JCGGProgressBar!
-    @IBOutlet weak var caseImageView: NSImageView!
-    @IBOutlet weak var leftEarImageView: NSImageView!
-    @IBOutlet weak var rightEarImageView: NSImageView!
+    @IBOutlet weak var airpodsBatteryView: BatteryAirpodsView!
+    @IBOutlet weak var headsetBatteryView: BatteryHeadsetView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,23 +24,34 @@ class BatteryView: NSView {
             return
         }
         
-        caseBatteryLevelLabel.stringValue = airpodsBatteryViewModel.caseBatteryValue
-        batteryLevelCaseProgressBar.progressValue = airpodsBatteryViewModel.caseBatteryProgressValue
-        leftEarBatteryLevelLabel.stringValue = airpodsBatteryViewModel.leftBatteryValue
-        batteryLevelLeftProgressBar.progressValue = airpodsBatteryViewModel.leftBatteryProgressValue
-        rightEarBatteryLevelLabel.stringValue = airpodsBatteryViewModel.rightBatteryValue
-        batteryLevelRightProgressBar.progressValue = airpodsBatteryViewModel.rightBatteryProgressValue
-        
-        switch airpodsBatteryViewModel.connectionStatus {
-        case .connected:
-            leftEarImageView.image = NSImage(imageLiteralResourceName: "LeftAirpodEar")
-            rightEarImageView.image = NSImage(imageLiteralResourceName: "RightAirpodEar")
-            caseImageView.image = NSImage(imageLiteralResourceName: "AirpodsCase")
-        default:
-            leftEarImageView.image = NSImage(imageLiteralResourceName: "LeftAirpodsDisconnected")
-            rightEarImageView.image = NSImage(imageLiteralResourceName: "RightAirpodEarDisconnected")
-            caseImageView.image = NSImage(imageLiteralResourceName: "AirpodsCaseDisconnected")
+        if let airpodsInfo = airpodsBatteryViewModel.airpodsInfo,
+           airpodsInfo.deviceState == .connected {
+            airpodsBatteryView.updateData(airpodsBatteryViewModel: airpodsBatteryViewModel)
+            headsetBatteryView.isHidden = true
+            airpodsBatteryView.isHidden = false
+        } else if let headsetInfo = airpodsBatteryViewModel.headsetInfo,
+                  headsetInfo.deviceState == .connected {
+            headsetBatteryView.isHidden = false
+            airpodsBatteryView.isHidden = true
+            headsetBatteryView.updateViewData(viewModel)
+        } else {
+            
+            let latestDeviceType = airpodsBatteryViewModel.latestDeviceType
+            
+            headsetBatteryView.isHidden = true
+            airpodsBatteryView.isHidden = true
+            
+            switch latestDeviceType {
+            case .airpods:
+                airpodsBatteryView.isHidden = false
+                airpodsBatteryView.updateData(airpodsBatteryViewModel: airpodsBatteryViewModel)
+            case .headset:
+                headsetBatteryView.isHidden = false
+                headsetBatteryView.updateViewData(viewModel)
+            default:
+                airpodsBatteryView.isHidden = false
+                airpodsBatteryView.updateData(airpodsBatteryViewModel: airpodsBatteryViewModel)
+            }
         }
     }
-    
 }

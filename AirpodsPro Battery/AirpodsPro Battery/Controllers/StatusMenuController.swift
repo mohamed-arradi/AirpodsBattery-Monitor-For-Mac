@@ -23,9 +23,9 @@ fileprivate enum MenuItemTypePosition: Int {
 class StatusMenuController: NSObject {
     
     @IBOutlet weak var statusMenu: NSMenu!
-    @IBOutlet weak var batteryStatusView: BatteryView!
+    @IBOutlet weak var airpodsBatteryStatusView: BatteryView!
     
-    var statusMenuItem: NSMenuItem!
+    var batteryStatusMenuItem: NSMenuItem!
     var airpodsBatteryViewModel: AirPodsBatteryViewModel!
     
     private var timer: Timer?
@@ -52,11 +52,11 @@ class StatusMenuController: NSObject {
         airpodsBatteryViewModel = AirPodsBatteryViewModel()
         setupStatusMenu()
         setUpRecurrentChecks()
-               
+        
         NotificationCenter.default.addObserver(self, selector: #selector(detectChange), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameConnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(undoTimer), name: NSNotification.Name(kIOBluetoothDeviceNotificationNameDisconnected), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateDeviceName), name: NSNotification.Name("update_device_name"), object: nil)
-       
+        
         self.updateBatteryValue()
     }
     
@@ -69,10 +69,10 @@ class StatusMenuController: NSObject {
                                      repeats: true)
         
         airpodsModeTimer = Timer.scheduledTimer(timeInterval: 3,
-                                     target: self,
-                                     selector: #selector(updateAirpodsMode),
-                                     userInfo: nil,
-                                     repeats: true)
+                                                target: self,
+                                                selector: #selector(updateAirpodsMode),
+                                                userInfo: nil,
+                                                repeats: true)
     }
     
     fileprivate func updateStatusButtonImage(hide: Bool = false) {
@@ -94,23 +94,22 @@ class StatusMenuController: NSObject {
         guard statusMenu != nil else {
             return
         }
-        
         updateStatusButtonImage()
         refreshStatusMenu()
     }
     
-    fileprivate func refreshStatusMenu() {
+    @objc fileprivate func refreshStatusMenu() {
         statusMenu.item(at: MenuItemTypePosition.quitApp.rawValue)?.title = "quit_app".localized
         statusMenu.item(at: MenuItemTypePosition.refreshDevices.rawValue)?.title = "refresh_devices".localized
         statusMenu.item(at: MenuItemTypePosition.about.rawValue)?.title = "feedback".localized
         statusMenu.item(at: MenuItemTypePosition.credit.rawValue)?.title = "credits".localized
         statusMenu.item(at: MenuItemTypePosition.startupLaunch.rawValue)?.title = "settings".localized
         
+        let statusMenuItem = statusMenu.item(at: MenuItemTypePosition.batteryView.rawValue)
+        statusMenuItem?.view = airpodsBatteryStatusView
+        
         statusItem.button?.title = ""
         statusItem.menu = statusMenu
-        
-        statusMenuItem = statusMenu.item(at: MenuItemTypePosition.batteryView.rawValue)
-        statusMenuItem.view = batteryStatusView
     }
     
     @objc fileprivate func detectChange() {
@@ -126,7 +125,7 @@ class StatusMenuController: NSObject {
         
         let pairedDevicesConnected = self.airpodsBatteryViewModel.connectionStatus == .connected
         
-        let deviceName = self.airpodsBatteryViewModel.deviceName
+        let deviceName = self.airpodsBatteryViewModel.shortDeviceName
         
         if !deviceName.isEmpty {
             let format = pairedDevicesConnected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
@@ -139,10 +138,10 @@ class StatusMenuController: NSObject {
     
     @objc fileprivate func updateBatteryValue() {
         
-        airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus) in
+        airpodsBatteryViewModel.updateBatteryInformation { [weak self] (success, connectionStatus, deviceType) in
             
             DispatchQueue.main.async {
-                self?.batteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
+                self?.airpodsBatteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
                 self?.statusItem.button?.title = self?.airpodsBatteryViewModel.fullStatusMessage ?? ""
                 
                 let pairedDevicesConnected = self?.airpodsBatteryViewModel.connectionStatus == .connected
@@ -154,10 +153,13 @@ class StatusMenuController: NSObject {
     }
     
     @objc fileprivate func updateAirpodsMode() {
-        airpodsBatteryViewModel.updateAirpodsMode()
-        statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
-        if #available(OSX 11, *) {
-            WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+        if !statusItem.isVisible {
+            airpodsBatteryViewModel.updateAirpodsMode()
+            statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
+            if #available(OSX 11, *) {
+                //WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+                WidgetCenter.shared.reloadAllTimelines()
+            }
         }
     }
     

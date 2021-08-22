@@ -83,6 +83,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     func updateBatteryInformation(completion: @escaping BatteryInfoCompletion) {
         
         guard let scriptHandler = scriptHandler else {
+            connectionStatus = .disconnected
             completion(false, .disconnected, .unknown)
             return
         }

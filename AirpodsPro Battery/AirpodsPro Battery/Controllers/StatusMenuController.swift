@@ -125,7 +125,7 @@ class StatusMenuController: NSObject {
         
         let pairedDevicesConnected = self.airpodsBatteryViewModel.connectionStatus == .connected
         
-        let deviceName = self.airpodsBatteryViewModel.deviceName
+        let deviceName = self.airpodsBatteryViewModel.shortDeviceName
         
         if !deviceName.isEmpty {
             let format = pairedDevicesConnected ? "disconnect_from_airpods".localized : "connect_to_airpods".localized
@@ -153,10 +153,12 @@ class StatusMenuController: NSObject {
     }
     
     @objc fileprivate func updateAirpodsMode() {
-        airpodsBatteryViewModel.updateAirpodsMode()
-        statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
-        if #available(OSX 11, *) {
-            WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+        if !statusItem.isVisible {
+            airpodsBatteryViewModel.updateAirpodsMode()
+            statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
+            if #available(OSX 11, *) {
+                WidgetCenter.shared.reloadTimelines(ofKind: WidgetIdentifiers.batteryMonitor.rawValue)
+            }
         }
     }
     

@@ -73,23 +73,23 @@
             <point key="canvasLocation" x="554" y="261"/>
         </menu>
         <customView id="HhN-DY-IST" userLabel="BatteryView" customClass="BatteryView" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="366" height="95"/>
+            <rect key="frame" x="0.0" y="0.0" width="366" height="88"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="22" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-9M-Mgg">
-                    <rect key="frame" x="0.0" y="0.0" width="366" height="95"/>
+                <stackView distribution="fillProportionally" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-9M-Mgg">
+                    <rect key="frame" x="0.0" y="0.0" width="366" height="88"/>
                     <subviews>
-                        <stackView distribution="fillProportionally" orientation="vertical" alignment="centerX" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMs-ov-aOl">
-                            <rect key="frame" x="0.0" y="0.0" width="366" height="95"/>
+                        <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMs-ov-aOl">
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="88"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="k7B-sq-m8O" customClass="BatteryAirpodsView" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="20" width="366" height="75"/>
+                                    <rect key="frame" x="0.0" y="20" width="366" height="68"/>
                                     <subviews>
-                                        <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqV-z6-O2O">
-                                            <rect key="frame" x="0.0" y="0.0" width="366" height="75"/>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqV-z6-O2O">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="68"/>
                                             <subviews>
                                                 <stackView distribution="fillProportionally" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SdT-sq-aun">
-                                                    <rect key="frame" x="0.0" y="55" width="366" height="20"/>
+                                                    <rect key="frame" x="0.0" y="48" width="366" height="20"/>
                                                     <subviews>
                                                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOC-fe-fsa">
                                                             <rect key="frame" x="0.0" y="0.0" width="338" height="20"/>
@@ -180,7 +180,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="47" id="sFa-Ua-eLh"/>
                                                                     </constraints>
-                                                                    <textFieldCell key="cell" alignment="center" title="100 %" id="mOY-46-tTA">
+                                                                    <textFieldCell key="cell" alignment="center" title="-- %" id="mOY-46-tTA">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -220,7 +220,7 @@
                                                     </customSpacing>
                                                 </stackView>
                                                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5yY-GV-r4f">
-                                                    <rect key="frame" x="0.0" y="28" width="366" height="20"/>
+                                                    <rect key="frame" x="0.0" y="24" width="366" height="20"/>
                                                     <subviews>
                                                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eki-91-jaf">
                                                             <rect key="frame" x="0.0" y="0.0" width="338" height="20"/>
@@ -308,7 +308,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="47" id="Rex-WF-bZr"/>
                                                                     </constraints>
-                                                                    <textFieldCell key="cell" alignment="center" title="100 %" id="uB5-rn-ET5">
+                                                                    <textFieldCell key="cell" alignment="center" title="-- %" id="uB5-rn-ET5">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -439,7 +439,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="47" id="4Y1-qd-h5V"/>
                                                                     </constraints>
-                                                                    <textFieldCell key="cell" alignment="center" title="100 %" id="Cex-0p-F1E">
+                                                                    <textFieldCell key="cell" alignment="center" title="-- %" id="Cex-0p-F1E">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -499,7 +499,6 @@
                                         <constraint firstAttribute="bottom" secondItem="GqV-z6-O2O" secondAttribute="bottom" id="9Wc-qT-6bb"/>
                                         <constraint firstItem="GqV-z6-O2O" firstAttribute="top" secondItem="k7B-sq-m8O" secondAttribute="top" id="GGe-Tt-RNx"/>
                                         <constraint firstItem="GqV-z6-O2O" firstAttribute="leading" secondItem="k7B-sq-m8O" secondAttribute="leading" id="N8q-8t-dXA"/>
-                                        <constraint firstAttribute="height" constant="75" id="QtV-MP-XA8"/>
                                         <constraint firstAttribute="trailing" secondItem="GqV-z6-O2O" secondAttribute="trailing" id="fmr-cb-0q8"/>
                                     </constraints>
                                     <connections>
@@ -518,13 +517,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="366" height="20"/>
                                     <subviews>
                                         <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYp-4k-O9s">
-                                            <rect key="frame" x="42" y="0.0" width="324" height="20"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="20"/>
                                             <subviews>
-                                                <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jae-QQ-dgo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="20"/>
+                                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jae-QQ-dgo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="20"/>
                                                     <subviews>
                                                         <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lft-ik-JK1">
-                                                            <rect key="frame" x="-2" y="2" width="59" height="16"/>
+                                                            <rect key="frame" x="-2" y="2" width="101" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Headset" id="RnA-rt-CT4">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -532,7 +531,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdo-iA-k0O">
-                                                            <rect key="frame" x="63" y="0.0" width="30" height="20"/>
+                                                            <rect key="frame" x="105" y="0.0" width="30" height="20"/>
                                                             <subviews>
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Lsn-9j-b2z">
                                                                     <rect key="frame" x="0.0" y="17" width="20" height="3"/>
@@ -571,7 +570,7 @@
                                                             </customSpacing>
                                                         </stackView>
                                                         <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="-10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W3v-B7-Mg4">
-                                                            <rect key="frame" x="101" y="0.0" width="140" height="20"/>
+                                                            <rect key="frame" x="143" y="0.0" width="140" height="20"/>
                                                             <subviews>
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Ay-9S-iAL" customClass="JCGGProgressBar" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="20"/>
@@ -605,18 +604,18 @@
                                                             </customSpacing>
                                                         </stackView>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HFN-IY-Bit">
-                                                            <rect key="frame" x="247" y="2" width="51" height="16"/>
+                                                            <rect key="frame" x="289" y="2" width="51" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="47" id="vBZ-bF-RZM"/>
                                                             </constraints>
-                                                            <textFieldCell key="cell" alignment="center" title="100 %" id="CkT-7f-gJV">
+                                                            <textFieldCell key="cell" alignment="center" title="-- %" id="CkT-7f-gJV">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Gwr-48-9pB">
-                                                            <rect key="frame" x="304" y="0.0" width="20" height="20"/>
+                                                            <rect key="frame" x="346" y="0.0" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="tf0-tK-VGE"/>
                                                             </constraints>
@@ -653,6 +652,7 @@
                                     <constraints>
                                         <constraint firstItem="gYp-4k-O9s" firstAttribute="top" secondItem="w8g-ss-fcZ" secondAttribute="top" id="BTf-Ao-RTM"/>
                                         <constraint firstAttribute="trailing" secondItem="gYp-4k-O9s" secondAttribute="trailing" id="BUX-dS-FqD"/>
+                                        <constraint firstItem="gYp-4k-O9s" firstAttribute="leading" secondItem="w8g-ss-fcZ" secondAttribute="leading" id="Lj2-D9-ja1"/>
                                         <constraint firstAttribute="height" constant="20" id="RZW-zr-aLY"/>
                                         <constraint firstAttribute="bottom" secondItem="gYp-4k-O9s" secondAttribute="bottom" id="eNa-gO-dzE"/>
                                     </constraints>
@@ -682,9 +682,6 @@
                             </customSpacing>
                         </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="xMs-ov-aOl" firstAttribute="leading" secondItem="TtL-9M-Mgg" secondAttribute="leading" id="yFW-J8-4Kz"/>
-                    </constraints>
                     <visibilityPriorities>
                         <integer value="1000"/>
                     </visibilityPriorities>

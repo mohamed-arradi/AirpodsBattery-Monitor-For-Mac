@@ -26,6 +26,15 @@ struct HeadsetBatteryEntry: TimelineEntry {
         
         return "\(Int(batt)) %"
     }
+    
+    var deviceName: String {
+        
+        guard let deviceName = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.DeviceMetaData.shortName.rawValue) as? String else {
+            return ""
+        }
+        
+        return deviceName
+    }
 }
 
 struct HeadsetBatteryProvider: IntentTimelineProvider {

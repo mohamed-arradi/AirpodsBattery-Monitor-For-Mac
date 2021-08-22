@@ -14,9 +14,9 @@ A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left
 
 Just download the latest version here: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/releases
 
-### Via Homebrew ###
+### Instal Via Homebrew ###
 
-Work in progress...
+WIP
 
 ## Why this App can be useful to you ? ##
 
@@ -30,6 +30,7 @@ This is why I build this tiny mac status bar app.
 - Add Airpods Max compatibility.
 - Stability Improvements.
 - Handle multiple devices connected at the same time (Taking the very top first one connected thought to display battery).
+- Update Widget for Airpods Max
 
 **2.0.0**
 

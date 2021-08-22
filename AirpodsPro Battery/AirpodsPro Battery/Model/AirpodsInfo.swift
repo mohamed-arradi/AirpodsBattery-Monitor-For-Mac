@@ -25,10 +25,12 @@ struct AirpodsInfo {
     let leftBatteryValue: CGFloat
     let rightBatteryValue: CGFloat
     let caseBatteryValue: CGFloat
+    let deviceState: DeviceConnectionState
     
-    init(_ left: CGFloat,_ right: CGFloat,_ caseV: CGFloat) {
+    init(_ left: CGFloat,_ right: CGFloat,_ caseV: CGFloat, _ deviceState: DeviceConnectionState = .connected) {
         self.leftBatteryValue = left
         self.rightBatteryValue = right
         self.caseBatteryValue = caseV
+        self.deviceState = deviceState
     }
 }

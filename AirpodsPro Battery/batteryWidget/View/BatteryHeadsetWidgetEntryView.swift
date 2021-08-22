@@ -17,16 +17,17 @@ struct BatteryHeadsetWidgetEntryView: View {
     var body: some View {
         Color("WidgetBackground")
             .overlay(
-                VStack(alignment: .center, spacing: nil, content: {
-                    VStack {
+                    VStack(alignment: .center, spacing: 8, content: {
                         Image("HeadSet")
                             .resizable()
                             .frame(width: 80.0, height: 80.0)
                         Text(entry.displayableBatteryText)
-                            .bold()
+                            .font(Font.system(size: 18.0, weight: .bold, design: .default))
                             .foregroundColor(.white)
-                    }
-                })
+                        Text(entry.deviceName)
+                            .font(Font.system(size: 10.0, weight: .light, design: .default))
+                            .foregroundColor(.white)
+                    })
             )
     }
 }

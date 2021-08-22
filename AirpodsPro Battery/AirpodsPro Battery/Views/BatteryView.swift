@@ -24,14 +24,34 @@ class BatteryView: NSView {
             return
         }
         
-        if airpodsBatteryViewModel.airpodsInfo != nil {
+        if let airpodsInfo = airpodsBatteryViewModel.airpodsInfo,
+           airpodsInfo.deviceState == .connected {
             airpodsBatteryView.updateData(airpodsBatteryViewModel: airpodsBatteryViewModel)
             headsetBatteryView.isHidden = true
             airpodsBatteryView.isHidden = false
-        } else if airpodsBatteryViewModel.headsetInfo != nil {
+        } else if let headsetInfo = airpodsBatteryViewModel.headsetInfo,
+                  headsetInfo.deviceState == .connected {
             headsetBatteryView.isHidden = false
             airpodsBatteryView.isHidden = true
             headsetBatteryView.updateViewData(viewModel)
+        } else {
+            
+            let latestDeviceType = airpodsBatteryViewModel.latestDeviceType
+            
+            headsetBatteryView.isHidden = true
+            airpodsBatteryView.isHidden = true
+            
+            switch latestDeviceType {
+            case .airpods:
+                airpodsBatteryView.isHidden = false
+                airpodsBatteryView.updateData(airpodsBatteryViewModel: airpodsBatteryViewModel)
+            case .headset:
+                headsetBatteryView.isHidden = false
+                headsetBatteryView.updateViewData(viewModel)
+            default:
+                airpodsBatteryView.isHidden = false
+                airpodsBatteryView.updateData(airpodsBatteryViewModel: airpodsBatteryViewModel)
+            }
         }
     }
 }

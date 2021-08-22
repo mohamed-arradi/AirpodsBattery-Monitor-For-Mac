@@ -22,6 +22,7 @@ enum PreferenceKey {
     }
     
     enum DeviceMetaData: String {
+        case shortName
         case deviceName
         case deviceType
         case deviceAddress

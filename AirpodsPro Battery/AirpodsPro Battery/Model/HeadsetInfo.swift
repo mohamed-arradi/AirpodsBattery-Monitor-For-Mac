@@ -11,6 +11,7 @@ import Foundation
 struct HeadsetInfo {
     
     let batteryValue: CGFloat
+    let deviceState: DeviceConnectionState
     
     var displayBatteryValue: String {
         return batteryValue > 0.0 ? "\(Int(batteryValue)) %" : "NC"

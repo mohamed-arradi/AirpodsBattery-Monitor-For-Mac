@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AirpodsConnectionStatus {
+enum DeviceConnectionState {
     case connected
     case disconnected
 }
@@ -17,7 +17,7 @@ protocol BluetoothAirpodsBatteryManagementProtocol {
     
     var airpodsInfo: AirpodsInfo? { get set }
     var headsetInfo: HeadsetInfo? { get set }
-    var connectionStatus: AirpodsConnectionStatus { get set }
+    var connectionStatus: DeviceConnectionState { get set }
     var deviceName: String { get }
     var deviceAddress: String { get }
     

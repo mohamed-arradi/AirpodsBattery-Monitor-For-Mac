@@ -31,16 +31,16 @@ WIP
 On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
 This is why I build this tiny mac status bar app.
 
-## Latest Changelog  ##
+## Change Log  ##
 
-**2.1.0**
+**V2.1.0**
 
 - Add Airpods Max compatibility.
 - Stability Improvements.
 - Handle multiple devices connected at the same time (Taking the very top first one connected thought to display battery).
 - Update Widget for Airpods Max
 
-**2.0.0**
+**V2.0.0**
 
  - Add M1 Compatilibity Support.
  - Add Transparency Mode Listener (Ability to detect which mode are you with your Airpods (Transparency / Noice Cancellation / Normal))
@@ -54,18 +54,18 @@ This is why I build this tiny mac status bar app.
 - Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
 - Support more languages.
 
-### DEPENDANCIES
+### DEPENDANCIES ###
 
 - **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo).
 - **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
 
-### Why it is not on the App Store ?
+### Why it is not on the App Store ? ###
 
 - Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
 
 Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this working.
 
-### THEY TALK ABOUT IT
+### THEY TALK ABOUT IT ###
 
 -  (Japanese Youtube Video Demo) https://www.youtube.com/watch?v=F8lBL62iYD4 
 - (German Blog - xgadget.de) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
@@ -78,11 +78,11 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 - (German Article - WorldUnion.info) https://worldunion.info/diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
 -  (PC6.com) http://www.pc6.com/mac/734552.html
 
-### CONTRIBUTING
+### CONTRIBUTING ###
 
 If you want to contribute to improve it, it will be with pleasure !
 
-### Image Credits
+### Image Credits - Attribution ###
 
 - Airpods Case Widget made from <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 - Airpods widget icon made from FreePik https://www.freepik.com
@@ -93,16 +93,17 @@ If you want to contribute to improve it, it will be with pleasure !
 - HeadSet icon made by <div><a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>. Link -> https://www.flaticon.com/free-icon/music_2503535?term=headset&related_id=2503535
 - Airpods Case Made by <div><a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-### LICENCE
+### LICENCE ###
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### DONATE
+### DONATE ###
 
 You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
 
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/momolette)
 
+### LEGAL ###
 
 **AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
 

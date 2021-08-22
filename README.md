@@ -47,7 +47,7 @@ This is why I build this tiny mac status bar app.
  - Add Basic Widget with Battery value for your MacOS Widget configuration.
  - Add Start on Launch as a Settings (before there were any :( ). 
  
-### REMAINING TO DO
+### TO DO ###
 
 - Activate Desktop Notification when battery is low. (it is developed but not yet activated, require some testing effort)
 - Add TouchBar App in order to see the battery from the touch bar

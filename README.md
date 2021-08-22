@@ -5,7 +5,9 @@
 
 Airpods Mac OS App which show you the battery percentage of your airpods and Airpods Pro from the status bar or the associated widget
 
+#### Airpods Pro Widgets ####
 ![Image of AirPods Widget](/images/airpods-battery-widget.png)
+#### Airpods Max ####
 ![Airpods Max Battery Widget](/images/airpodsMax-widget-demo.png)
 
 A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left / Right) in real-time !. It is a shortcut to remove the long and painful access from the Bluetooth Tab that Mac OS X provide.

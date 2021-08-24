@@ -43,27 +43,9 @@ Guide Link: [Issue 27](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-
 - Stability Improvements.
 - Handle multiple devices connected at the same time (Taking the very top first one connected thought to display battery).
 - Update Widget for Airpods Max
+- M1 Support
 
-**V2.0.0**
-
- - Add M1 Compatilibity Support.
- - Add Transparency Mode Listener (Ability to detect which mode are you with your Airpods (Transparency / Noice Cancellation / Normal))
- - Add Basic Widget with Battery value for your MacOS Widget configuration.
- - Add Start on Launch as a Settings (before there were any :( ). 
- 
-### TO DO ###
-
-- Activate Desktop Notification when battery is low. (it is developed but not yet activated, require some testing effort)
-- Add TouchBar App in order to see the battery from the touch bar
-- Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
-- Support more languages.
-
-### DEPENDANCIES ###
-
-- **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo).
-- **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
-
-### Why it is not on the App Store ? ###
+### Not on the Mac App Store ? Why ? ###
 
 - Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
 
@@ -86,6 +68,18 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 ### CONTRIBUTING ###
 
 - To contribute, nothing has been easier ! Fork it and make a PR !
+
+### REMAINING TO DO ###
+
+- Activate Desktop Notification when battery is low. (it is developed but not yet activated, require some testing effort)
+- Add TouchBar App in order to see the battery from the touch bar
+- Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
+- Support more languages.
+
+### DEPENDANCIES ###
+
+- **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo).
+- **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
 
 ### Thanks ###
 

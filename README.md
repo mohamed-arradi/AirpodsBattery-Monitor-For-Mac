@@ -77,6 +77,7 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 - (English Blog - AppsForMyPC) http://www.appsformypc.com/2020/01/airpods-battery-monitor-for-mac/
 - (German Article - WorldUnion.info) https://worldunion.info/diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
 -  (PC6.com) http://www.pc6.com/mac/734552.html
+-  MacZ.com https://www.macz.com/mac/4255.html
 
 ### CONTRIBUTING ###
 

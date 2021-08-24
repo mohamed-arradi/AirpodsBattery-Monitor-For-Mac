@@ -31,6 +31,10 @@ WIP
 On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
 This is why I build this tiny mac status bar app.
 
+## Want to Help Adding your LG, Samsung, Huawei Ear Pods ? Please follow that Guide below ##
+
+Guide Link: [Issue 27](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/issues/27)
+
 ## Change Log  ##
 
 **V2.1.0**

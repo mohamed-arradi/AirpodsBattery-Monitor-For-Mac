@@ -52,8 +52,8 @@ Guide Link: [Issue 27](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-
 Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this working.
 
 ### THEY TALK ABOUT IT ###
-
--  (Japanese Youtube Video Demo) https://www.youtube.com/watch?v=F8lBL62iYD4 
+-  Ifun.de https://www.ifun.de/airpods-battery-monitor-akkuanzeige-fuer-die-mac-menueleiste-173617/
+- (Japanese Youtube Video Demo) https://www.youtube.com/watch?v=F8lBL62iYD4 
 - (German Blog - xgadget.de) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
 - (German Online Article - Mobiflip.de) https://www.mobiflip.de/shortnews/airpods-battery-monitor-fuer-macos/
 - (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html

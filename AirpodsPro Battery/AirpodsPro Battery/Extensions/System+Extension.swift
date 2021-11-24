@@ -8,8 +8,16 @@
 
 import Foundation
 
+extension OperatingSystemVersion {
+    func getFullVersion(separator: String = ".") -> String {
+        return "\(majorVersion)\(separator)\(minorVersion)\(separator)\(patchVersion)"
+    }
+}
+
 var isMontereyOS: Bool {
-    guard #available(macOS 12, *) else {
+    let os = ProcessInfo().operatingSystemVersion
+    guard #available(macOS 12, *),
+          os.majorVersion >= 12 else {
         return false
     }
     return true

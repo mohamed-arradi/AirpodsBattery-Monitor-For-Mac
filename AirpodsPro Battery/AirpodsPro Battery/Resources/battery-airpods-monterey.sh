@@ -5,8 +5,10 @@
 BT_DEFAULTS=$(defaults read /Library/Preferences/com.apple.Bluetooth)
 SYS_PROFILE=$(system_profiler SPBluetoothDataType 2>/dev/null)
 MAC_ADDR=$(grep -b2 "Minor Type: "<<<"${SYS_PROFILE}"|awk '/Address/{print $3}')
-CONNECTED=$(grep -ia6 "${MAC_ADDR}"<<<"${SYS_PROFILE}"|awk '/Connected: Yes/{print 1}')
+regex_connected="(Connected:.+Yes)"
 
+if [[ $SYS_PROFILE =~ $regex_connected ]]
+then
 #this regex won't work because of PRCE not working with some bash version (Connected:.Yes).(Vendor ID:.0x004C.)(Product ID:.*(Case.+%).+(Firmware Version:.[A-Z-a-z-0-9]+))
 pat="(.+)(Connected:.Yes).(Vendor ID:.0x004C.)(Product ID.*(Case.+%).+(Firmware Version:.+))"
 replace="?"
@@ -51,9 +53,13 @@ echo $macAddress"@@""$batteryLevel"
 fi
 elif [[ $data =~ $batterySingleRegex ]]
 then
-batteryLevel=""
+#IN PROGRESS - AIRPODS MAX (TO VERIFY)
+batteryLevel=$macAddress"@@"${BASH_REMATCH[2]}
 echo $batteryLevel
 fi
 fi
 done
+else
+echo "nc"
+fi
 exit 0

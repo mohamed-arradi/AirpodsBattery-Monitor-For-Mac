@@ -100,7 +100,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         let script = isMontereyOS ? scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods-monterey.sh") : scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods.sh")
         
         let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
-        
         let arguments = isMontereyOS ? ["\(script)"] : ["\(script)","\(macMappingFile)"]
         
         scriptHandler.execute(commandName: "sh", arguments: arguments) { [weak self] (result) in
@@ -119,6 +118,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 
                 guard datas.count > 1,
                       let dataDevice = datas.last else {
+                        self?.resetAllDevicesBatteryState()
+                        completion(false, .disconnected, deviceType)
                     return
                 }
                 

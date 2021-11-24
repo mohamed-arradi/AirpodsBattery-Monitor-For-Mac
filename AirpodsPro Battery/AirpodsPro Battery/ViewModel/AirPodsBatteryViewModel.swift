@@ -59,12 +59,18 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var fullStatusMessage: String {
         if !listeningNoiseMode.isEmpty
-            && !displayStatusMessage.isEmpty {  
+            && !displayStatusMessage.isEmpty {
+            if !isMontereyOS {
             return "\(displayStatusMessage) - \(listeningNoiseMode)"
+            } else {
+            return "\(displayStatusMessage)"
+            }
         } else {
             return displayStatusMessage
         }
     }
+    
+
     
     // MARK: - Init
     
@@ -75,7 +81,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         self.preferenceManager = preferenceManager
         self.transparencyModeViewModel = transparencyModeViewModel
         self.transparencyModeViewModel.deviceChangeDelegate = self
-        self.transparencyModeViewModel.startListening()
+    
+        if !isMontereyOS {
+             self.transparencyModeViewModel.startListening()
+        }
     }
     
     // MARK: - Update Functions
@@ -88,10 +97,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             return
         }
         
-        let script = scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods.sh")
+        let script = isMontereyOS ? scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods-monterey.sh") : scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods.sh")
+        
         let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
         
-        scriptHandler.execute(commandName: "sh", arguments: ["\(script)","\(macMappingFile)"]) { [weak self] (result) in
+        let arguments = isMontereyOS ? ["\(script)"] : ["\(script)","\(macMappingFile)"]
+        
+        scriptHandler.execute(commandName: "sh", arguments: arguments) { [weak self] (result) in
             
             var deviceType: DeviceType = .unknown
             
@@ -288,6 +300,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                     self?.updateStoredDeviceInfos(name: "", address: "")
                     return
                 }
+                
                 let transparencyType: String =  self?.transparencyModeViewModel.listeningModeDisplayable ?? ""
                 self?.preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.listeningMode.rawValue,
                                                         value: transparencyType)

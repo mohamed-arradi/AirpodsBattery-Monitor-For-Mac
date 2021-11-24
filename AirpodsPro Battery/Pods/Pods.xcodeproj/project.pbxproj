@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39901ED0E424B4AD66D94DBF5ED432A3 /* LoginServiceKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B47772FCEEEA56D7EB26B27A46B4B697 /* LoginServiceKit-dummy.m */; };
-		5A4B1142F44DDA0E740445DF6BE8F245 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
-		5C232150CA77EF06DC418A48F78C822F /* LoginServiceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C26A81296C1505B5264AEE8F2F1278 /* LoginServiceKit.swift */; };
-		87C9DC448B46B34BDCF71672C5935FBD /* Pods-AirpodsPro Battery-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABEC48CDBA28180F003381A99ED6335D /* Pods-AirpodsPro Battery-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A07CB251CD645102838869562C50883 /* Pods-AirpodsPro Battery-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6013F3EBDFA4322F051B455C745E7458 /* Pods-AirpodsPro Battery-dummy.m */; };
-		DDBE3E6B883CF5E04C1BF6B3E997E3BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
-		FD9EA8AA8D3959577C324CE51105CC90 /* LoginServiceKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F2F800F7D436B7604AAA29F49C90BC /* LoginServiceKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47C169342C17B6FBD01BF2C515E15FCE /* LoginServiceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C26A81296C1505B5264AEE8F2F1278 /* LoginServiceKit.swift */; };
+		5914846FCADEB344E5F49ACBB0BB72DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
+		6504CD7BF957128465607CEE8B7878D1 /* Pods-AirpodsPro Battery-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6013F3EBDFA4322F051B455C745E7458 /* Pods-AirpodsPro Battery-dummy.m */; };
+		7F84AEFBAE705B3CAD444745332F728C /* Pods-AirpodsPro Battery-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABEC48CDBA28180F003381A99ED6335D /* Pods-AirpodsPro Battery-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85FCEAFC82BFC654BC023F98F766F25D /* LoginServiceKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F2F800F7D436B7604AAA29F49C90BC /* LoginServiceKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE55B9F80EE00D0E99C456023570E3F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */; };
+		FF29B1C3A0C80D7F06F99AFCC237C4CB /* LoginServiceKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B47772FCEEEA56D7EB26B27A46B4B697 /* LoginServiceKit-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B9A62698441BAB8D75261D79AC4777C0 /* PBXContainerItemProxy */ = {
+		DE048B1C9C111E6FC4312E55252F18FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -35,14 +35,14 @@
 		6013F3EBDFA4322F051B455C745E7458 /* Pods-AirpodsPro Battery-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AirpodsPro Battery-dummy.m"; sourceTree = "<group>"; };
 		67A919B80652DD0082004685267CD4CA /* LoginServiceKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoginServiceKit.debug.xcconfig; sourceTree = "<group>"; };
 		72F2F800F7D436B7604AAA29F49C90BC /* LoginServiceKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoginServiceKit-umbrella.h"; sourceTree = "<group>"; };
-		820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoginServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LoginServiceKit; path = LoginServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877E7731588F739CCA87A7CA4FEE27C2 /* Pods-AirpodsPro Battery.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AirpodsPro Battery.modulemap"; sourceTree = "<group>"; };
 		8BF38C751580D39694A4F2E56063703D /* Pods-AirpodsPro Battery-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AirpodsPro Battery-Info.plist"; sourceTree = "<group>"; };
 		91FA531CD32F31433FCCDF766C0BB03C /* Pods-AirpodsPro Battery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AirpodsPro Battery.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ABEC48CDBA28180F003381A99ED6335D /* Pods-AirpodsPro Battery-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AirpodsPro Battery-umbrella.h"; sourceTree = "<group>"; };
 		B47772FCEEEA56D7EB26B27A46B4B697 /* LoginServiceKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LoginServiceKit-dummy.m"; sourceTree = "<group>"; };
-		C0DF9AB4FD97D98ABF59D8B2F9EDB638 /* Pods_AirpodsPro_Battery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirpodsPro_Battery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0DF9AB4FD97D98ABF59D8B2F9EDB638 /* Pods-AirpodsPro Battery */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AirpodsPro Battery"; path = Pods_AirpodsPro_Battery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		DF2D5BF1037CE17966B5D833B2F70468 /* LoginServiceKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LoginServiceKit-Info.plist"; sourceTree = "<group>"; };
 		DFEE06ECE5AC594BF549E7A3869594C6 /* Pods-AirpodsPro Battery-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AirpodsPro Battery-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -51,19 +51,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3CB65A48D8F6087DBE6EE068559897D9 /* Frameworks */ = {
+		5A1DE6655A176CFEF2B19BD120A3FDA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A4B1142F44DDA0E740445DF6BE8F245 /* Cocoa.framework in Frameworks */,
+				FE55B9F80EE00D0E99C456023570E3F6 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F08CCE1431965C44B72BDC8DD6CF1F01 /* Frameworks */ = {
+		ADDDD30151236A6C9B86D03369EF8DFA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDBE3E6B883CF5E04C1BF6B3E997E3BB /* Cocoa.framework in Frameworks */,
+				5914846FCADEB344E5F49ACBB0BB72DA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,22 +95,23 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		69EBACA6EE084D216A2B2E4EB8ED81A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit */,
+				C0DF9AB4FD97D98ABF59D8B2F9EDB638 /* Pods-AirpodsPro Battery */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6B6E69E2F74A2A5E06335B50621617EA /* LoginServiceKit */ = {
 			isa = PBXGroup;
 			children = (
 				F4C26A81296C1505B5264AEE8F2F1278 /* LoginServiceKit.swift */,
 				9E47A2B7D628817FAD9D4F6352432CE1 /* Support Files */,
 			);
+			name = LoginServiceKit;
 			path = LoginServiceKit;
-			sourceTree = "<group>";
-		};
-		7C8815AC04BC99D2BBEC8E296438329B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit.framework */,
-				C0DF9AB4FD97D98ABF59D8B2F9EDB638 /* Pods_AirpodsPro_Battery.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		9E47A2B7D628817FAD9D4F6352432CE1 /* Support Files */ = {
@@ -142,7 +143,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */,
 				A95C8D1716EB36BFAA5BEA992DE63920 /* Pods */,
-				7C8815AC04BC99D2BBEC8E296438329B /* Products */,
+				69EBACA6EE084D216A2B2E4EB8ED81A8 /* Products */,
 				60E8AB0474C14C12BF607B814652B530 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -166,19 +167,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		13BDB6BCF75ABB2770EDD7B9F4201294 /* Headers */ = {
+		91A01C3FBF39DB336566904AC42E76F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87C9DC448B46B34BDCF71672C5935FBD /* Pods-AirpodsPro Battery-umbrella.h in Headers */,
+				7F84AEFBAE705B3CAD444745332F728C /* Pods-AirpodsPro Battery-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97C249D8B94D576C224CA6105B518D02 /* Headers */ = {
+		966A8B68E7E007ADFD36CF70A6DA42DA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9EA8AA8D3959577C324CE51105CC90 /* LoginServiceKit-umbrella.h in Headers */,
+				85FCEAFC82BFC654BC023F98F766F25D /* LoginServiceKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,12 +188,12 @@
 /* Begin PBXNativeTarget section */
 		4363B3DEE0E244A6E95B497FB82E7385 /* LoginServiceKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6310DB0AF3F4FB8C97CF81017433C2D /* Build configuration list for PBXNativeTarget "LoginServiceKit" */;
+			buildConfigurationList = 2BBE40909279AF3D30FB5B66E6C8B6CD /* Build configuration list for PBXNativeTarget "LoginServiceKit" */;
 			buildPhases = (
-				97C249D8B94D576C224CA6105B518D02 /* Headers */,
-				EC1E63028C94A657E523CF7E86650E8C /* Sources */,
-				3CB65A48D8F6087DBE6EE068559897D9 /* Frameworks */,
-				D67CF8E41FCE21EB2DB9C6B008323288 /* Resources */,
+				966A8B68E7E007ADFD36CF70A6DA42DA /* Headers */,
+				0706593FE99CE75A019A098CEA357F10 /* Sources */,
+				5A1DE6655A176CFEF2B19BD120A3FDA7 /* Frameworks */,
+				9F7499F7442D3E902CEEF28950DE2004 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -200,26 +201,26 @@
 			);
 			name = LoginServiceKit;
 			productName = LoginServiceKit;
-			productReference = 820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit.framework */;
+			productReference = 820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit */;
 			productType = "com.apple.product-type.framework";
 		};
 		92176A62B84A4B32942C458604603F01 /* Pods-AirpodsPro Battery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53CB53CD41BA67D50B014B3A5D52C4C1 /* Build configuration list for PBXNativeTarget "Pods-AirpodsPro Battery" */;
+			buildConfigurationList = CA3EF77DFEF10BD44EF39C2E7EA8124F /* Build configuration list for PBXNativeTarget "Pods-AirpodsPro Battery" */;
 			buildPhases = (
-				13BDB6BCF75ABB2770EDD7B9F4201294 /* Headers */,
-				55288D8A4166E60F5203FC9784AA8FB3 /* Sources */,
-				F08CCE1431965C44B72BDC8DD6CF1F01 /* Frameworks */,
-				EE7ABC34BB9C33252EAA06ACED3B0B5D /* Resources */,
+				91A01C3FBF39DB336566904AC42E76F6 /* Headers */,
+				628059242B8A6373A735514C3D1C2D6F /* Sources */,
+				ADDDD30151236A6C9B86D03369EF8DFA /* Frameworks */,
+				CFBB3BCEF183359DF2D0FBB36BDA9665 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1F0FB6C8863BFC7C6988B59B0644109B /* PBXTargetDependency */,
+				878EF0C829995E5AF081D0B4AC15C78A /* PBXTargetDependency */,
 			);
 			name = "Pods-AirpodsPro Battery";
-			productName = "Pods-AirpodsPro Battery";
-			productReference = C0DF9AB4FD97D98ABF59D8B2F9EDB638 /* Pods_AirpodsPro_Battery.framework */;
+			productName = Pods_AirpodsPro_Battery;
+			productReference = C0DF9AB4FD97D98ABF59D8B2F9EDB638 /* Pods-AirpodsPro Battery */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -228,19 +229,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1250;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 7C8815AC04BC99D2BBEC8E296438329B /* Products */;
+			productRefGroup = 69EBACA6EE084D216A2B2E4EB8ED81A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -251,14 +252,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D67CF8E41FCE21EB2DB9C6B008323288 /* Resources */ = {
+		9F7499F7442D3E902CEEF28950DE2004 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE7ABC34BB9C33252EAA06ACED3B0B5D /* Resources */ = {
+		CFBB3BCEF183359DF2D0FBB36BDA9665 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,40 +269,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		55288D8A4166E60F5203FC9784AA8FB3 /* Sources */ = {
+		0706593FE99CE75A019A098CEA357F10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A07CB251CD645102838869562C50883 /* Pods-AirpodsPro Battery-dummy.m in Sources */,
+				47C169342C17B6FBD01BF2C515E15FCE /* LoginServiceKit.swift in Sources */,
+				FF29B1C3A0C80D7F06F99AFCC237C4CB /* LoginServiceKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC1E63028C94A657E523CF7E86650E8C /* Sources */ = {
+		628059242B8A6373A735514C3D1C2D6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39901ED0E424B4AD66D94DBF5ED432A3 /* LoginServiceKit-dummy.m in Sources */,
-				5C232150CA77EF06DC418A48F78C822F /* LoginServiceKit.swift in Sources */,
+				6504CD7BF957128465607CEE8B7878D1 /* Pods-AirpodsPro Battery-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1F0FB6C8863BFC7C6988B59B0644109B /* PBXTargetDependency */ = {
+		878EF0C829995E5AF081D0B4AC15C78A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LoginServiceKit;
 			target = 4363B3DEE0E244A6E95B497FB82E7385 /* LoginServiceKit */;
-			targetProxy = B9A62698441BAB8D75261D79AC4777C0 /* PBXContainerItemProxy */;
+			targetProxy = DE048B1C9C111E6FC4312E55252F18FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0378E6B742660CFBAB91007993721CF3 /* Debug */ = {
+		127882E4ECB1FA5D37A44C9A12FF9E0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37DF4F4B5A963C1ECADE766723875171 /* Pods-AirpodsPro Battery.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -334,11 +336,48 @@
 			};
 			name = Debug;
 		};
-		1899C3334C5AFD119891696B9A6C725A /* Release */ = {
+		47E7227B73A0FF204E970FB5D7783A1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67A919B80652DD0082004685267CD4CA /* LoginServiceKit.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LoginServiceKit/LoginServiceKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit.modulemap";
+				PRODUCT_MODULE_NAME = LoginServiceKit;
+				PRODUCT_NAME = LoginServiceKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8136BBD6BEDB583427D50AD5D17A2A82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 91FA531CD32F31433FCCDF766C0BB03C /* Pods-AirpodsPro Battery.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -370,41 +409,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		4F688CCF639C54E0CEEF013E1F2A6FA7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67A919B80652DD0082004685267CD4CA /* LoginServiceKit.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LoginServiceKit/LoginServiceKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit.modulemap";
-				PRODUCT_MODULE_NAME = LoginServiceKit;
-				PRODUCT_NAME = LoginServiceKit;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		A734648D21C485124F4CA7866CB7B37C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -472,6 +476,42 @@
 			};
 			name = Debug;
 		};
+		D4745282B94448555E054514D8FB7FD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED37C4A83958AB8E9C684460D432325 /* LoginServiceKit.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LoginServiceKit/LoginServiceKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit.modulemap";
+				PRODUCT_MODULE_NAME = LoginServiceKit;
+				PRODUCT_NAME = LoginServiceKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D7C18A4BB3A23E3E9BD431BC6F0C4001 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -534,44 +574,18 @@
 			};
 			name = Release;
 		};
-		FB8C519D2ECF12C2CCEAF47A70EB67EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FED37C4A83958AB8E9C684460D432325 /* LoginServiceKit.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LoginServiceKit/LoginServiceKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit.modulemap";
-				PRODUCT_MODULE_NAME = LoginServiceKit;
-				PRODUCT_NAME = LoginServiceKit;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2BBE40909279AF3D30FB5B66E6C8B6CD /* Build configuration list for PBXNativeTarget "LoginServiceKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47E7227B73A0FF204E970FB5D7783A1E /* Debug */,
+				D4745282B94448555E054514D8FB7FD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -581,20 +595,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53CB53CD41BA67D50B014B3A5D52C4C1 /* Build configuration list for PBXNativeTarget "Pods-AirpodsPro Battery" */ = {
+		CA3EF77DFEF10BD44EF39C2E7EA8124F /* Build configuration list for PBXNativeTarget "Pods-AirpodsPro Battery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0378E6B742660CFBAB91007993721CF3 /* Debug */,
-				1899C3334C5AFD119891696B9A6C725A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B6310DB0AF3F4FB8C97CF81017433C2D /* Build configuration list for PBXNativeTarget "LoginServiceKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F688CCF639C54E0CEEF013E1F2A6FA7 /* Debug */,
-				FB8C519D2ECF12C2CCEAF47A70EB67EB /* Release */,
+				127882E4ECB1FA5D37A44C9A12FF9E0B /* Debug */,
+				8136BBD6BEDB583427D50AD5D17A2A82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

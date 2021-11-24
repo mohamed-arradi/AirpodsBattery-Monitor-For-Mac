@@ -2,5 +2,5 @@ platform :osx, '10.14'
 
 target 'AirpodsPro Battery' do
   use_frameworks!
-  pod 'LoginServiceKit', :git => 'https://github.com/Clipy/LoginServiceKit'
+  pod 'LoginServiceKit'
 end

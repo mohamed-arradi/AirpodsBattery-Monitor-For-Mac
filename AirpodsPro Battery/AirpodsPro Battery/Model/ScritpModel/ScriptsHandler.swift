@@ -30,7 +30,7 @@ struct ScriptsHandler {
     
     private(set) var bashExecutor: CommandExecuting
     private(set) var scriptsName: [String]
-    static let `default` = ScriptsHandler(scriptsName: ["battery-airpods.sh", "oui.txt", "apple-devices-verification.sh"])
+    static let `default` = ScriptsHandler(scriptsName: ["battery-airpods.sh", "oui.txt", "apple-devices-verification.sh", "battery-airpods-monterey.sh"])
     
     var scriptingFolderPath: String = "AirpodsProBattery/script/"
     var searchPathDirectory: FileManager.SearchPathDirectory = .libraryDirectory

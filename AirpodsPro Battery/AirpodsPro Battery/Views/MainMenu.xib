@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -711,8 +711,8 @@
         </customView>
     </objects>
     <resources>
-        <image name="CaseAirpods" width="171" height="171"/>
-        <image name="HeadSetIcon" width="171" height="171"/>
+        <image name="CaseAirpods" width="171.5" height="171.5"/>
+        <image name="HeadSetIcon" width="171.5" height="171.5"/>
         <image name="LeftAirpodEar" width="120" height="256"/>
         <image name="RightAirpodEar" width="117.5" height="256"/>
         <namedColor name="TrackColor">

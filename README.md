@@ -5,7 +5,7 @@ Airpods Mac OS App which show you the battery percentage of your airpods and Air
 
 ### IMPORTANT INFORMATION ###
 
-**Monterey Support has been added ONLY for Airpods Pro and Airpods Classic (Airpods Max is currently in working in progress state).**
+**Monterey Support has been added ONLY for Airpods Pro and Airpods Classic (Airpods Max Battery Value is currently not possible to get unfortunately. A workaround is currently in research).**
 - Transparency Mode has been disactivated for Monterey users util this feature can be fixed
 
 ### Status Bar on Mac OS (OSX 11+) ###

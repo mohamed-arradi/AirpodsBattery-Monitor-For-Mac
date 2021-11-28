@@ -113,7 +113,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                       let topMostDeviceData = valueGroupedBySpaces.first else {
                     return
                 }
-                let pattern = "\\d+"
+                let pattern = "(-?\\d+)"
                 let datas = String(topMostDeviceData).components(separatedBy: "@@")
                 
                 guard datas.count > 1,
@@ -123,7 +123,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                     return
                 }
                 
-                let groups = dataDevice.groups(for: pattern).flatMap({$0})
+                let groups = dataDevice.groups(for: pattern).compactMap({$0.first})
                 if groups.count > 1 {
                     deviceType = .airpods
                     DispatchQueue.main.async {
@@ -206,13 +206,13 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             var right: CGFloat? = nil
             var caseBattery: CGFloat? = nil
             
-            if let caseValue = Int(groups[0]) {
+            if let caseValue = Int(groups[0]), caseValue >= 0 {
                 caseBattery = CGFloat(caseValue)
             }
             
             if let leftValue = Int(groups[1]) {
                 let value = leftValue > 0 ? "\(leftValue) %": "--"
-                self.displayStatusMessage.append("\("left".localized): \(value) / ")
+                self.displayStatusMessage.append("\("left".localized): \(value) | ")
                 left = CGFloat(leftValue)
             }
             

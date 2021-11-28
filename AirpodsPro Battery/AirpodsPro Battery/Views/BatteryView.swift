@@ -35,9 +35,7 @@ class BatteryView: NSView {
             airpodsBatteryView.isHidden = true
             headsetBatteryView.updateViewData(viewModel)
         } else {
-            
             let latestDeviceType = airpodsBatteryViewModel.latestDeviceType
-            
             headsetBatteryView.isHidden = true
             airpodsBatteryView.isHidden = true
             

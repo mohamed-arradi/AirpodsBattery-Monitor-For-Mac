@@ -112,7 +112,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
 
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/momolette)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)
 
 ### LEGAL ###
 

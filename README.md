@@ -92,7 +92,7 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 
 ### Thanks ###
 
-- Special thanks to patrickbdev (https://github.com/patrickbdev) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
+- Special thanks to patrickbdev (https://github.com/ptrkstr) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
 
 ### Image Credits - Attribution ###
 

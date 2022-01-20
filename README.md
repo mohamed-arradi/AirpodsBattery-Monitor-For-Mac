@@ -5,8 +5,8 @@ Airpods Mac OS App which show you the battery percentage of your airpods and Air
 
 ### IMPORTANT INFORMATION ###
 
-# Monterey Support has been added ONLY for Airpods Pro All Gens and Airpods Classic #
-## Monterey support per default all 3rd Party Bluetooth headsets. Battery informations are not available with how the software is currently built on. ##
+## Monterey Support has been added ONLY for Airpods Pro All Gens and Airpods Classic ##
+### Monterey support per default all 3rd Party Bluetooth headsets. ###
 **Transparency Mode has been unfortunately disactivated for Monterey users util this feature can be fixed**
 
 ### Status Bar on Mac OS (OSX 11+) ###

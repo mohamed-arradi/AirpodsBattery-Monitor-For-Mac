@@ -6,7 +6,6 @@ Airpods Mac OS App which show you the battery percentage of your airpods and Air
 ### IMPORTANT INFORMATION ###
 
 ## Monterey Support has been added ONLY for Airpods Pro and Airpods Classic ##
-### Monterey support per default all 3rd Party Bluetooth headsets. ###
 **Transparency Mode has been unfortunately disactivated for Monterey users util this feature can be fixed**
 
 ### Status Bar on Mac OS (OSX 11+) ###
@@ -36,24 +35,6 @@ WIP
 On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
 This is why I build this tiny mac status bar app.
 
-## Want to Help Adding your LG, Samsung, Huawei Ear Pods ? Please follow that Guide below ##
-
-Guide Link: [Issue 27](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/issues/27)
-
-## Change Log  ##
-
-**V2.2.1**
-
-- Add Mac OS Monterey Support for Airpods Pro / Airpods Classic. (Airpods Max not officially compatible yet)
-
-**V2.1.0**
-
-- Add Airpods Max compatibility.
-- Stability Improvements.
-- Handle multiple devices connected at the same time (Taking the very top first one connected thought to display battery).
-- Update Widget for Airpods Max
-- M1 Support
-
 ### Not on the Mac App Store ? Why ? ###
 
 - Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
@@ -74,9 +55,9 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 -  (PC6.com) http://www.pc6.com/mac/734552.html
 -  MacZ.com https://www.macz.com/mac/4255.html
 
-### CONTRIBUTING ###
+### THEY ARE USING IT ###
 
-- To contribute, nothing has been easier ! Fork it and make a PR !
+- [**OnlySwitch**](https://github.com/jacklandrin/OnlySwitch)
 
 ### REMAINING TO DO ###
 
@@ -90,11 +71,11 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 - **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo).
 - **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
 
-### Thanks ###
+### Special Thanks ###
 
 - Special thanks to patrickbdev (https://github.com/ptrkstr) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
 
-### Image Credits - Attribution ###
+### Image Credits / Attribution ###
 
 - Airpods Case Widget made from <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 - Airpods widget icon made from FreePik https://www.freepik.com
@@ -109,10 +90,6 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### DONATE ###
-
-You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
-
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)
 
 ### LEGAL ###
@@ -120,3 +97,8 @@ You like it ? help supporting this app by giving me **Coffee** in order for me t
 **AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
 
 [![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)
+
+### DONATE ###
+
+You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
+

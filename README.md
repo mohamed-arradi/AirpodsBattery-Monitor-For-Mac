@@ -1,41 +1,39 @@
+[![MIT License][license-shield]][license-url] [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
 
-# AirPods Battery Monitor For MAC OS ! [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="#">
+    <img src="/images/appIcon.png" alt="Logo" width="80" height="80">
+  </a>
+  <h3 align="center">AirPods Battery Monitor For MAC OS</h3>
+</p>
 
 Airpods Mac OS App which show you the battery percentage of your airpods and Airpods Pro from the status bar or the associated widget
-
-### IMPORTANT INFORMATION ###
 
 ## Monterey Support has been added ONLY for Airpods Pro and Airpods Classic ##
 **Transparency Mode has been unfortunately disactivated for Monterey users util this feature can be fixed**
 
-### Status Bar on Mac OS (OSX 11+) ###
+### Status Bar on Mac OS (Mac OS 11+) ###
 
 A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left / Right) in real-time !. It is a shortcut to remove the long and painful access from the Bluetooth Tab that Mac OS X provide.
 
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.jpg)
 
-### Widgets (Airpods / Airpods Pro / Airpods Max) ###
-
-This App also support widgets ! 
-
-![Image of AirPods Widget](/images/Airpods-Max-Pro-Widget.png)
-
-## HOW TO DOWNLOAD IT ?
-
-### Download Link ###
+### Direct Download ###
 
 Just download the latest version here: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/releases
 
-### Instal Via Homebrew ###
+### Homebrew ###
 
-WIP
+Working in Progress to have it as a cask
 
-## Why this App can be useful to you ? ##
+## How this App can be useful to you ? ##
 
-On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then navigate to the Battery Mode. Now this time is over ! Just an Eye look to the Top and done !
-This is why I build this tiny mac status bar app.
+On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then see the battery levels! Now just move your eyes up and done!
+This is why I build this tiny mac status bar app. Lazyness can make yourself doing great things :)
 
-### Not on the Mac App Store ? Why ? ###
+### Not on the Mac App Store, Why ? ###
 
 - Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
 
@@ -71,8 +69,14 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 - **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo).
 - **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
 
-### Special Thanks ###
+### Widgets (Airpods / Airpods Pro / Airpods Max) ###
 
+This App also support widgets ! 
+
+![Image of AirPods Widget](/images/Airpods-Max-Pro-Widget.png)
+
+
+### Special Thanks ###
 - Special thanks to patrickbdev (https://github.com/ptrkstr) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
 
 ### Image Credits / Attribution ###
@@ -102,3 +106,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
 
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/LICENSE

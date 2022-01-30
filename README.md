@@ -34,28 +34,28 @@ On Mac OS, in order to get the battery information from your AirPods you need to
 This is why I build this tiny mac status bar app. Lazyness can make yourself doing great things :)
 
 ### Not on the Mac App Store, Why ? ###
-
-- Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder : https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
+ 
+Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder:https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
 
 Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this working.
 
 ### THEY TALK ABOUT IT ###
--  Ifun.de https://www.ifun.de/airpods-battery-monitor-akkuanzeige-fuer-die-mac-menueleiste-173617/
-- (Japanese Youtube Video Demo) https://www.youtube.com/watch?v=F8lBL62iYD4 
-- (German Blog - xgadget.de) https://www.xgadget.de/app-software/freeware-airpods-battery-monitor/
-- (German Online Article - Mobiflip.de) https://www.mobiflip.de/shortnews/airpods-battery-monitor-fuer-macos/
-- (Japanese Blog) https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html
-- (English Software Online News - Mac Softpedia) https://mac.softpedia.com/get/Utilities/AirPods-Battery-Monitor.shtml
-- ( German Article - giga.de) https://www.giga.de/news/airpods-diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
-- (German Article - itopnews.de) https://www.itopnews.de/2020/01/airpods-battery-monitor-mac-app-zeigt-airpods-akkustand-bequem-an/
-- (English Blog - AppsForMyPC) http://www.appsformypc.com/2020/01/airpods-battery-monitor-for-mac/
-- (German Article - WorldUnion.info) https://worldunion.info/diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/
--  (PC6.com) http://www.pc6.com/mac/734552.html
--  MacZ.com https://www.macz.com/mac/4255.html
+-  [Ifun.de](https://www.ifun.de/airpods-battery-monitor-akkuanzeige-fuer-die-mac-menueleiste-173617/)
+- [Japanese Vlog Youtube Video](https://www.youtube.com/watch?v=F8lBL62iYD4)
+- [German - xgadget.de](https://www.xgadget.de/app-software/freeware-airpods-battery-monitor)
+- [German - Mobiflip.de](https://www.mobiflip.de/shortnews/airpods-battery-monitor-fuer-macos/)
+- [Japanese - Appleech2](https://applech2.com/archives/20191227-airpods-battery-monitor-app-for-mac-os.html)
+- [Mac Softpedia](https://mac.softpedia.com/get/Utilities/AirPods-Battery-Monitor.shtml)
+- [Giga.de](https://www.giga.de/news/airpods-diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/)
+- [itopnews.de](https://www.itopnews.de/2020/01/airpods-battery-monitor-mac-app-zeigt-airpods-akkustand-bequem-an/)
+- [AppsForMyPC.com](http://www.appsformypc.com/2020/01/airpods-battery-monitor-for-mac/)
+- [WorldUnion.info]( https://worldunion.info/diese-mac-app-ist-die-perfekte-ergaenzung-zu-den-apple-kopfhoerern/)
+- [PC6.com](http://www.pc6.com/mac/734552.html)
+- [MacZ.com](https://www.macz.com/mac/4255.html)
 
-### THEY ARE USING IT ###
+### THEY ARE USING IT IN THEIR APP ###
 
-- [**OnlySwitch**](https://github.com/jacklandrin/OnlySwitch)
+- [**OnlySwitch**](https://github.com/jacklandrin/OnlySwitch) by [jacklandrin](https://github.com/jacklandrin)
 
 ### REMAINING TO DO ###
 

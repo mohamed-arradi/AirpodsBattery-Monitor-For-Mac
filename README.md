@@ -12,15 +12,15 @@
 
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.jpg)
 
-# Install #
+# Installation #
 
-## Direct Download ##
+## Via Direct Download ##
 
-Just download the latest version here: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/releases
+Just download the latest version [**here**](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/releases).
 
 ## Homebrew ##
 
-Working in Progress to have it as a cask
+Working in Progress. Soon !
 
 ## How this App can be useful to you ? ##
 

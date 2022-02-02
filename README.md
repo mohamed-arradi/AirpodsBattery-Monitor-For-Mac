@@ -7,16 +7,18 @@
     <img src="/images/appIcon.png" alt="Logo" width="160" height="160">
   </a>
   <h3 align="center">AirPods Battery Monitor For MAC OS <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat"></img></h3>
-  <p align="center">Small status bar app that display at eye sight your Airpods battery level.</p>
+  <p align="center"><strong>Small status bar app that displays at eye sight your Airpods battery levels hassle-free</strong></p>
 </p>
 
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.jpg)
 
-### Direct Download ###
+# Install #
+
+## Direct Download ##
 
 Just download the latest version here: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/releases
 
-### Homebrew ###
+## Homebrew ##
 
 Working in Progress to have it as a cask
 
@@ -25,13 +27,13 @@ Working in Progress to have it as a cask
 On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then see the battery levels! Now just move your eyes up and done!
 This is why I build this tiny mac status bar app. Lazyness can make yourself doing great things :)
 
-### Not on the Mac App Store, Why ? ###
+### Why it is not on the Mac App Store ? ###
  
-Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the Resources folder:https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources.
+Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the [Resources folder](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources).
 
 Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this working.
 
-##THEY ARE TALKING ABOUT IT ##
+## THEY ARE TALKING ABOUT IT ##
 -  [Ifun.de](https://www.ifun.de/airpods-battery-monitor-akkuanzeige-fuer-die-mac-menueleiste-173617/)
 - [Japanese Vlog Youtube Video](https://www.youtube.com/watch?v=F8lBL62iYD4)
 - [German - xgadget.de](https://www.xgadget.de/app-software/freeware-airpods-battery-monitor)

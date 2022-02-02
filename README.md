@@ -96,5 +96,6 @@ You like it ? help supporting this app by giving me **Coffee** in order for me t
 [license-url]: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/LICENSE
 
 
+### Powered By M1 MacStadium ###
 [![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)
 

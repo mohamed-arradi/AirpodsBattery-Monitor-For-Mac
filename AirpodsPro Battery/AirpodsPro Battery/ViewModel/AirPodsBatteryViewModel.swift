@@ -298,7 +298,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 guard !deviceName.isEmpty,
                       !deviceAddress.isEmpty,
                       success else {
-                    self?.updateStoredDeviceInfos(name: "", address: "")
+                    self?.updateStoredDeviceInfos(name: deviceName, address: deviceAddress)
                     return
                 }
                 

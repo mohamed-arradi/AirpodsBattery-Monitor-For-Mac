@@ -7,7 +7,7 @@
     <img src="/images/appIcon.png" alt="Logo" width="160" height="160">
   </a>
   <h3 align="center">AirPods Battery Monitor For MAC OS <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat"></img></h3>
-  <p align="center"><strong>Small status bar app that displays at eye sight your Airpods battery levels hassle-free</strong></p>
+  <p align="center"><strong>Small Status Bar App that puts at eyesight your AirPods battery levels</strong></p>
 </p>
 
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.jpg)
@@ -80,9 +80,6 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 ### LICENCE ###
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### LEGAL ###
-**AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
-
 ### Special Thanks ###
 - Special thanks to patrickbdev (https://github.com/ptrkstr) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
 
@@ -100,4 +97,8 @@ You like it ? help supporting this app by giving me **Coffee** in order for me t
 
 ### Powered By M1 MacStadium ###
 [![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)
+
+### LEGAL ###
+**AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
+
 

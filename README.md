@@ -1,22 +1,14 @@
-[![MIT License][license-shield]][license-url] [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
+[![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="#">
-    <img src="/images/appIcon.png" alt="Logo" width="80" height="80">
+    <img src="/images/appIcon.png" alt="Logo" width="160" height="160">
   </a>
-  <h3 align="center">AirPods Battery Monitor For MAC OS</h3>
+  <h3 align="center">AirPods Battery Monitor For MAC OS <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat"></img></h3>
+  <p align="center">Small status bar app that display at eye sight your Airpods battery level.</p>
 </p>
-
-Airpods Mac OS App which show you the battery percentage of your airpods and Airpods Pro from the status bar or the associated widget
-
-## Monterey Support has been added ONLY for Airpods Pro and Airpods Classic ##
-**Transparency Mode has been unfortunately disactivated for Monterey users util this feature can be fixed**
-
-### Status Bar on Mac OS (Mac OS 11+) ###
-
-A small Mac OS App that allow you to see easily your AirPods Battery (Case/ Left / Right) in real-time !. It is a shortcut to remove the long and painful access from the Bluetooth Tab that Mac OS X provide.
 
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.jpg)
 
@@ -39,7 +31,7 @@ Sandbox is not activated in order to beneficiate from the scripting tool permiss
 
 Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this working.
 
-### THEY TALK ABOUT IT ###
+##THEY ARE TALKING ABOUT IT ##
 -  [Ifun.de](https://www.ifun.de/airpods-battery-monitor-akkuanzeige-fuer-die-mac-menueleiste-173617/)
 - [Japanese Vlog Youtube Video](https://www.youtube.com/watch?v=F8lBL62iYD4)
 - [German - xgadget.de](https://www.xgadget.de/app-software/freeware-airpods-battery-monitor)
@@ -59,54 +51,50 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 
 ### REMAINING TO DO ###
 
-- Activate Desktop Notification when battery is low. (it is developed but not yet activated, require some testing effort)
-- Add TouchBar App in order to see the battery from the touch bar
-- Make it Generic in order to detect battery from Sony WF 1000xm3, etc..
+- Activate Desktop Notification when battery is low.
+- Add TouchBar App in order to see the battery from the touch bar.
 - Support more languages.
 
 ### DEPENDANCIES ###
 
-- **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo).
+- **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo). (Mac OS Catalina Max)
 - **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
 
 ### Widgets (Airpods / Airpods Pro / Airpods Max) ###
 
-This App also support widgets ! 
-
 ![Image of AirPods Widget](/images/Airpods-Max-Pro-Widget.png)
-
-
-### Special Thanks ###
-- Special thanks to patrickbdev (https://github.com/ptrkstr) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
 
 ### Image Credits / Attribution ###
 
 - Airpods Case Widget made from <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-- Airpods widget icon made from FreePik https://www.freepik.com
-- Airpod Case by Joel Wisneski from the Noun Project
+- [Airpods widget icon made from FreePik](https://www.freepik.com)
+- Airpods Case by Joel Wisneski from the Noun Project
 - AirPods case by Mathijs Boogaert from the Noun Project
-- Connected Airpods Icon made by Vincent Le Moign. Link -> https://icon-icons.com/fr/icone/airpods/110461#32
-- Not connected Airpods Icon made by Vincent Le Moign. Link ->  https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32
-- HeadSet icon made by <div><a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>. Link -> https://www.flaticon.com/free-icon/music_2503535?term=headset&related_id=2503535
-- Airpods Case Made by <div><a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+- [Connected Airpods Icon made by Vincent Le Moign](https://icon-icons.com/fr/icone/airpods/110461#32)
+- [Disconnected Airpods Icon made by Vincent Le Moign](https://icon-icons.com/fr/icone/airpods-pas-connect%C3%A9/110456#32)
+- [HeadSet icon made by Monkik](https://www.flaticon.com/authors/monkik), from [FlatIcon](https://www.flaticon.com/free-icon/music_2503535?term=headset&related_id=2503535).
+- [Airpods Case Made by Icon54](https://icon54.com/),from [FlatIcon](https://www.flaticon.com/).
 
 ### LICENCE ###
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)
-
 ### LEGAL ###
-
 **AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
 
-[![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)
+### Special Thanks ###
+- Special thanks to patrickbdev (https://github.com/ptrkstr) for lending me his Airpods Max, without who the V2.1.0 would never have been out ! 
 
 ### DONATE ###
 
 You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/LICENSE
+
+
+[![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)
+

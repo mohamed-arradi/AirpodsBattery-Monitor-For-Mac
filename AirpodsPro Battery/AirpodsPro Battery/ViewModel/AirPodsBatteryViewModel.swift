@@ -142,6 +142,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                
                 completion(true, .connected, deviceType)
             case .failure( _):
+                self?.resetAllDevicesBatteryState()
                 if #available(OSX 11, *) {
                     WidgetCenter.shared.reloadAllTimelines()
                 }

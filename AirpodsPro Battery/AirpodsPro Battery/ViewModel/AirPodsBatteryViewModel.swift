@@ -142,6 +142,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                
                 completion(true, .connected, deviceType)
             case .failure( _):
+                let connectionState = self?.connectionStatus ?? .disconnected
+                if connectionState == .disconnected {
+                    self?.resetAllDevicesBatteryState()
+                }
                 if #available(OSX 11, *) {
                     WidgetCenter.shared.reloadAllTimelines()
                 }

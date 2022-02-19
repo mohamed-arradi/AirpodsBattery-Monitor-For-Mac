@@ -59,8 +59,8 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 
 ### DEPENDANCIES ###
 
-- **TransparencyCore** -> https://github.com/insidegui/NoiseBuddy (developed by Guilherme Rambo). (Mac OS Catalina Max)
-- **LoginServiceKit** -> https://github.com/Clipy/LoginServiceKit.
+- [TransparencyCore](https://github.com/insidegui/NoiseBuddy) (up to Catalina only)
+- [LoginServiceKit](https://github.com/Clipy/LoginServiceKit).
 
 ### Widgets (Airpods / Airpods Pro / Airpods Max) ###
 
@@ -85,8 +85,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ### DONATE ###
 
-You like it ? help supporting this app by giving me **Coffee** in order for me to keep coding
+Wanna buy me a cup of coffee ? 
 
+ <a href="#">
+    <img src="/images/coffee_sponsor.jpg" alt="Logo" width="160" height="160">
+ </a>
+  
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -94,11 +98,11 @@ You like it ? help supporting this app by giving me **Coffee** in order for me t
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/blob/master/LICENSE
 
+### LEGAL ###
+**AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
 
 ### Powered By M1 MacStadium ###
 [![MacStadium](/images/macstadium.png)](https://www.macstadium.com/opensource-members)
 
-### LEGAL ###
-**AirPods, Touch Bar and Beats Solo Pro are trademarks of Apple Inc., registered in the U.S. and other countries. This app is not made by, affiliated with or endorsed by Apple.**
 
 

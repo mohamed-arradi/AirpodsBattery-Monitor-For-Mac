@@ -66,7 +66,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         }
     }
     
-
+    
     
     // MARK: - Init
     
@@ -104,17 +104,17 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 let valueGroupedBySpaces = value.split(separator: "\n")
                 guard valueGroupedBySpaces.count > 0,
                       let topMostDeviceData = valueGroupedBySpaces.first else {
-                    return
-                }
+                          return
+                      }
                 let pattern = "(-?\\d+)"
                 let datas = String(topMostDeviceData).components(separatedBy: "@@")
                 
                 guard datas.count > 1,
                       let dataDevice = datas.last else {
-                        self?.resetAllDevicesBatteryState()
-                        completion(false, .disconnected, deviceType)
-                    return
-                }
+                          self?.resetAllDevicesBatteryState()
+                          completion(false, .disconnected, deviceType)
+                          return
+                      }
                 
                 let groups = dataDevice.groups(for: pattern).compactMap({$0.first})
                 if groups.count > 1 {
@@ -132,13 +132,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 } else {
                     self?.resetAllDevicesBatteryState()
                 }
-               
+                
                 completion(true, .connected, deviceType)
             case .failure( _):
-                let connectionState = self?.connectionStatus ?? .disconnected
-                if connectionState == .disconnected {
-                    self?.resetAllDevicesBatteryState()
-                }
+                self?.resetAllDevicesBatteryState()
                 if #available(OSX 11, *) {
                     WidgetCenter.shared.reloadAllTimelines()
                 }
@@ -175,9 +172,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         
         guard !info.isEmpty,
               let battValue = Int(info) else {
-            displayStatusMessage = ""
-            return
-        }
+                  displayStatusMessage = ""
+                  return
+              }
         airpodsInfo = nil
         connectionStatus = .connected
         let batteryValue = CGFloat(battValue)
@@ -268,9 +265,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         
         guard latestNotificationSendDate == nil,
               batteryValue <= Threshold.minBatteryLow.rawValue else {
-            resetNotificationState(batteryValue: batteryValue)
-            return
-        }
+                  resetNotificationState(batteryValue: batteryValue)
+                  return
+              }
         
         let notificationMessage = AppleScriptType.batteryNotification.replacingOccurrences(of: "%@", with: "\(batteryValue)")
         AppleScriptExecutor().executeAction(script: notificationMessage)
@@ -295,8 +292,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 guard !deviceName.isEmpty,
                       !deviceAddress.isEmpty,
                       success else {
-                    return
-                }
+                          return
+                      }
                 
                 let transparencyType = self?.transparencyModeViewModel.listeningModeDisplayable ?? ""
                 self?.preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.listeningMode.rawValue,
@@ -309,7 +306,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     func updateAirpodsMode() {
         listeningNoiseMode = transparencyModeViewModel.listeningModeDisplayable
         preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.listeningMode.rawValue,
-                                                value: listeningNoiseMode)
+                                          value: listeningNoiseMode)
     }
     
     // MARK: - BLE
@@ -332,10 +329,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     fileprivate func findLatestDevices(connected: Bool, devices: [IOBluetoothDevice]) -> IOBluetoothDevice? {
         
         guard let device = devices.first(where: { $0.isConnected() == connected
-                                            && $0.deviceClassMajor == kBluetoothDeviceClassMajorAudio
-                                            && $0.deviceClassMinor == kBluetoothDeviceClassMinorAudioHeadphones }) else {
-            return nil
-        }
+            && $0.deviceClassMajor == kBluetoothDeviceClassMajorAudio
+            && $0.deviceClassMinor == kBluetoothDeviceClassMinorAudioHeadphones }) else {
+                return nil
+            }
         return device
     }
     

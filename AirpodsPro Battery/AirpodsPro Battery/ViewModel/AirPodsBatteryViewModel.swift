@@ -25,7 +25,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     var connectionStatus: DeviceConnectionState = .disconnected
     private (set) var scriptHandler: ScriptsHandler?
-    private (set) var preferenceManager: PrefsPersistanceManager!
+    private (set) var preferenceManager: PrefsPersistanceManager
     
     private let transparencyModeViewModel: TransparencyModeViewModel!
     
@@ -60,11 +60,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     var fullStatusMessage: String {
         if !listeningNoiseMode.isEmpty
             && !displayStatusMessage.isEmpty {
-            if !isMontereyOS {
             return "\(displayStatusMessage) - \(listeningNoiseMode)"
-            } else {
-            return "\(displayStatusMessage)"
-            }
         } else {
             return displayStatusMessage
         }
@@ -81,10 +77,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         self.preferenceManager = preferenceManager
         self.transparencyModeViewModel = transparencyModeViewModel
         self.transparencyModeViewModel.deviceChangeDelegate = self
-    
-        if !isMontereyOS {
-             self.transparencyModeViewModel.startListening()
-        }
+        self.transparencyModeViewModel.startListening()
     }
     
     // MARK: - Update Functions
@@ -302,11 +295,10 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                 guard !deviceName.isEmpty,
                       !deviceAddress.isEmpty,
                       success else {
-                    self?.updateStoredDeviceInfos(name: deviceName, address: deviceAddress)
                     return
                 }
                 
-                let transparencyType: String =  self?.transparencyModeViewModel.listeningModeDisplayable ?? ""
+                let transparencyType = self?.transparencyModeViewModel.listeningModeDisplayable ?? ""
                 self?.preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.listeningMode.rawValue,
                                                         value: transparencyType)
                 self?.updateStoredDeviceInfos(name: deviceName, address: deviceAddress)
@@ -316,6 +308,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     func updateAirpodsMode() {
         listeningNoiseMode = transparencyModeViewModel.listeningModeDisplayable
+        preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.listeningMode.rawValue,
+                                                value: listeningNoiseMode)
     }
     
     // MARK: - BLE

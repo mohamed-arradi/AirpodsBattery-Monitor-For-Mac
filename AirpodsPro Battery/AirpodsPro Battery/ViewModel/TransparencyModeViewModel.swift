@@ -38,10 +38,6 @@ class TransparencyModeViewModel {
     }
     
     var listeningModeDisplayable: String {
-        
-        guard !isMontereyOS else {
-            return ""
-        }
         switch listeningMode {
         case .anc:
             return "anc".localized

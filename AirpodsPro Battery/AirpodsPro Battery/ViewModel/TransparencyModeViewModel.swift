@@ -49,7 +49,6 @@ class TransparencyModeViewModel {
     }
     
     func startListening() {
-        
         self.transparencyController.outputDeviceDidChange = { device in
             guard let device = device else {
                 return
@@ -65,7 +64,6 @@ class TransparencyModeViewModel {
                 }
             })
         }
-        
         transparencyController.startListeningForUpdates()
     }
     

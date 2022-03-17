@@ -26,7 +26,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     var connectionStatus: DeviceConnectionState = .disconnected
     private (set) var scriptHandler: ScriptsHandler?
     private (set) var preferenceManager: PrefsPersistanceManager
-    
     private let transparencyModeViewModel: TransparencyModeViewModel!
     
     var deviceName: String {
@@ -34,7 +33,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             return preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.deviceName.rawValue) as? String ?? ""
         }
     }
-    
     
     var shortDeviceName: String {
         get {
@@ -65,7 +63,6 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             return displayStatusMessage
         }
     }
-    
     
     
     // MARK: - Init

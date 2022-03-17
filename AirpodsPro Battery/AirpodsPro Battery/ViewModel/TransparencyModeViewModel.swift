@@ -38,10 +38,6 @@ class TransparencyModeViewModel {
     }
     
     var listeningModeDisplayable: String {
-        
-        guard !isMontereyOS else {
-            return ""
-        }
         switch listeningMode {
         case .anc:
             return "anc".localized
@@ -53,7 +49,6 @@ class TransparencyModeViewModel {
     }
     
     func startListening() {
-        
         self.transparencyController.outputDeviceDidChange = { device in
             guard let device = device else {
                 return
@@ -69,7 +64,6 @@ class TransparencyModeViewModel {
                 }
             })
         }
-        
         transparencyController.startListeningForUpdates()
     }
     

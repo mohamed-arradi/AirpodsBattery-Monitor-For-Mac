@@ -59,7 +59,7 @@ Therefore this App cannot be allowed on the Mac App Store due to the necessary t
 
 ### DEPENDANCIES ###
 
-- [TransparencyCore](https://github.com/insidegui/NoiseBuddy) (up to Catalina only)
+- [TransparencyCore](https://github.com/insidegui/NoiseBuddy)
 - [LoginServiceKit](https://github.com/Clipy/LoginServiceKit).
 
 ### Widgets (Airpods / Airpods Pro / Airpods Max) ###

@@ -5,18 +5,18 @@
 BT_DEFAULTS=$(defaults read /Library/Preferences/com.apple.Bluetooth)
 SYS_PROFILE=$(system_profiler SPBluetoothDataType 2>/dev/null)
 MAC_ADDR=$(grep -b2 "Minor Type: "<<<"${SYS_PROFILE}"|awk '/Address/{print $3}')
-regex_connected="(Connected:.+Yes)"
+
+regex_connected="(Connected:.+)"
 
 if [[ $SYS_PROFILE =~ $regex_connected ]]
 then
 
 #this regex won't work because of PRCE not working with some bash version (Connected:.Yes).(Vendor ID:.0x004C.)(Product ID:.*(Case.+%).+(Firmware Version:.[A-Z-a-z-0-9]+))
-patwithCase="(.+)(Connected:.Yes).(Vendor ID:.0x004C.)(Product ID.*(Case.+%).+(Firmware.+Version:.+))"
-patwithoutCase="(.+)(Connected:.Yes).(Vendor ID:.0x004C.)(Product ID.*.+(Firmware.+Version:.+))"
+patwithCase="(.+).(Vendor ID:.0x004C.)(Product ID.*(Case.+%))"
+patwithoutCase="(.+).(Vendor ID:.0x004C.)(Product ID.*.)"
 replace="?"
 
 comp=$(echo ${SYS_PROFILE}  | sed "s/Address:/$replace/g")
-
 set -f
 IFS='?'
 ary=($comp)

@@ -61,9 +61,8 @@ fi
 elif [[ $d =~ $patwithoutCase ]]
 then
 macAddress=$( echo "${BASH_REMATCH[1]}" | sed 's/ *$//g')
-connectedStatus="${BASH_REMATCH[2]}"
-vendorID="${BASH_REMATCH[3]}"
-data="${BASH_REMATCH[4]}"
+vendorID="${BASH_REMATCH[2]}"
+data="${BASH_REMATCH[3]}"
 firmwareVersion=$(echo ${BASH_REMATCH[6]} | awk '{print $3}')
 batterylevelregex="Left Battery Level: (.+%) Right Battery Level: (.+%)"
 

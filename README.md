@@ -24,14 +24,14 @@ Working in Progress. Soon !
 
 ## How this App can be useful to you ? ##
 
-On Mac OS, in order to get the battery information from your AirPods you need to Select your bluetooth device and then see the battery levels! Now just move your eyes up and done!
-This is why I build this tiny mac status bar app. Lazyness can make yourself doing great things :)
+On Mac OS, in order to get the battery information from your AirPods you need to Select your Bluetooth device and then see the battery levels! Now just move your eyes up and done!
+This is why I build this tiny mac status bar app. Laziness can make yourself doing great things :)
 
 ### Why it is not on the Mac App Store ? ###
  
 Sandbox is not activated in order to beneficiate from the scripting tool permissions. This software is using AppleScript and Bash Script. Those scripts can be found in the [Resources folder](https://github.com/mohamed-arradi/AirpodsBattery-Monitor-For-Mac/tree/master/AirpodsPro%20Battery/AirpodsPro%20Battery/Resources).
 
-Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this working.
+Therefore this App cannot be allowed on the Mac App Store due to the necessary temporary exceptions required to make this work.
 
 ## THEY ARE TALKING ABOUT IT ##
 -  [Ifun.de](https://www.ifun.de/airpods-battery-monitor-akkuanzeige-fuer-die-mac-menueleiste-173617/)

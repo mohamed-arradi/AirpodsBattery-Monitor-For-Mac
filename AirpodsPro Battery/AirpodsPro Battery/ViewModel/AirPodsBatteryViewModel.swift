@@ -98,6 +98,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             
             switch result {
             case .success(let value):
+                self?.preferenceManager.savePreferences(key: "test_d", value: value)
                 let valueGroupedBySpaces = value.split(separator: "\n")
                 guard valueGroupedBySpaces.count > 0,
                       let topMostDeviceData = valueGroupedBySpaces.first else {

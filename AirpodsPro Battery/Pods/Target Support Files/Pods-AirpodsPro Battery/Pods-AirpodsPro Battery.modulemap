@@ -1,6 +1,0 @@
-framework module Pods_AirpodsPro_Battery {
-  umbrella header "Pods-AirpodsPro Battery-umbrella.h"
-
-  export *
-  module * { export * }
-}

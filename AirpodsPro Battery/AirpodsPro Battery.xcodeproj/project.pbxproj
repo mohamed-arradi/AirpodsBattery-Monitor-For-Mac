@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A34BB46F3EBC83AA782B6A38 /* Pods_AirpodsPro_Battery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */; };
 		D904C6472747AB94009856C5 /* NSScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D904C6462747AB94009856C5 /* NSScreen+Extension.swift */; };
 		D904C64C274BD30A009856C5 /* battery-airpods-monterey.sh in Resources */ = {isa = PBXBuildFile; fileRef = D904C64B274BD309009856C5 /* battery-airpods-monterey.sh */; };
 		D94F607526D2A54A0086CF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F9FF81256838890086120E /* Assets.xcassets */; };
 		D957E013274E6658007F940C /* System+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957E012274E6658007F940C /* System+Extension.swift */; };
 		D957E014274E6658007F940C /* System+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957E012274E6658007F940C /* System+Extension.swift */; };
+		D98B79092A166FEF0078CA8B /* LoginServiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = D98B79082A166FEF0078CA8B /* LoginServiceKit */; };
 		D99B875026A8D1400036C56F /* PrefsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */; };
 		D99B875426A984A90036C56F /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99B875326A984A90036C56F /* DateUtil.swift */; };
 		D99B875626A9DC910036C56F /* PreferenceSettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99B875526A9DC910036C56F /* PreferenceSettingsWindow.swift */; };
@@ -106,9 +106,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.release.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.release.xcconfig"; sourceTree = "<group>"; };
-		4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirpodsPro_Battery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CD417C15AE3C9D3617883FB /* Pods-AirpodsPro Battery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirpodsPro Battery.debug.xcconfig"; path = "Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery.debug.xcconfig"; sourceTree = "<group>"; };
 		D904C6462747AB94009856C5 /* NSScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen+Extension.swift"; sourceTree = "<group>"; };
 		D904C64B274BD309009856C5 /* battery-airpods-monterey.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "battery-airpods-monterey.sh"; sourceTree = "<group>"; };
 		D957E012274E6658007F940C /* System+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "System+Extension.swift"; sourceTree = "<group>"; };
@@ -200,26 +197,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A34BB46F3EBC83AA782B6A38 /* Pods_AirpodsPro_Battery.framework in Frameworks */,
+				D98B79092A166FEF0078CA8B /* LoginServiceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0934EA61DB65303CC7153D08 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4CD417C15AE3C9D3617883FB /* Pods-AirpodsPro Battery.debug.xcconfig */,
-				1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		9BB432FC310C592562BB9CB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4BAECABB81B19FB3F4F3624E /* Pods_AirpodsPro_Battery.framework */,
 				D9F9FF79256838880086120E /* WidgetKit.framework */,
 				D9F9FF7B256838880086120E /* SwiftUI.framework */,
 			);
@@ -326,7 +313,6 @@
 				EBA1C26C23CE450E00B1BE68 /* Airpods Battery MonitorTests */,
 				D9F9FF7D256838880086120E /* batteryWidget */,
 				EBC7AD3C2386769700A53E83 /* Products */,
-				0934EA61DB65303CC7153D08 /* Pods */,
 				9BB432FC310C592562BB9CB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -493,11 +479,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC7AD4B2386769900A53E83 /* Build configuration list for PBXNativeTarget "AirpodsPro Battery" */;
 			buildPhases = (
-				FC4DEFE1FCA2B2859A3F25FF /* [CP] Check Pods Manifest.lock */,
 				EBC7AD372386769700A53E83 /* Sources */,
 				EBC7AD382386769700A53E83 /* Frameworks */,
 				EBC7AD392386769700A53E83 /* Resources */,
-				674D600EE85F284238567152 /* [CP] Embed Pods Frameworks */,
 				D9F9FF8D256838890086120E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -506,6 +490,9 @@
 				D9F9FF88256838890086120E /* PBXTargetDependency */,
 			);
 			name = "AirpodsPro Battery";
+			packageProductDependencies = (
+				D98B79082A166FEF0078CA8B /* LoginServiceKit */,
+			);
 			productName = "AirpodsPro Battery";
 			productReference = EBC7AD3B2386769700A53E83 /* Airpods Battery Monitor.app */;
 			productType = "com.apple.product-type.application";
@@ -545,6 +532,9 @@
 				fr,
 			);
 			mainGroup = EBC7AD322386769700A53E83;
+			packageReferences = (
+				D98B79072A166FEF0078CA8B /* XCRemoteSwiftPackageReference "LoginServiceKit" */,
+			);
 			productRefGroup = EBC7AD3C2386769700A53E83 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -592,48 +582,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		674D600EE85F284238567152 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AirpodsPro Battery/Pods-AirpodsPro Battery-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC4DEFE1FCA2B2859A3F25FF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AirpodsPro Battery-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9F9FF74256838880086120E /* Sources */ = {
@@ -963,7 +911,6 @@
 		};
 		EBC7AD4C2386769900A53E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CD417C15AE3C9D3617883FB /* Pods-AirpodsPro Battery.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -994,7 +941,6 @@
 		};
 		EBC7AD4D2386769900A53E83 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1005E2DA5B1F46CCF07ED9B3 /* Pods-AirpodsPro Battery.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1062,6 +1008,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D98B79072A166FEF0078CA8B /* XCRemoteSwiftPackageReference "LoginServiceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Clipy/LoginServiceKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D98B79082A166FEF0078CA8B /* LoginServiceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D98B79072A166FEF0078CA8B /* XCRemoteSwiftPackageReference "LoginServiceKit" */;
+			productName = LoginServiceKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EBC7AD332386769700A53E83 /* Project object */;
 }

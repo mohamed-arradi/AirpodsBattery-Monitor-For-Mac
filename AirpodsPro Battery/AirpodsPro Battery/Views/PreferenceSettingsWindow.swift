@@ -14,6 +14,8 @@ class PreferenceSettingsWindow: NSWindowController {
     
     @IBOutlet weak var startupLaunchSettingCheckbox: NSButton!
     
+    var preferenceManager: PrefsPersistanceManager?
+    
     override var windowNibName: NSNib.Name? {
         return NSNib.Name("PreferenceSettingsWindow")
     }

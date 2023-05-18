@@ -1,16 +1,3 @@
-PODS:
-  - LoginServiceKit (2.2.1)
+PODFILE CHECKSUM: 0b8009fd0734a9882786f0d351233f6fd3c2dddc
 
-DEPENDENCIES:
-  - LoginServiceKit
-
-SPEC REPOS:
-  trunk:
-    - LoginServiceKit
-
-SPEC CHECKSUMS:
-  LoginServiceKit: e39022a6ea6169b3716fc3c43e89b2e7fd12f222
-
-PODFILE CHECKSUM: 46ad7fac475b54b8e37aa39d566979546b7be1eb
-
-COCOAPODS: 1.11.2
+COCOAPODS: 1.12.1

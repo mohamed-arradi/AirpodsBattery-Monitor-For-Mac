@@ -1,10 +1,11 @@
 
-AirpodsPro Battery/AirpodsPro Battery.xcworkspace/xcuserdata/mohamedarradi.xcuserdatad/UserInterfaceState.xcuserstate
+AirpodsPro Battery/AirpodsPro Battery.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
 *.xcuserstate
-AirpodsPro Battery/AirpodsPro Battery.xcworkspace/xcuserdata/mohamed.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
-AirpodsPro Battery/AirpodsPro Battery.xcodeproj/xcuserdata/mohamed.xcuserdatad/xcschemes/xcschememanagement.plist
-AirpodsPro Battery/Pods/Pods.xcodeproj/xcuserdata/mohamed.xcuserdatad/xcschemes/xcschememanagement.plist
+AirpodsPro Battery/AirpodsPro Battery.xcworkspace/xcuserdata/*.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+AirpodsPro Battery/AirpodsPro Battery.xcodeproj/xcuserdata/*.xcuserdatad/xcschemes/xcschememanagement.plist
+AirpodsPro Battery/Pods/Pods.xcodeproj/xcuserdata/*.xcuserdatad/xcschemes/xcschememanagement.plist
 AirpodsPro Battery/.DS_Store
 .DS_Store
 AirpodsPro Battery/.DS_Store
-.DS_Store
+*.DS_Store
+**/.DS_Store

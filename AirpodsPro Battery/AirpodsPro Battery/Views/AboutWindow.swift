@@ -26,7 +26,7 @@ class AboutWindow: NSWindowController {
         self.window?.titlebarAppearsTransparent =  true
         
         self.window?.center()
-        self.window?.makeKeyAndOrderFront(nil)
+        self.window?.orderFrontRegardless()
         NSApp.activate(ignoringOtherApps: true)
         
         appNameLabel.stringValue = "Airpods Battery Monitor"
@@ -43,7 +43,7 @@ class AboutWindow: NSWindowController {
         guard let service = NSSharingService(named: NSSharingService.Name.composeEmail) else {
             return
         }
-        service.recipients = ["hello@arradimohamed.fr"]
+        service.recipients = ["moha-dev-pro@proton.me"]
         service.subject = "Feedback"
         service.perform(withItems: ["Write your feedback here"])
     }

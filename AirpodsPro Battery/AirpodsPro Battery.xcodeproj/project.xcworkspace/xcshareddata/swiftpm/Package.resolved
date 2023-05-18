@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "loginservicekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Clipy/LoginServiceKit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a8e68051aca8bbb702e62ab36006a301966ab053"
+      }
+    }
+  ],
+  "version" : 2
+}

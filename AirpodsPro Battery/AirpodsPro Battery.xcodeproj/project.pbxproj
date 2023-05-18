@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,7 +49,7 @@
 		D9F9FF82256838890086120E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F9FF81256838890086120E /* Assets.xcassets */; };
 		D9F9FF85256838890086120E /* batteryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D9F9FF80256838880086120E /* batteryWidget.intentdefinition */; };
 		D9F9FF86256838890086120E /* batteryWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D9F9FF80256838880086120E /* batteryWidget.intentdefinition */; };
-		D9F9FF89256838890086120E /* batteryWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9F9FF78256838880086120E /* batteryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9F9FF89256838890086120E /* batteryWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D9F9FF78256838880086120E /* batteryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EB5874E5239E19F7005C6E04 /* ScriptsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5874E4239E19F7005C6E04 /* ScriptsHandler.swift */; };
 		EB8CF6B123A2154900C59492 /* PrefsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8CF6B023A2154900C59492 /* PrefsPersistanceManager.swift */; };
 		EB8E8E34238DA65C00EBC5ED /* battery-airpods.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB8E8E33238DA65C00EBC5ED /* battery-airpods.sh */; };
@@ -92,15 +92,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D9F9FF8D256838890086120E /* Embed App Extensions */ = {
+		D9F9FF8D256838890086120E /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D9F9FF89256838890086120E /* batteryWidgetExtension.appex in Embed App Extensions */,
+				D9F9FF89256838890086120E /* batteryWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -498,7 +498,7 @@
 				EBC7AD382386769700A53E83 /* Frameworks */,
 				EBC7AD392386769700A53E83 /* Resources */,
 				674D600EE85F284238567152 /* [CP] Embed Pods Frameworks */,
-				D9F9FF8D256838890086120E /* Embed App Extensions */,
+				D9F9FF8D256838890086120E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -516,8 +516,9 @@
 		EBC7AD332386769700A53E83 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Mohamed Arradi";
 				TargetAttributes = {
 					D9F9FF77256838880086120E = {
@@ -744,6 +745,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8JVK53ZY4C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = batteryWidget/Info.plist;
@@ -753,7 +755,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery.batteryWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -775,6 +777,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8JVK53ZY4C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = batteryWidget/Info.plist;
@@ -784,7 +787,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery.batteryWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -799,6 +802,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8JVK53ZY4C;
 				INFOPLIST_FILE = "Airpods Battery MonitorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -820,6 +824,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8JVK53ZY4C;
 				INFOPLIST_FILE = "Airpods Battery MonitorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -870,6 +875,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -933,6 +939,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -966,15 +973,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8JVK53ZY4C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "AirpodsPro Battery/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
 				PRODUCT_NAME = "Airpods Battery Monitor";
 				SWIFT_OBJC_BRIDGING_HEADER = "AirpodsPro Battery/External/TransparencyCore/AirpodsPro Battery-Bridging-Header.h";
@@ -995,15 +1004,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8JVK53ZY4C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "AirpodsPro Battery/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.2.5;
+				MARKETING_VERSION = 2.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mac.AirpodsPro-Battery";
 				PRODUCT_NAME = "Airpods Battery Monitor";
 				SWIFT_OBJC_BRIDGING_HEADER = "AirpodsPro Battery/External/TransparencyCore/AirpodsPro Battery-Bridging-Header.h";

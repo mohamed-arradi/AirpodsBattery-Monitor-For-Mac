@@ -5,7 +5,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![SPM supported](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager)
 
-Easy manage login items in macOS.
+Easy manage login items for macOS. **Not support Sandbox application.**
 
 ## Usage
 ### CocoaPods

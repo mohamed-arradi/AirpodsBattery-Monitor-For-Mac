@@ -8,6 +8,7 @@
   </a>
   <h3 align="center">AirPods Battery Monitor For MAC OS <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat"></img></h3>
   <p align="center"><strong>Small Status Bar App that puts at eyesight your AirPods battery levels</strong></p>
+    <p align="center"><a href="https://buymeacoffee.com/momolette" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a></p>
 </p>
 
 ![Image of AirPods Battery Monitor](/images/airpods-connected-min.jpg)
@@ -85,14 +86,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ### DONATE ###
 
-Wanna buy me a cup of coffee ? 
-
- <a href="#">
-    <img src="/images/coffee_sponsor.jpg" alt="Logo" width="160" height="160">
- </a>
+<a href="https://buymeacoffee.com/momolette" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
   
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CK4Y594T6K5LL)
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge

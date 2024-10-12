@@ -15,6 +15,7 @@ protocol ScriptingProtocol {
     
     var scriptingFolderPath: String { get set }
     var searchPathDirectory: FileManager.SearchPathDirectory { get set }
+
     
     func askPermissionsForUser()
     func directoryExistsAtPath(_ path: String) -> Bool
@@ -26,8 +27,9 @@ protocol ExecutingProtocol {
     func execute(commandName: String, arguments: [String], completion: @escaping ExecutingCompletionBlock)
 }
 
-struct ScriptsHandler {
+class ScriptsHandler {
     
+    private (set) var scriptURLs: [URL]  = []
     private(set) var bashExecutor: CommandExecuting
     private(set) var scriptsName: [String]
     static let `default` = ScriptsHandler(scriptsName: ["battery-airpods.sh", "oui.txt", "apple-devices-verification.sh", "battery-airpods-monterey.sh"])
@@ -94,7 +96,6 @@ extension ScriptsHandler: ExecutingProtocol {
 }
 
 extension ScriptsHandler: ScriptingProtocol {
-    
     /**
      Detect if the Script Directory is already existing or not
         */
@@ -135,12 +136,62 @@ extension ScriptsHandler: ScriptingProtocol {
         return "\(scriptFileURL)\(scriptingFolderPath)\(scriptName)".replacingOccurrences(of: "file://", with: "")
     }
     
+    
+    
+
     // MARK: - Unused (Sandbox Specific)
+    
+    func askPermissionsForUser() {
+         guard let scriptsURL = try? FileManager.default.url(for: .applicationScriptsDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {
+             return
+         }
+         
+         let openPanel = NSOpenPanel()
+         openPanel.directoryURL = scriptsURL
+         openPanel.canChooseDirectories = true
+         openPanel.canChooseFiles = false
+         openPanel.prompt = "Select Script Folder"
+         openPanel.message = "Please select the Application Scripts folder"
+         
+         openPanel.begin(completionHandler: { result in
+             if result == NSApplication.ModalResponse.OK {
+                 guard let selectedURL = openPanel.url else {
+                     return
+                 }
+                 
+                 for scriptName in self.scriptsName {
+                     let destinationURL = selectedURL.appendingPathComponent(scriptName)
+                     
+                     // Remove existing file if it exists
+                     do {
+                         try FileManager.default.removeItem(at: destinationURL)
+                     } catch {
+                         // Handle the error or ignore if the file doesn't exist
+                     }
+                     
+                     // Copy the new script file
+                     guard let sourceURL = Bundle.main.url(forResource: scriptName.components(separatedBy: ".").first, withExtension: scriptName.components(separatedBy: ".").last) else {
+                         return
+                     }
+                     
+                     do {
+                         try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
+                         try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: destinationURL.path)
+                         // Store the URL of the saved script
+                        self.scriptURLs.append(destinationURL)
+                         print(destinationURL)
+                     } catch {
+                         print("Error: \(error)")
+                     }
+                 }
+             }
+         })
+     }
     /**
        (Unused)
        If app require to be on Sandbox Mode. It is asking to the user to select a folder to write the script files
        */
-      func askPermissionsForUser() {
+      func askPermissionsForUser2() {
           
           guard let directoryURL = try? FileManager.default.url(for: searchPathDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {
               return
@@ -151,7 +202,7 @@ extension ScriptsHandler: ScriptingProtocol {
           openPanel.canChooseDirectories = true
           openPanel.canChooseFiles = false
           openPanel.prompt = "Select Script Folder"
-          openPanel.message = "Please select the User > Library > Application Scripts > com.iconfactory.Scriptinator folder"
+          openPanel.message = "Please select the User > Library > Application Scripts > AirpodsPro-Battery folder"
           openPanel.begin(completionHandler: { result in
               
               if result == NSApplication.ModalResponse.OK {
@@ -188,7 +239,7 @@ extension ScriptsHandler: ScriptingProtocol {
                                   }
                               } else {
                                   // the item couldn't be copied, try again
-                                  self.askPermissionsForUser()
+                                //  self.askPermissionsForUser()
                               }
                           }
                       }

@@ -142,7 +142,16 @@ class StatusMenuController: NSObject {
             
             DispatchQueue.main.async {
                 self?.airpodsBatteryStatusView.updateViewData(self?.airpodsBatteryViewModel)
-                self?.statusItem.button?.title = self?.airpodsBatteryViewModel.fullStatusMessage ?? ""
+
+                if let button = self?.statusItem.button {
+                    let style = NSMutableParagraphStyle()
+                    style.maximumLineHeight = 10
+                    style.alignment = NSTextAlignment.left
+                    let attributes = [NSAttributedString.Key.paragraphStyle: style, NSAttributedString.Key.font: NSFont.systemFont(ofSize: 11.0), NSAttributedString.Key.baselineOffset: -5] as [NSAttributedString.Key : Any]
+                    let textString = self?.airpodsBatteryViewModel.fullStatusMessage ?? ""
+                    let attributedTitle = NSAttributedString(string: textString, attributes: attributes)
+                    button.attributedTitle = attributedTitle
+                }
                 
                 let pairedDevicesConnected = self?.airpodsBatteryViewModel.connectionStatus == .connected
                 self?.updateStatusButtonImage(hide: pairedDevicesConnected)
@@ -154,7 +163,6 @@ class StatusMenuController: NSObject {
     
     @objc fileprivate func updateAirpodsMode() {
         if !statusItem.isVisible {
-            airpodsBatteryViewModel.updateAirpodsMode()
             statusItem.button?.title = airpodsBatteryViewModel.fullStatusMessage
             if #available(OSX 11, *) {
                 WidgetCenter.shared.reloadAllTimelines()

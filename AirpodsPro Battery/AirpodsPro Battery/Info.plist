@@ -33,7 +33,7 @@
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>We use bluetooth to fetch data </string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2019 Mohamed Arradi. All rights reserved.</string>
+	<string>Copyright © 2024 Mohamed Arradi Alaoui. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
@@ -49,5 +49,7 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth Permission are required to fetch Airpods battery information</string>
 </dict>
 </plist>

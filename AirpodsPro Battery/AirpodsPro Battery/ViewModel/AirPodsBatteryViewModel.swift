@@ -9,7 +9,7 @@
 import Foundation
 import IOBluetooth
 import WidgetKit
-
+import SwiftUI
 enum WidgetIdentifiers: String {
     case batteryMonitor = "com.mac.AirpodsPro-Battery.batteryWidget"
 }
@@ -56,12 +56,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     }
     
     var fullStatusMessage: String {
-        if !listeningNoiseMode.isEmpty
-            && !displayStatusMessage.isEmpty {
-            return "\(displayStatusMessage) - \(listeningNoiseMode)"
-        } else {
-            return displayStatusMessage
-        }
+        return displayStatusMessage
     }
     
     
@@ -79,6 +74,46 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     
     // MARK: - Update Functions
     
+    func terminateAllProcesses() {
+        let processInfo = ProcessInfo()
+        let currentProcessId = processInfo.processIdentifier
+
+        for process in NSWorkspace.shared.runningApplications {
+            // Avoid terminating the current process
+            guard process.processIdentifier != currentProcessId else {
+                continue
+            }
+
+            // Terminate the process
+            process.terminate()
+        }
+    }
+    
+    func readBluetoothDefaults() {
+        let process = Process()
+        process.launchPath = "/usr/bin/defaults"
+        process.arguments = ["read", "/Library/Preferences/com.apple.Bluetooth"]
+
+        let outputPipe = Pipe()
+        let errorPipe = Pipe()
+        process.standardOutput = outputPipe
+        process.standardError = errorPipe
+
+        process.launch()
+        process.waitUntilExit()
+
+        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+        if let outputString = String(data: outputData, encoding: .utf8) {
+            print("Bluetooth Defaults:\n\(outputString)")
+        }
+
+        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+        if let errorString = String(data: errorData, encoding: .utf8) {
+            print("Error:\n\(errorString)")
+        }
+    }
+
+    
     func updateBatteryInformation(completion: @escaping BatteryInfoCompletion) {
         
         guard let scriptHandler = scriptHandler else {
@@ -87,10 +122,43 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             return
         }
         
-        let script = isMontereyOS ? scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods-monterey.sh") : scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods.sh")
-        
+//        let applicationScriptsDirectory = FileManager.default
+//            .urls(for: .applicationScriptsDirectory, in: .userDomainMask)
+//            .first!
+//
+//        let scriptName = "battery-airpods-monterey.sh"
+//        let scriptURL = applicationScriptsDirectory.appendingPathComponent(scriptName)
+//        readBluetoothDefaults()
+//        return
+//       // terminateAllProcesses()
+//        let task = Process()
+//        task.launchPath = "/bin/sh"
+//        task.arguments = ["-c", "\(scriptURL)"]
+//        
+//        let errorPipe = Pipe()
+//        task.standardError = errorPipe
+//        
+//        let outputPipe = Pipe()
+//        task.standardOutput = outputPipe
+//          
+//        task.launch()
+//        task.waitUntilExit()
+//           
+//        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+//        if let errorOutput = String(data: errorData, encoding: .utf8) {
+//            print("Script Error Output: \(errorOutput)")
+//        }
+//               
+//        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+//            if let output = String(data: outputData, encoding: .utf8) {
+//                print("ls Command Output: \(output)")
+//            }
+//        
+//        completion(false, .disconnected, .unknown)
+//        return
+        let script = scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods-monterey.sh")
         let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
-        let arguments = isMontereyOS ? ["\(script)"] : ["\(script)","\(macMappingFile)"]
+        let arguments = ["\(script)"]
         
         scriptHandler.execute(commandName: "sh", arguments: arguments) { [weak self] (result) in
             
@@ -180,7 +248,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         storeHeadSetBatteryLevelInCache(batteryLevel: batteryValue)
         
         if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.listeningMode.rawValue) as? String {
-            self.listeningNoiseMode = listeningMode
+            self.listeningNoiseMode = listeningMode.listeningMode()
+        } else {
+            self.listeningNoiseMode = ""
         }
         preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.deviceType.rawValue, value: DeviceType.headset.rawValue)
     }
@@ -203,18 +273,20 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             
             if let leftValue = Int(groups[1]) {
                 let value = leftValue > 0 ? "\(leftValue) %": "--"
-                self.displayStatusMessage.append("\("left".localized): \(value) | ")
+                self.displayStatusMessage.append("\("left".localized): \(value)")
                 left = CGFloat(leftValue)
             }
             
             if let rightValue = Int(groups[2]) {
                 let value = rightValue > 0 ? "\(rightValue) %": "--"
-                self.displayStatusMessage.append("\("right".localized): \(value)")
+                self.displayStatusMessage.append("\n\("right".localized): \(value)")
                 right = CGFloat(rightValue)
             }
             
             if let listeningMode = preferenceManager.getValuePreferences(from: PreferenceKey.DeviceMetaData.listeningMode.rawValue) as? String {
-                self.listeningNoiseMode = listeningMode
+                self.listeningNoiseMode = listeningMode.listeningMode()
+            } else {
+                self.listeningNoiseMode = ""
             }
             
             airpodsInfo = AirpodsInfo(left ?? -1, right ?? -1, caseBattery ?? -1, .connected)

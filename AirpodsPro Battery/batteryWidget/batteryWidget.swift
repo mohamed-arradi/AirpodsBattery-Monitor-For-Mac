@@ -16,6 +16,9 @@ struct batteryWidget: Widget {
     var body: some WidgetConfiguration {
             return IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: AirpodsBatteryProvider()) { entry in
                 AnyView(BatteryAirpodsWidgetEntryView(entry: entry))
+                    .widgetBackground {
+                        Color("WidgetBackground")
+                    }
             }
             .supportedFamilies([.systemSmall, .systemMedium])
             .configurationDisplayName("Airpods Battery Monitor")

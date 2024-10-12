@@ -1,4 +1,5 @@
 {
+  "originHash" : "1ec685d27a84c49c67d8ed572df27602b3ff131cede7880b853cef2bde046d2a",
   "pins" : [
     {
       "identity" : "loginservicekit",
@@ -6,9 +7,9 @@
       "location" : "https://github.com/Clipy/LoginServiceKit",
       "state" : {
         "branch" : "master",
-        "revision" : "a8e68051aca8bbb702e62ab36006a301966ab053"
+        "revision" : "56dce9dbf4367c1445ef2343a2a912bbe5019a6c"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

@@ -40,11 +40,11 @@ class TransparencyModeViewModel {
     var listeningModeDisplayable: String {
         switch listeningMode {
         case .anc:
-            return "anc".localized
+            return "NC"
         case .transparency:
-            return "transparency".localized
+            return "TR"
         default:
-            return "normal".localized
+            return "N"
         }
     }
     

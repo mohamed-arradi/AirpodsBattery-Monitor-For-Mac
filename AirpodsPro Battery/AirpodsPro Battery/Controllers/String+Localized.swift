@@ -53,4 +53,17 @@ extension String {
             return []
         }
     }
+    
+    func listeningMode() -> String {
+        if self == NCListeningMode.normal.rawValue {
+            return "Normal"
+        }
+        if self == NCListeningMode.anc.rawValue {
+            return "Noise Cancellation"
+        }
+        if self == NCListeningMode.transparency.rawValue {
+            return "Transparency"
+        }
+        return self
+    }
 }

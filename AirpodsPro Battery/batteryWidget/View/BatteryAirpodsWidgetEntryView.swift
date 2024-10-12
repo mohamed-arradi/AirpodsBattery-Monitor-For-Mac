@@ -10,6 +10,20 @@ import Foundation
 import WidgetKit
 import SwiftUI
 
+extension View {
+    @ViewBuilder func widgetBackground<T: View>(@ViewBuilder content: () -> T) -> some View {
+        if #available(iOS 17.0, *) {
+            if #available(macOSApplicationExtension 14.0, *) {
+                containerBackground(for: .widget, content: content)
+            } else {
+                // Fallback on earlier versions
+            }
+        }else {
+            background(content())
+        }
+    }
+}
+
 struct BatteryAirpodsWidgetEntryView : View {
     var entry: AirpodsBatteryProvider.Entry
     
@@ -22,7 +36,7 @@ struct BatteryAirpodsWidgetEntryView : View {
                     VStack {
                         Image("Airpods")
                             .resizable()
-                            .frame(width: 80.0, height: 80.0)
+                            .frame(width: 60.0, height: 60.0)
                         Text(entry.batteryInformation.displayableAirpodsBatteryText)
                             .bold()
                             .foregroundColor(.white)
@@ -35,6 +49,20 @@ struct BatteryAirpodsWidgetEntryView : View {
                             .bold()
                             .foregroundColor(.white)
                     }
+                    HStack {
+                        Spacer()
+                        Button {
+                            let isConnected = entry.batteryInformation.isConnected
+                            if let url = URL(string: "airpodsbattery://\(isConnected ? "disconnect" : "connect")") {
+                                NSWorkspace.shared.open(url)
+                            }
+                        } label: {
+                            Text(entry.batteryInformation.isConnected ? "Disconnect" : "Connect").foregroundColor(.white)
+                        }
+
+                        Spacer()
+                    }
+                    .frame(height: 30.0)
                 })
             )
         } else {
@@ -118,5 +146,18 @@ struct BatteryInformation {
         }
         
         return "\(caseP) %"
+    }
+    
+    var isConnected: Bool {
+        
+        let leftP =  PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.left.rawValue) as? CGFloat
+        let rightP = PrefsPersistanceManager().getValuePreferences(from: PreferenceKey.BatteryValue.right.rawValue) as? CGFloat
+        
+        guard let left = leftP,
+              let right = rightP, left > 0.0 && right > 0.0 else {
+            return false
+        }
+        
+        return true
     }
 }

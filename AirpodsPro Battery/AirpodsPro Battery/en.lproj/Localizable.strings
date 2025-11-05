@@ -24,3 +24,6 @@
 "transparency" = "Transparency Mode";
 "settings" = "Settings";
 "headset_battery" = "Headset Battery";
+"serial_number_case" = "Serial Number";
+"serial_number_left" = "Serial Number (Left)";
+"serial_number_right" = "Serial Number (Right)";

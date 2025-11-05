@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24128" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24128"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferenceSettingsWindow" customModule="Airpods_Battery_Monitor" customModuleProvider="target">
             <connections>
+                <outlet property="airpodsHardwareLeftSerial" destination="cf3-ax-oTM" id="wU3-NZ-u0e"/>
+                <outlet property="airpodsHardwareMainSerial" destination="yLU-GT-esU" id="lLB-7q-QRD"/>
+                <outlet property="airpodsHardwareRightSerial" destination="JxZ-4H-jYe" id="qQp-O9-WKX"/>
                 <outlet property="startupLaunchSettingCheckbox" destination="vAd-Cn-4q9" id="Tuo-C3-cT4"/>
                 <outlet property="window" destination="BM2-N9-ib9" id="SPf-r4-zRb"/>
             </connections>
@@ -17,14 +20,14 @@
         <window title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="BM2-N9-ib9">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="206" width="450" height="225"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1728" height="1079"/>
+            <rect key="contentRect" x="196" y="206" width="450" height="149"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1728" height="1083"/>
             <view key="contentView" id="1W0-lG-UzZ">
-                <rect key="frame" x="0.0" y="0.0" width="450" height="225"/>
+                <rect key="frame" x="0.0" y="0.0" width="450" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vAd-Cn-4q9">
-                        <rect key="frame" x="18" y="188" width="144" height="18"/>
+                        <rect key="frame" x="20" y="113" width="140" height="16"/>
                         <buttonCell key="cell" type="check" title="Launch on startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Xf1-rI-cbB">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="systemBold"/>
@@ -33,13 +36,55 @@
                             <action selector="toogleStartupLaunchSettingsWithSender:" target="-2" id="9IB-8z-pP6"/>
                         </connections>
                     </button>
+                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-gP-OKu">
+                        <rect key="frame" x="20" y="16" width="410" height="67"/>
+                        <subviews>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-GT-esU">
+                                <rect key="frame" x="-2" y="50" width="99" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Serial Number" id="3xB-vc-Nxi">
+                                    <font key="font" metaFont="systemMedium" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cf3-ax-oTM">
+                                <rect key="frame" x="-2" y="25" width="99" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Serial Number" id="Vt5-Af-MKb">
+                                    <font key="font" metaFont="systemMedium" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JxZ-4H-jYe">
+                                <rect key="frame" x="-2" y="0.0" width="99" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Serial Number" id="jlH-fZ-6Sv">
+                                    <font key="font" metaFont="systemMedium" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <visibilityPriorities>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                        </visibilityPriorities>
+                        <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                        </customSpacing>
+                    </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vAd-Cn-4q9" firstAttribute="leading" secondItem="1W0-lG-UzZ" secondAttribute="leading" constant="20" symbolic="YES" id="6Ct-mX-Df0"/>
+                    <constraint firstItem="YCg-gP-OKu" firstAttribute="leading" secondItem="1W0-lG-UzZ" secondAttribute="leading" constant="20" id="Bct-7R-ob0"/>
+                    <constraint firstAttribute="bottom" secondItem="YCg-gP-OKu" secondAttribute="bottom" constant="16" id="NQH-UC-Osa"/>
+                    <constraint firstAttribute="trailing" secondItem="YCg-gP-OKu" secondAttribute="trailing" constant="20" id="fXs-Hw-H7d"/>
                     <constraint firstItem="vAd-Cn-4q9" firstAttribute="top" secondItem="1W0-lG-UzZ" secondAttribute="top" constant="20" symbolic="YES" id="kjQ-RS-Hyf"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="159" y="94.5"/>
+            <point key="canvasLocation" x="159" y="104.5"/>
         </window>
     </objects>
 </document>

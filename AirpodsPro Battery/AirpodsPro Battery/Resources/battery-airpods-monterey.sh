@@ -61,6 +61,9 @@ if [[ $SYS_PROFILE =~ $serialNumbersRegex ]]; then
     mainSerial="M--${BASH_REMATCH[1]}"
     leftSerial="L--${BASH_REMATCH[2]}"
     rightSerial="R--${BASH_REMATCH[3]}"
+    # echo "Main serial: ${BASH_REMATCH[1]}"
+    # echo "Left serial: ${BASH_REMATCH[2]}"
+    # echo "Right serial: ${BASH_REMATCH[3]}"
 fi
 
 batterylevelregex="Case Battery Level: (.+%) Left Battery Level: (.+%) Right Battery Level: (.+%)"
@@ -75,12 +78,12 @@ if [ -z "$batteryLevel" ]
 then
 echo ""
 else
-echo $macAddress"@@""$batteryLevel"@@""$mainSerial-$leftSerial-$rightSerial""
+echo $macAddress"@@""$batteryLevel"!!""$mainSerial-$leftSerial-$rightSerial""
 fi
 elif [[ $data =~ $batterySingleRegex ]]
 then
 #IN PROGRESS - AIRPODS MAX (TO VERIFY)
-batteryLevel=$macAddress"@@"${BASH_REMATCH[2]}""@@""$mainSerial-$leftSerial-$rightSerial""
+batteryLevel=$macAddress"@@"${BASH_REMATCH[2]}""!!""$mainSerial-$leftSerial-$rightSerial""
 echo $batteryLevel
 fi
 elif [[ $d =~ $patwithoutCase ]]
@@ -115,12 +118,12 @@ if [ -z "$batteryLevel" ]
 then
 echo ""
 else
-echo $macAddress"@@""$batteryLevel"@@""$mainSerial-$leftSerial-$rightSerial""
+echo $macAddress"@@""$batteryLevel"!!""$mainSerial-$leftSerial-$rightSerial""
 fi
 fi
 fi
 done
 else
-echo "nc"@@"$mainSerial-$leftSerial-$rightSerial"
+echo "nc"!!"$mainSerial-$leftSerial-$rightSerial"
 fi
 exit 0

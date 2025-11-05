@@ -24,3 +24,6 @@
 "transparency" = "Mode transparence";
 "settings" = "Paramètres";
 "headset_battery" = "Batterie";
+"serial_number_case" = "Numéro de série";
+"serial_number_left" = "Numéro de série (Gauche)";
+"serial_number_right" = "Numéro de série (Droite)";

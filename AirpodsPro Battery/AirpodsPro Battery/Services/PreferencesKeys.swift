@@ -28,6 +28,9 @@ enum PreferenceKey {
         case deviceAddress
         case listeningMode
         case latestBatteryLevel
+        case mainSerialNumber
+        case leftSerialNumber
+        case rightSerialNumber
     }
     
     enum BatteryValue: String {

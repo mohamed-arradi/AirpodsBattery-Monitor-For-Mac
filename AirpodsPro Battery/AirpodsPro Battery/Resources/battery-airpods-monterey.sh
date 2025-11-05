@@ -6,7 +6,26 @@ BT_DEFAULTS=$(defaults read /Library/Preferences/com.apple.Bluetooth)
 SYS_PROFILE=$(system_profiler SPBluetoothDataType 2>/dev/null)
 MAC_ADDR=$(grep -b2 "Minor Type: "<<<"${SYS_PROFILE}"|awk '/Address/{print $3}')
 
-regex_connected="(Connected:.+)"
+regex_not_connected='(Not Connected:.+))'
+regex_connected='(Connected:.+)'
+serialNumbersRegex='Serial Number:[[:space:]]*([^[:space:]]+)[[:space:]]*Serial Number \(Left\):[[:space:]]*([^[:space:]]+)[[:space:]]*Serial Number \(Right\):[[:space:]]*([^[:space:]]+)'
+
+mainSerial=""
+leftSerial=""
+rightSerial=""
+
+if [[ $SYS_PROFILE =~ $serialNumbersRegex ]]; then
+    mainSerial="M--${BASH_REMATCH[1]}"
+    leftSerial="L--${BASH_REMATCH[2]}"
+    rightSerial="R--${BASH_REMATCH[3]}"
+fi
+
+if [[ $SYS_PROFILE =~ $regex_not_connected ]]
+then
+echo "end"
+echo "nc"@@"$mainSerial-$leftSerial-$rightSerial"
+exit 0
+fi
 
 if [[ $SYS_PROFILE =~ $regex_connected ]]
 then
@@ -38,6 +57,15 @@ vendorID="${BASH_REMATCH[3]}"
 data="${BASH_REMATCH[4]}"
 firmwareVersion=$(echo ${BASH_REMATCH[6]} | awk '{print $3}')
 
+if [[ $SYS_PROFILE =~ $serialNumbersRegex ]]; then
+    mainSerial="M--${BASH_REMATCH[1]}"
+    leftSerial="L--${BASH_REMATCH[2]}"
+    rightSerial="R--${BASH_REMATCH[3]}"
+    # echo "Main serial: ${BASH_REMATCH[1]}"
+    # echo "Left serial: ${BASH_REMATCH[2]}"
+    # echo "Right serial: ${BASH_REMATCH[3]}"
+fi
+
 batterylevelregex="Case Battery Level: (.+%) Left Battery Level: (.+%) Right Battery Level: (.+%)"
 batterySingleRegex="(BatteryPercentSingle) = ([0-9]+)"
 if [[ $data =~ $batterylevelregex ]]
@@ -50,12 +78,12 @@ if [ -z "$batteryLevel" ]
 then
 echo ""
 else
-echo $macAddress"@@""$batteryLevel"
+echo $macAddress"@@""$batteryLevel"!!""$mainSerial-$leftSerial-$rightSerial""
 fi
 elif [[ $data =~ $batterySingleRegex ]]
 then
 #IN PROGRESS - AIRPODS MAX (TO VERIFY)
-batteryLevel=$macAddress"@@"${BASH_REMATCH[2]}
+batteryLevel=$macAddress"@@"${BASH_REMATCH[2]}""!!""$mainSerial-$leftSerial-$rightSerial""
 echo $batteryLevel
 fi
 elif [[ $d =~ $patwithoutCase ]]
@@ -66,8 +94,22 @@ data="${BASH_REMATCH[3]}"
 firmwareVersion=$(echo ${BASH_REMATCH[6]} | awk '{print $3}')
 batterylevelregex="Left Battery Level: (.+%) Right Battery Level: (.+%)"
 
+
+if [[ $SYS_PROFILE =~ $serialNumbersRegex ]]; then
+    mainSerial="M--${BASH_REMATCH[1]}"
+    leftSerial="L--${BASH_REMATCH[2]}"
+    rightSerial="R--${BASH_REMATCH[3]}"
+fi
+
 if [[ $data =~ $batterylevelregex ]]
 then
+
+if [[ $SYS_PROFILE =~ $serialNumbersRegex ]]; then
+    mainSerial= "${BASH_REMATCH[1]}"
+    leftSerial= "${BASH_REMATCH[2]}"
+    rightSerial= "${BASH_REMATCH[3]}"
+fi
+
 caseBattery="-1"
 leftBattery="${BASH_REMATCH[1]}"
 rightBattery="${BASH_REMATCH[2]}"
@@ -76,12 +118,12 @@ if [ -z "$batteryLevel" ]
 then
 echo ""
 else
-echo $macAddress"@@""$batteryLevel"
+echo $macAddress"@@""$batteryLevel"!!""$mainSerial-$leftSerial-$rightSerial""
 fi
 fi
 fi
 done
 else
-echo "nc"
+echo "nc"!!"$mainSerial-$leftSerial-$rightSerial"
 fi
 exit 0

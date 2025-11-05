@@ -24,8 +24,8 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     private var listeningNoiseMode: String = ""
     
     var connectionStatus: DeviceConnectionState = .disconnected
-    private (set) var scriptHandler: ScriptsHandler?
-    private (set) var preferenceManager: PrefsPersistanceManager
+    private(set) var scriptHandler: ScriptsHandler?
+    private(set) var preferenceManager: PrefsPersistanceManager
     private let transparencyModeViewModel: TransparencyModeViewModel!
     
     var deviceName: String {
@@ -58,8 +58,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
     var fullStatusMessage: String {
         return displayStatusMessage
     }
-    
-    
+        
     // MARK: - Init
     
     init(scriptHandler: ScriptsHandler = ScriptsHandler.default,
@@ -121,43 +120,9 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
             completion(false, .disconnected, .unknown)
             return
         }
-        
-//        let applicationScriptsDirectory = FileManager.default
-//            .urls(for: .applicationScriptsDirectory, in: .userDomainMask)
-//            .first!
-//
-//        let scriptName = "battery-airpods-monterey.sh"
-//        let scriptURL = applicationScriptsDirectory.appendingPathComponent(scriptName)
-//        readBluetoothDefaults()
-//        return
-//       // terminateAllProcesses()
-//        let task = Process()
-//        task.launchPath = "/bin/sh"
-//        task.arguments = ["-c", "\(scriptURL)"]
-//        
-//        let errorPipe = Pipe()
-//        task.standardError = errorPipe
-//        
-//        let outputPipe = Pipe()
-//        task.standardOutput = outputPipe
-//          
-//        task.launch()
-//        task.waitUntilExit()
-//           
-//        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
-//        if let errorOutput = String(data: errorData, encoding: .utf8) {
-//            print("Script Error Output: \(errorOutput)")
-//        }
-//               
-//        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-//            if let output = String(data: outputData, encoding: .utf8) {
-//                print("ls Command Output: \(output)")
-//            }
-//        
-//        completion(false, .disconnected, .unknown)
-//        return
+    
         let script = scriptHandler.scriptDiskFilePath(scriptName: "battery-airpods-monterey.sh")
-        let macMappingFile = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
+        _ = scriptHandler.scriptDiskFilePath(scriptName: "oui.txt")
         let arguments = ["\(script)"]
         
         scriptHandler.execute(commandName: "sh", arguments: arguments) { [weak self] (result) in
@@ -172,7 +137,24 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                           return
                       }
                 let pattern = "(-?\\d+)"
-                let datas = String(topMostDeviceData).components(separatedBy: "@@")
+                let datasGross = String(topMostDeviceData)
+                var datas: [String] = []
+                
+                var serialStringBlock = ""
+                
+                if datasGross.contains("!!") {
+                    if let dataBlock = datasGross.split(separator: "!!").first {
+                        datas = dataBlock.components(separatedBy: "@@")
+                        
+                        let blocks = datasGross.split(separator: "!!")
+                        
+                        if blocks.count > 1,
+                           let serialBlock = datasGross.split(separator: "!!").last {
+                            serialStringBlock = String(serialBlock)
+                            self?.updateSerialNumber(value: serialStringBlock)
+                        }
+                    }
+                }
                 
                 guard datas.count > 1,
                       let dataDevice = datas.last else {
@@ -198,6 +180,7 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
                     self?.resetAllDevicesBatteryState()
                 }
                 
+
                 completion(true, .connected, deviceType)
             case .failure( _):
                 self?.resetAllDevicesBatteryState()
@@ -230,6 +213,24 @@ class AirPodsBatteryViewModel: BluetoothAirpodsBatteryManagementProtocol {
         preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.shortName.rawValue, value: name)
         preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.deviceName.rawValue, value: nameToSave)
         preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.deviceAddress.rawValue, value: address)
+        NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
+    }
+    
+    fileprivate func updateSerialNumber(value: String) {
+        
+        let pattern = #"M--([^-]+)-L--([^-]+)-R--([^-]+)"#
+
+        if let regex = try? NSRegularExpression(pattern: pattern) {
+            if let match = regex.firstMatch(in: value, range: NSRange(value.startIndex..., in: value)) {
+                let mValue = String(value[Range(match.range(at: 1), in: value)!])
+                let lValue = String(value[Range(match.range(at: 2), in: value)!])
+                let rValue = String(value[Range(match.range(at: 3), in: value)!])
+                
+                preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.mainSerialNumber.rawValue, value: mValue)
+                preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.leftSerialNumber.rawValue, value: lValue)
+                preferenceManager.savePreferences(key: PreferenceKey.DeviceMetaData.rightSerialNumber.rawValue, value: rValue)
+            }
+        }
         NotificationCenter.default.post(name: NSNotification.Name("update_device_name"), object: nil)
     }
     
